@@ -12,7 +12,7 @@ namespace TimeTable_GAs.Data
     {
 
         TimeTableEntities1 db = new TimeTableEntities1();
-        public List<BaiGiang> Index(string id)
+        public List<BaiGiang> Index()
         {
            // DataGridView dgv = new DataGridView();
             var baigiang= db.BaiGiangs;

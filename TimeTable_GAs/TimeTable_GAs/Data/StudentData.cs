@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data;
 namespace TimeTable_GAs.Data
 {
     public class StudentData
     {
-        TimeTableEntities1 db = new TimeTableEntities1();
+        public TimeTableEntities1 db = new TimeTableEntities1();
         public List<HocSinh> Index()
         {
             //  DataGridView dgv = new DataGridView();
@@ -19,6 +19,12 @@ namespace TimeTable_GAs.Data
             return hs.ToList();
 
         }
+        //public System.Data.Linq.Table<HocSinh> GetAll()
+        //{
+        //    DataSet ds = new DataSet();
+        //    //SuperMarketDataContext qlHDB = new SuperMarketDataContext();
+        //    return db.HocSinhs;
+        //}
 
         public bool Add(string id,string name, ref string err)
         {

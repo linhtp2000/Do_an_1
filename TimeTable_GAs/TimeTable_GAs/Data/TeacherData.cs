@@ -11,7 +11,7 @@ namespace TimeTable_GAs.Data
     public class TeacherData
     {
         TimeTableEntities1 db = new TimeTableEntities1();
-        public List<GiaoVien> Index(string id)
+        public List<GiaoVien> Index()//(string id)
         {
            //DataGridView dgv = new DataGridView();
             var gv = db.GiaoViens;
