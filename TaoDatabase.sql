@@ -1,13 +1,20 @@
-﻿create database ThoiKhoaBieu
-USE ThoiKhoaBieu
+﻿create database TimeTable
+USE TimeTable
 GO
-CREATE TABLE GiaoVien
+
+CREATE TABLE LoaiPhong
 (
-MaGV varchar(10) PRIMARY KEY,
-HoTen nvarchar(100),
-Email nvarchar(max)
---GioiTinh nvarchar(3),
---DiaChi nvarchar(100),
+Lab int PRIMARY KEY,
+GhiChu varchar(10)
+)
+
+CREATE TABLE Phong
+(
+MaPhong varchar(10) PRIMARY KEY,
+TenPhong nvarchar(100), --LÝ THUYẾT HAY PHÒNG LAB
+SoLuong int,
+Lab int FOREIGN KEY(Lab) REFERENCES LoaiPhong(Lab),
+Tinhtrang int
 )
 
 CREATE TABLE MonHoc
@@ -15,52 +22,72 @@ CREATE TABLE MonHoc
 MaMon varchar(10) PRIMARY KEY,
 TenMon nvarchar(100),
 SoTietTrongTuan int,
-MaPhong varchar(10) --Mã phòng LÝ THUYẾT HAY PHÒNG LAB
+Lab int FOREIGN KEY(Lab) REFERENCES LoaiPhong(Lab),
+)
+CREATE TABLE GiaoVien
+(
+MaGV varchar(10) PRIMARY KEY,
+HoTen nvarchar(100),
+Email nvarchar(max),
+MaMon varchar(10)REFERENCES MonHoc(MaMon),
+Tinhtrang int
+--GioiTinh nvarchar(3),
+--DiaChi nvarchar(100),
 )
 
-CREATE TABLE Phong
+--CREATE TABLE Lop
+--(
+--MaLop varchar(10) PRIMARY KEY,
+--TenLop varchar(100),
+--SiSo int,
+--)
+
+CREATE TABLE KhoaHoc
 (
-MaPhong varchar(10) PRIMARY KEY,
-TenPhong nvarchar(100), --LÝ THUYẾT HAY PHÒNG LAB
+MaKH int PRIMARY KEY,
+--Tinhtrang int
+)
+CREATE TABLE ChuongTrinh
+(
+MaCT varchar(20) PRIMARY KEY,
+MaKH int FOREIGN KEY(MaKH) REFERENCES KhoaHoc(MaKH),
+MaHK varchar(10),
+MaMon varchar(10)REFERENCES MonHoc(MaMon),
+--PRIMARY KEY(MaKH, MaHK,MaMon)
+--Tinhtrang int
+)
+
+CREATE TABLE ThoiGian
+(
+MaTG varchar(10) PRIMARY KEY,
+Tuan int,
+Ngay date,
+TietBatDau int,
+TietKetThuc int,
 Tinhtrang int
 )
-CREATE TABLE Lop
+CREATE TABLE ThoiGianSlot
 (
-MaLop varchar(10) PRIMARY KEY,
-TenLop varchar(100),
-SiSo int,
-MaPhong varchar(10), --mã phòng LÝ THUYẾT HAY PHÒNG LAB 
-MaHK varchar(10) --1 hoặc 2
-)
-CREATE TABLE HocKy
-(
-MaHK varchar(10) PRIMARY KEY,
-HocKy varchar(10)
---NamHoc varchar(10)
-)
-CREATE TABLE Thu
-(
-MaThu varchar(10) PRIMARY KEY,
-TenThu varchar(100)
-)
-CREATE TABLE PhanCongGiangDay
-(
-MaGiaoVien varchar(10),
-MaLop varchar(10),
-MaMon varchar(10),
-MaThu varchar(10),
+MaTGS varchar(10) PRIMARY KEY,
+MaTG varchar(10) FOREIGN KEY(MaTG) REFERENCES ThoiGian(MaTG),
 ThoiLuong int,
 TietBatDau int,
 TietKetThuc int,
-PRIMARY KEY(MaGiaoVien, MaLop, MaMon,MaThu)
+Tinhtrang int
 )
-ALTER TABLE  MonHoc ADD FOREIGN KEY(MaPhong) REFERENCES Phong(MaPhong);
-ALTER TABLE  Lop ADD FOREIGN KEY(MaPhong) REFERENCES Phong(MaPhong);
-ALTER TABLE  Lop ADD FOREIGN KEY(MaHK) REFERENCES HocKy(MaHK);
-ALTER TABLE  PhanCongGiangDay ADD FOREIGN KEY(MaGiaoVien) REFERENCES GiaoVien(MaGV);
-ALTER TABLE  PhanCongGiangDay ADD FOREIGN KEY(MaLop) REFERENCES Lop(MaLop);
-ALTER TABLE  PhanCongGiangDay ADD FOREIGN KEY(MaMon) REFERENCES MonHoc(MaMon);
-ALTER TABLE  PhanCongGiangDay ADD FOREIGN KEY(MaThu) REFERENCES Thu(MaThu);
 
+CREATE TABLE ThoiKhoaBieu
+(
+MaTKB varchar(10)PRIMARY KEY,
+MaTG varchar(10) FOREIGN KEY(MaTG) REFERENCES ThoiGian(MaTG),
+MaCT varchar(20) FOREIGN KEY(MaCT) REFERENCES ChuongTrinh(MaCT),
+MaMon varchar(10) FOREIGN KEY(MaMon) REFERENCES MonHoc(MaMon),
+MaGV varchar(10)FOREIGN KEY(MaGV) REFERENCES GiaoVien(MaGV),
+--MaLop varchar(10),
+MaPhong varchar(10) FOREIGN KEY(MaPhong) REFERENCES Phong(MaPhong)
+)
+use BachHoaXanh
+
+drop database TimeTable
 
 

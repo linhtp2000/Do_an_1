@@ -17,7 +17,7 @@ namespace TimeTable_GAs
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GiaoVien()
         {
-            this.PhanCongGiangDays = new HashSet<PhanCongGiangDay>();
+            this.BaiGiangs = new HashSet<BaiGiang>();
         }
     
         public string MaGV { get; set; }
@@ -25,6 +25,6 @@ namespace TimeTable_GAs
         public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhanCongGiangDay> PhanCongGiangDays { get; set; }
+        public virtual ICollection<BaiGiang> BaiGiangs { get; set; }
     }
 }

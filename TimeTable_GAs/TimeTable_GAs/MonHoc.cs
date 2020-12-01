@@ -17,16 +17,13 @@ namespace TimeTable_GAs
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MonHoc()
         {
-            this.PhanCongGiangDays = new HashSet<PhanCongGiangDay>();
+            this.BaiGiangs = new HashSet<BaiGiang>();
         }
     
         public string MaMon { get; set; }
         public string TenMon { get; set; }
-        public Nullable<int> SoTietTrongTuan { get; set; }
-        public string MaPhong { get; set; }
     
-        public virtual Phong Phong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhanCongGiangDay> PhanCongGiangDays { get; set; }
+        public virtual ICollection<BaiGiang> BaiGiangs { get; set; }
     }
 }
