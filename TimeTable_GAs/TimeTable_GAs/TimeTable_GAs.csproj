@@ -43,6 +43,7 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
       <Private>True</Private>
@@ -61,9 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaiGiang.cs">
-      <DependentUpon>TimeTable.tt</DependentUpon>
-    </Compile>
     <Compile Include="Bài Giảng.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,18 +71,11 @@
     <Compile Include="Data\CourseData.cs" />
     <Compile Include="Data\LectureData.cs" />
     <Compile Include="ExceptionPlanning.cs" />
-    <Compile Include="GiaoVien.cs">
-      <DependentUpon>TimeTable.tt</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Giáo Viên.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Giáo Viên.Designer.cs">
       <DependentUpon>Giáo Viên.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HocSinh.cs">
-      <DependentUpon>TimeTable.tt</DependentUpon>
     </Compile>
     <Compile Include="IDataModel.cs" />
     <Compile Include="Data\RoomData.cs" />
@@ -96,23 +87,48 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BaiGiang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Chromosome.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\Data.cs" />
     <Compile Include="Model\Drive.cs" />
-    <Compile Include="MonHoc.cs">
-      <DependentUpon>TimeTable.tt</DependentUpon>
-      <SubType>Form</SubType>
+    <Compile Include="Model\GiaoVien.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HocSinh.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Lop.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MonHoc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Phong.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Môn Học.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Môn Học.Designer.cs">
       <DependentUpon>Môn Học.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Phong.cs">
-      <DependentUpon>TimeTable.tt</DependentUpon>
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Phòng.cs">
       <SubType>Form</SubType>
@@ -130,21 +146,6 @@
       <DependentUpon>Sinh Viên.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlData.cs" />
-    <Compile Include="TimeTable.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TimeTable.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TimeTable.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TimeTable.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TimeTable.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TimeTable.edmx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Bài Giảng.resx">
       <DependentUpon>Bài Giảng.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +173,13 @@
     <EmbeddedResource Include="Sinh Viên.resx">
       <DependentUpon>Sinh Viên.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -182,30 +190,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="TimeTable.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TimeTable.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="TimeTable.edmx.diagram">
-      <DependentUpon>TimeTable.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TimeTable.Context.tt">
+    <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TimeTable.edmx</DependentUpon>
-      <LastGenOutput>TimeTable.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="TimeTable.tt">
+    <Content Include="Model\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TimeTable.edmx</DependentUpon>
-      <LastGenOutput>TimeTable.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

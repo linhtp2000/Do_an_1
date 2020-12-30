@@ -1,0 +1,10 @@
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csprojAssemblyReference.cache
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Bài_Giảng.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Form1.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.GiaoVien.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.MonHoc.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Phong.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Properties.Resources.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.SinhVien.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.GenerateResource.cache
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.CoreCompileInputs.cache

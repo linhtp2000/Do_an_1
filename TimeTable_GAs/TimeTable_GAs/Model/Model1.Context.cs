@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeTable_GAs
+namespace TimeTable_GAs.Model
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TimeTableEntities1 : DbContext
+    public partial class ThoiKhoaBieuEntities : DbContext
     {
-        public TimeTableEntities1()
-            : base("name=TimeTableEntities1")
+        public ThoiKhoaBieuEntities()
+            : base("name=ThoiKhoaBieuEntities")
         {
         }
     
@@ -26,9 +26,10 @@ namespace TimeTable_GAs
         }
     
         public virtual DbSet<BaiGiang> BaiGiangs { get; set; }
-        public virtual DbSet<GiaoVien> GiaoViens { get; set; }
-        public virtual DbSet<HocSinh> HocSinhs { get; set; }
-        public virtual DbSet<MonHoc> MonHocs { get; set; }
+        public virtual DbSet<GiaoVien_Mon> GiaoVien_Mon { get; set; }
+        public virtual DbSet<Lop> Lops { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
+        public virtual DbSet<SinhVien> SinhViens { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

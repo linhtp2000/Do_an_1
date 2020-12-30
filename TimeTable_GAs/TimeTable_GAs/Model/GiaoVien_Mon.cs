@@ -7,21 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeTable_GAs
+namespace TimeTable_GAs.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class HocSinh
+    public partial class GiaoVien_Mon
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HocSinh()
+        public GiaoVien_Mon()
         {
             this.BaiGiangs = new HashSet<BaiGiang>();
         }
     
-        public string MaSV { get; set; }
-        public string TenSV { get; set; }
+        public string MaGV { get; set; }
+        public string HoTen { get; set; }
+        public string Email { get; set; }
+        public string MonHoc { get; set; }
+        public string MaMon { get; set; }
+        public Nullable<int> SoTiet1Tuan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiGiang> BaiGiangs { get; set; }

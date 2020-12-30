@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace TimeTable_GAs
-{
-    class ExceptionPlanning : Exception
-    {
-        public ChuongTrinh Obj { get; set; }
+//namespace TimeTable_GAs
+//{
+//    class ExceptionPlanning : Exception
+//    {
+//        public ChuongTrinh Obj { get; set; }
 
-        public ExceptionPlanning(ChuongTrinh input)
-        {
-            this.Obj = input;
-        }
-    }
-}
+//        public ExceptionPlanning(ChuongTrinh input)
+//        {
+//            this.Obj = input;
+//        }
+//    }
+//}

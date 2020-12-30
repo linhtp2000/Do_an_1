@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeTable_GAs
+namespace TimeTable_GAs.Model
 {
     using System;
     using System.Collections.Generic;

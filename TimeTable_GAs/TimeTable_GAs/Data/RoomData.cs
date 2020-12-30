@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TimeTable_GAs.Model;
 namespace TimeTable_GAs.Data
 {
     public class RoomData
     {
-        TimeTableEntities1 db = new TimeTableEntities1();
-        public List<Phong> Index()
+        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
+        public List<Model.Phong> Index()
         {
            // DataGridView dgv = new DataGridView();
             var room = db.Phongs;
@@ -21,7 +21,7 @@ namespace TimeTable_GAs.Data
 
         public bool Add(string id, string name, int capacity, ref string err)
         {
-            Phong room = new Phong();
+            Model.Phong room = new Model.Phong();
             room.MaPhong = id;
             room.TenPhong = name;
             room.SoLuong = capacity;          
@@ -46,10 +46,10 @@ namespace TimeTable_GAs.Data
 
             return true;
         }
-        public Phong Find(string id)
+        public Model.Phong Find(string id)
         {
-            var room = db.Phongs.Find(id);
-            return room;
+            return db.Phongs.FirstOrDefault(r => r.MaPhong == id);
+            // return room;
         }
     }
 }

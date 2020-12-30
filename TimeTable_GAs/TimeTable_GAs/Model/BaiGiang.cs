@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeTable_GAs
+namespace TimeTable_GAs.Model
 {
     using System;
     using System.Collections.Generic;
@@ -15,18 +15,17 @@ namespace TimeTable_GAs
     public partial class BaiGiang
     {
         public string MaBG { get; set; }
-        public string MaSV { get; set; }
+        public string MaNhomSV { get; set; }
         public string MaMon { get; set; }
         public string MaGV { get; set; }
         public string MaPhong { get; set; }
         public Nullable<int> Tuan { get; set; }
-        public DayOfWeek Thu { get; set; }
+        public Nullable<int> Thu { get; set; }
         public Nullable<int> TietBatDau { get; set; }
         public Nullable<int> TietKetThuc { get; set; }
     
-        public virtual GiaoVien GiaoVien { get; set; }
-        public virtual MonHoc MonHoc { get; set; }
+        public virtual GiaoVien_Mon GiaoVien_Mon { get; set; }
+        public virtual SinhVien SinhVien { get; set; }
         public virtual Phong Phong { get; set; }
-        public virtual HocSinh HocSinh { get; set; }
     }
 }

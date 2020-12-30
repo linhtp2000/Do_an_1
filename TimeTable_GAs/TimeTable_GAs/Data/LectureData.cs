@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TimeTable_GAs.Model;
 namespace TimeTable_GAs.Data
 {
     public class Class
     {
 
-        TimeTableEntities1 db = new TimeTableEntities1();
+        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
         public List<BaiGiang> Index()
         {
            // DataGridView dgv = new DataGridView();
@@ -20,9 +20,9 @@ namespace TimeTable_GAs.Data
             return baigiang.ToList();
        }    
 
-        public bool Add(string id, string teacherid,string courseid,string roomid, string studentid,DayOfWeek thu,int start, int end,ref string err)
+        public bool Add(string id, string teacherid,string courseid,string roomid, string studentid,int thu,int start, int end,ref string err)
         {
-            BaiGiang bg = new BaiGiang();
+            BaiGiang bg = new Model.BaiGiang();
             bg.MaBG = id;
             bg.MaGV = teacherid;
             bg.MaMon = courseid;
@@ -43,7 +43,7 @@ namespace TimeTable_GAs.Data
             db.SaveChanges();
             return true;
         }
-        public bool Update(string id, string teacherid, string courseid, string roomid, string studentid, DayOfWeek thu, int start, int end, ref string err)
+        public bool Update(string id, string teacherid, string courseid, string roomid, string studentid, int thu, int start, int end, ref string err)
         {
             var bg = db.BaiGiangs.Find(id);
             bg.MaGV = teacherid;

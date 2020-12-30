@@ -5,24 +5,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TimeTable_GAs.Model;
 namespace TimeTable_GAs.Data
 {
     public class TeacherData
     {
-        TimeTableEntities1 db = new TimeTableEntities1();
-        public List<GiaoVien> Index()//(string id)
+        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
+        public List<Model.GiaoVien> Index()//(string id)
         {
-           //DataGridView dgv = new DataGridView();
+            //DataGridView dgv = new DataGridView();
             var gv = db.GiaoViens;
-           //dgv.DataSource = tkb;
+            //dgv.DataSource = tkb;
             return gv.ToList();
 
         }
 
         public bool Add(string id,string name,string email, ref string err)
         {
-            GiaoVien gv = new GiaoVien();
+            Model.GiaoVien gv = new Model.GiaoVien();
             gv.MaGV = id;
             gv.HoTen = name;
             gv.Email = email;
@@ -47,7 +47,7 @@ namespace TimeTable_GAs.Data
 
             return true;
         }
-        public GiaoVien Find(string id)
+        public Model.GiaoVien Find(string id)
         {
             var gv = db.GiaoViens.Find(id);
             return gv;

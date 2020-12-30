@@ -5,23 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TimeTable_GAs.Model;
 namespace TimeTable_GAs.Data
 {
     public class CourseData
     {
-        TimeTableEntities1 db = new TimeTableEntities1();
+        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
+        //public CourseData(ThoiKhoaBieuEntities db)
+        //{
+        //    this.db = db;
+        // }
         public List<MonHoc> Index()
         {
-            //DataGridView dgv = new DataGridView();
-            var course = db.MonHocs;
-            //dgv.DataSource = ct;
-            return course.ToList();
+            return (List<MonHoc>)(from gv in db.GiaoViens
+                   orderby gv.HoTen
+                   select gv);
+            ////DataGridView dgv = new DataGridView();
+            //var course = db.MonHocs;
+            ////dgv.DataSource = ct;
+            //return course.ToList();
         }
 
         public bool Add(string id, string name, ref string err)
         {
-            MonHoc course = new MonHoc();
+            Model.MonHoc course = new Model.MonHoc();
             course.MaMon = id;
             course.TenMon = name;
             db.MonHocs.Add(course);
@@ -45,9 +52,9 @@ namespace TimeTable_GAs.Data
 
             return true;
         }
-        public MonHoc Find(string id)
+        public Model.MonHoc Find(string id)
         {
-            var course=db.MonHocs.Find(id);
+            var course = db.MonHocs.Find(id);
             return course;
         }
     }

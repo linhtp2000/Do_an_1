@@ -7,23 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeTable_GAs
+namespace TimeTable_GAs.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MonHoc
+    public partial class SinhVien
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MonHoc()
+        public SinhVien()
         {
             this.BaiGiangs = new HashSet<BaiGiang>();
+            this.Lops = new HashSet<Lop>();
         }
     
-        public string MaMon { get; set; }
-        public string TenMon { get; set; }
+        public string MaNhomSV { get; set; }
+        public string TenNhomSV { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiGiang> BaiGiangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Lop> Lops { get; set; }
     }
 }
