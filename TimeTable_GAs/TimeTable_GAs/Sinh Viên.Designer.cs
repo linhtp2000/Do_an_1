@@ -37,8 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewSV = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -138,9 +136,6 @@
             this.dataGridViewSV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridViewSV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridViewSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
             this.dataGridViewSV.Location = new System.Drawing.Point(47, 60);
             this.dataGridViewSV.Name = "dataGridViewSV";
             this.dataGridViewSV.RowHeadersWidth = 62;
@@ -148,20 +143,6 @@
             this.dataGridViewSV.Size = new System.Drawing.Size(1360, 532);
             this.dataGridViewSV.TabIndex = 28;
             this.dataGridViewSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSV_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã Sinh Viên";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 139;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Sinh Viên";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 144;
             // 
             // groupBox1
             // 
@@ -339,8 +320,6 @@
         public System.Windows.Forms.Label label10;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel63;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel54;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btnHuy;
     }
 }

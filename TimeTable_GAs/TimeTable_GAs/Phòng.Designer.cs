@@ -38,10 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewPhong = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.txtSoLuongSV = new System.Windows.Forms.TextBox();
@@ -56,9 +52,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.flowLayoutPanel63 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel54 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhong)).BeginInit();
+            this.dataGridViewPhong = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhong)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXacNhan
@@ -154,44 +151,6 @@
             this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Thông tin";
-            // 
-            // dataGridViewPhong
-            // 
-            this.dataGridViewPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridViewPhong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dataGridViewPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridViewPhong.Location = new System.Drawing.Point(47, 60);
-            this.dataGridViewPhong.Name = "dataGridViewPhong";
-            this.dataGridViewPhong.RowHeadersWidth = 62;
-            this.dataGridViewPhong.RowTemplate.Height = 28;
-            this.dataGridViewPhong.Size = new System.Drawing.Size(1360, 532);
-            this.dataGridViewPhong.TabIndex = 28;
-            this.dataGridViewPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPhong_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã Phòng";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 117;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Phòng";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 122;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Số lượng";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 108;
             // 
             // groupBox1
             // 
@@ -349,6 +308,19 @@
             this.flowLayoutPanel54.Size = new System.Drawing.Size(176, 105);
             this.flowLayoutPanel54.TabIndex = 19;
             // 
+            // dataGridViewPhong
+            // 
+            this.dataGridViewPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridViewPhong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGridViewPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPhong.Location = new System.Drawing.Point(47, 60);
+            this.dataGridViewPhong.Name = "dataGridViewPhong";
+            this.dataGridViewPhong.RowHeadersWidth = 62;
+            this.dataGridViewPhong.RowTemplate.Height = 28;
+            this.dataGridViewPhong.Size = new System.Drawing.Size(1360, 532);
+            this.dataGridViewPhong.TabIndex = 28;
+            this.dataGridViewPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPhong_CellClick);
+            // 
             // Phong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -359,10 +331,10 @@
             this.Name = "Phong";
             this.Text = "Phòng";
             this.Load += new System.EventHandler(this.Phong_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhong)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,7 +351,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridViewPhong;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSoLuongSV;
         private System.Windows.Forms.Label label1;
@@ -393,9 +364,7 @@
         public System.Windows.Forms.Label label10;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel63;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel54;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.DataGridView dataGridViewPhong;
     }
 }

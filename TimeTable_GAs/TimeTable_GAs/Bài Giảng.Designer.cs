@@ -35,15 +35,6 @@
             this.flowLayoutPanel54 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewBG = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel45 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel36 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel27 = new System.Windows.Forms.FlowLayoutPanel();
@@ -150,16 +141,6 @@
             this.dataGridViewBG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridViewBG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridViewBG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12});
             this.dataGridViewBG.Location = new System.Drawing.Point(47, 60);
             this.dataGridViewBG.Name = "dataGridViewBG";
             this.dataGridViewBG.RowHeadersWidth = 62;
@@ -167,69 +148,6 @@
             this.dataGridViewBG.Size = new System.Drawing.Size(1360, 532);
             this.dataGridViewBG.TabIndex = 28;
             this.dataGridViewBG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBG_CellClick);
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Mã Bài giảng";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 137;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Mã Sinh viên";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 135;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Mã Môn học";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 132;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Mã Giáo viên";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 137;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Mã Phòng";
-            this.Column8.MinimumWidth = 8;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 117;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Số thứ tự Tuần";
-            this.Column9.MinimumWidth = 8;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 150;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Thứ";
-            this.Column10.MinimumWidth = 8;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 72;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Tiết Bắt đầu";
-            this.Column11.MinimumWidth = 8;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 131;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Tiết Kết Thúc";
-            this.Column12.MinimumWidth = 8;
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 138;
             // 
             // flowLayoutPanel45
             // 
@@ -359,11 +277,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 138);
+            this.label4.Location = new System.Drawing.Point(-4, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 20);
+            this.label4.Size = new System.Drawing.Size(146, 20);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Mã Sinh viên:";
+            this.label4.Text = "Mã Nhóm sinh viên:";
             // 
             // groupBox1
             // 
@@ -563,14 +481,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnXacNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
     }
 }

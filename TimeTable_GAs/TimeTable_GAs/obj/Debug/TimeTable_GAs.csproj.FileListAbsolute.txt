@@ -2,9 +2,19 @@ D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csprojA
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Bài_Giảng.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Form1.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.GiaoVien.resources
-D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.MonHoc.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Phong.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Properties.Resources.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.SinhVien.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.GenerateResource.cache
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.CoreCompileInputs.cache
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Môn Học.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\TimeTable_GAs.exe.config
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\TimeTable_GAs.exe
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\TimeTable_GAs.pdb
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\EntityFramework.dll
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\EntityFramework.SqlServer.dll
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\EntityFramework.xml
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\EntityFramework.SqlServer.xml
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.CopyComplete
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.exe
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.pdb

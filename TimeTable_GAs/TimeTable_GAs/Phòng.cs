@@ -19,7 +19,7 @@ namespace TimeTable_GAs
         {
             InitializeComponent();
         }
-        public LoadData()
+        void LoadData()
         {
             try
             {
@@ -37,7 +37,7 @@ namespace TimeTable_GAs
                 btnXoaPhong.Enabled = true;
                 btnHuy.Enabled = false;
 
-                dataGridViewPhong_CellClick(null, null);
+               dataGridViewPhong_CellClick(null, null);
                
             }
             catch
@@ -130,40 +130,46 @@ namespace TimeTable_GAs
             {
                 if (them)
                 {
-                    dbPhong.Update(txtMaPH.Text, txtTenPH.Text,Int32.Parse(txtSoLuongSV.Text), ref err);
+                    //dbPhong.Add(txtMaPH.Text, txtTenPH.Text,Int32.Parse(txtSoLuongSV.Text), ref err);
+                    //LoadData();
+                    //MessageBox.Show("Đã cập nhật xong!");
+                    try
+                    {
+                        //tìm xem nv đã có hay chưa
+                        if (dbPhong.Find(txtMaPH.Text) == null)
+                        {
+                            dbPhong.Add(txtMaPH.Text, txtTenPH.Text, Int32.Parse(txtSoLuongSV.Text), ref err);
+                            LoadData();
+                            MessageBox.Show("Đã thêm xong!");
+                        }
+                        else
+                        {
+                            DialogResult tl;
+                            tl = MessageBox.Show("Phòng đã tồn tại. bạn có muốn cập nhật lại chi tiết phòng?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (tl == DialogResult.OK)
+                            {
+                                //nếu ok--> cập nhật lại nv 
+                                dbPhong.Update(txtMaPH.Text, txtTenPH.Text, Int32.Parse(txtSoLuongSV.Text), ref err);
+                                LoadData();
+                                MessageBox.Show("Đã cập nhật xong!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thực hiện việc thêm mẫu tin!");
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Không thêm được. Lỗi rồi!");
+                    }
+                }
+                else
+                {
+                    dbPhong.Update(txtMaPH.Text, txtTenPH.Text, Int32.Parse(txtSoLuongSV.Text), ref err);
                     LoadData();
                     MessageBox.Show("Đã cập nhật xong!");
-                    //try
-                    //{
-                    //    //tìm xem nv đã có hay chưa
-                    //    if (dbNV.TimKiemNV(txtID.Text, ref err) == false)
-                    //    {
-                    //        dbNV.ThemNhanVien(txtHoTen.Text, cmbGioiTinh.Text, DateTime.Parse(dtpNgaySinh.Text), txtDiaChi.Text, txtCMND.Text, txtDienThoai.Text, cmbChucVu.Text, txtID.Text, txtMatKhau.Text, ref err);
-                    //        LoadData();
-                    //        MessageBox.Show("Đã thêm xong!");
-                    //    }
-                    //    else
-                    //    {
-                    //        DialogResult tl;
-                    //        tl = MessageBox.Show("Nhân viên đã tồn tại. bạn có muốn cập nhật lại chi tiết nhân viên?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    //        if (tl == DialogResult.OK)
-                    //        {
-                    //            //nếu ok--> cập nhật lại nv 
-                    //            dbNV.CapNhatNhanVien(txtHoTen.Text, cmbGioiTinh.Text, DateTime.Parse(dtpNgaySinh.Text), txtDiaChi.Text, txtCMND.Text, txtDienThoai.Text, cmbChucVu.Text, txtID.Text, txtMatKhau.Text, ref err);
-                    //            LoadData();
-                    //            MessageBox.Show("Đã cập nhật xong!");
-                    //        }
-                    //        else
-                    //        {
-                    //            MessageBox.Show("Không thực hiện việc thêm mẫu tin!");
-                    //        }
-                    //    }
-                    //}
-                    //catch
-                    //{
-                    //    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                    //}
-                }
+                }    
             }
             else
             {
@@ -174,7 +180,7 @@ namespace TimeTable_GAs
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            them = false;
+            dataGridViewPhong_CellClick(null, null);
 
             txtMaPH.Enabled = true;
             txtTenPH.Enabled = true;

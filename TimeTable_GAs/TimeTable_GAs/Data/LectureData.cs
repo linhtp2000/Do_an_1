@@ -27,7 +27,7 @@ namespace TimeTable_GAs.Data
             bg.MaGV = teacherid;
             bg.MaMon = courseid;
             bg.MaPhong = roomid;
-            bg.MaSV = studentid;
+            bg.MaNhomSV = studentid;
             bg.Thu = thu;
             bg.TietBatDau = start;
             bg.TietKetThuc = end;
@@ -49,7 +49,7 @@ namespace TimeTable_GAs.Data
             bg.MaGV = teacherid;
             bg.MaMon = courseid;
             bg.MaPhong = roomid;
-            bg.MaSV = studentid;
+            bg.MaNhomSV = studentid;
             bg.Thu = thu;
             bg.TietBatDau = start;
             bg.TietKetThuc = end;

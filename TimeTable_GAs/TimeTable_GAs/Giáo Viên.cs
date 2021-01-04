@@ -15,7 +15,7 @@ namespace TimeTable_GAs
     {
         bool them;
         string err;
-        TeacherData dbGV = new TeacherData();
+        TeacherAndCourseData dbGV = new TeacherAndCourseData();
         public GiaoVien()
         {
             InitializeComponent();
@@ -53,6 +53,10 @@ namespace TimeTable_GAs
             txtMaGV.Text = dataGridViewGV.Rows[r].Cells[0].Value.ToString();
             txtTenGV.Text = dataGridViewGV.Rows[r].Cells[1].Value.ToString();
             txtEmail.Text = dataGridViewGV.Rows[r].Cells[2].Value.ToString();
+            txtMonHoc.Text = dataGridViewGV.Rows[r].Cells[3].Value.ToString();
+            txtMaMon.Text = dataGridViewGV.Rows[r].Cells[4].Value.ToString();
+            txtSoTiet.Text = dataGridViewGV.Rows[r].Cells[5].Value.ToString();
+
 
         }
 
@@ -79,6 +83,9 @@ namespace TimeTable_GAs
             txtMaGV.ResetText();
             txtTenGV.ResetText();
             txtEmail.ResetText();
+            txtMonHoc.ResetText();
+            txtMaMon.ResetText();
+            txtSoTiet.ResetText();
 
             txtMaGV.Focus();
         }
@@ -132,40 +139,47 @@ namespace TimeTable_GAs
             {
                 if (them)
                 {
+                    //dbPhong.Add(txtMaPH.Text, txtTenPH.Text,Int32.Parse(txtSoLuongSV.Text), ref err);
+                    //LoadData();
+                    //MessageBox.Show("Đã cập nhật xong!");
+                    try
+                    {
+                        //tìm xem nv đã có hay chưa
+                        if (dbGV.Find(txtMaGV.Text) == null)
+                        {
+                            dbGV.Add(txtMaGV.Text, txtTenGV.Text, txtEmail.Text, ref err);
+                            LoadData();
+                            MessageBox.Show("Đã thêm xong!");
+                        }
+                        else
+                        {
+                            DialogResult tl;
+                            tl = MessageBox.Show("Phòng đã tồn tại. bạn có muốn cập nhật lại chi tiết phòng?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (tl == DialogResult.OK)
+                            {
+                                //nếu ok--> cập nhật lại nv 
+                                dbGV.Update(txtMaGV.Text, txtTenGV.Text, txtEmail.Text, ref err);
+                                LoadData();
+                                MessageBox.Show("Đã cập nhật xong!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không thực hiện việc thêm mẫu tin!");
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Không thêm được. Lỗi rồi!");
+                    }
+                }
+                else
+                {
                     dbGV.Update(txtMaGV.Text, txtTenGV.Text, txtEmail.Text, ref err);
                     LoadData();
                     MessageBox.Show("Đã cập nhật xong!");
-                    //try
-                    //{
-                    //    //tìm xem nv đã có hay chưa
-                    //    if (dbNV.TimKiemNV(txtID.Text, ref err) == false)
-                    //    {
-                    //        dbNV.ThemNhanVien(txtHoTen.Text, cmbGioiTinh.Text, DateTime.Parse(dtpNgaySinh.Text), txtDiaChi.Text, txtCMND.Text, txtDienThoai.Text, cmbChucVu.Text, txtID.Text, txtMatKhau.Text, ref err);
-                    //        LoadData();
-                    //        MessageBox.Show("Đã thêm xong!");
-                    //    }
-                    //    else
-                    //    {
-                    //        DialogResult tl;
-                    //        tl = MessageBox.Show("Nhân viên đã tồn tại. bạn có muốn cập nhật lại chi tiết nhân viên?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    //        if (tl == DialogResult.OK)
-                    //        {
-                    //            //nếu ok--> cập nhật lại nv 
-                    //            dbNV.CapNhatNhanVien(txtHoTen.Text, cmbGioiTinh.Text, DateTime.Parse(dtpNgaySinh.Text), txtDiaChi.Text, txtCMND.Text, txtDienThoai.Text, cmbChucVu.Text, txtID.Text, txtMatKhau.Text, ref err);
-                    //            LoadData();
-                    //            MessageBox.Show("Đã cập nhật xong!");
-                    //        }
-                    //        else
-                    //        {
-                    //            MessageBox.Show("Không thực hiện việc thêm mẫu tin!");
-                    //        }
-                    //    }
-                    //}
-                    //catch
-                    //{
-                    //    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                    //}
-                }         
+                }
+
             }
             else
             {
@@ -176,7 +190,7 @@ namespace TimeTable_GAs
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            them = false;
+            dataGridViewGV_CellClick(null,null);
 
             txtMaGV.Enabled = true;
             txtTenGV.Enabled = true;
@@ -190,7 +204,9 @@ namespace TimeTable_GAs
             txtMaGV.ResetText();
             txtTenGV.ResetText();
             txtEmail.ResetText();
-
+            txtMonHoc.ResetText();
+            txtMaMon.ResetText();
+            txtSoTiet.ResetText();
         }
     }
 }
