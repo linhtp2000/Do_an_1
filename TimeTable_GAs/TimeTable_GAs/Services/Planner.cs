@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TimeTable_GAs.Model
+namespace TimeTable_GAs.Services
 {
-    class Phong
+    class Planner
     {
     }
 }

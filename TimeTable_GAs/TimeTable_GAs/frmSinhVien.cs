@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using TimeTable_GAs.Data;
 namespace TimeTable_GAs
 {
-    public partial class SinhVien : Form
+    public partial class frmSinhvien : Form
     {
         StudentData dbSV = new StudentData();
         bool them;
         string err;
-        public SinhVien()
+        public frmSinhvien()
         {
             InitializeComponent();
         }

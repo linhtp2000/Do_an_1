@@ -62,20 +62,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bài Giảng.cs">
+    <Compile Include="fromBaiGiang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bài Giảng.Designer.cs">
-      <DependentUpon>Bài Giảng.cs</DependentUpon>
+    <Compile Include="fromBaiGiang.Designer.cs">
+      <DependentUpon>fromBaiGiang.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\CourseData.cs" />
     <Compile Include="Data\LectureData.cs" />
     <Compile Include="ExceptionPlanning.cs" />
-    <Compile Include="Giáo Viên.cs">
+    <Compile Include="frmGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giáo Viên.Designer.cs">
-      <DependentUpon>Giáo Viên.cs</DependentUpon>
+    <Compile Include="frmGiaoVien.Designer.cs">
+      <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </Compile>
     <Compile Include="IDataModel.cs" />
     <Compile Include="Data\RoomData.cs" />
@@ -87,77 +87,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\BaiGiang.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Chromosome.cs" />
-    <Compile Include="Model\Class.cs" />
-    <Compile Include="Model\Data.cs" />
-    <Compile Include="Model\Drive.cs" />
-    <Compile Include="Model\GiaoVien_Mon.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Lop.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Phong.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\SinhVien.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Model\GiaoVien.cs" />
+    <Compile Include="Model\KhoaHoc.cs" />
+    <Compile Include="Model\Lop.cs" />
+    <Compile Include="Model\MonHoc.cs" />
+    <Compile Include="Model\SchemaCourse.cs" />
+    <Compile Include="Model\ThoiGian.cs" />
     <Compile Include="Môn Học.cs" />
     <Compile Include="Môn Học.Designer.cs">
       <DependentUpon>Môn Học.cs</DependentUpon>
     </Compile>
-    <Compile Include="Phòng.cs">
+    <Compile Include="frmPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Phòng.Designer.cs">
-      <DependentUpon>Phòng.cs</DependentUpon>
+    <Compile Include="frmPhong.Designer.cs">
+      <DependentUpon>frmPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Planner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sinh Viên.cs">
+    <Compile Include="frmSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sinh Viên.Designer.cs">
-      <DependentUpon>Sinh Viên.cs</DependentUpon>
+    <Compile Include="frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlData.cs" />
-    <EmbeddedResource Include="Bài Giảng.resx">
-      <DependentUpon>Bài Giảng.cs</DependentUpon>
+    <EmbeddedResource Include="fromBaiGiang.resx">
+      <DependentUpon>fromBaiGiang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giáo Viên.resx">
-      <DependentUpon>Giáo Viên.cs</DependentUpon>
+    <EmbeddedResource Include="frmGiaoVien.resx">
+      <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Môn Học.resx">
       <DependentUpon>Môn Học.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Phòng.resx">
-      <DependentUpon>Phòng.cs</DependentUpon>
+    <EmbeddedResource Include="frmPhong.resx">
+      <DependentUpon>frmPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -168,16 +137,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Sinh Viên.resx">
-      <DependentUpon>Sinh Viên.cs</DependentUpon>
+    <EmbeddedResource Include="frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -195,18 +157,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

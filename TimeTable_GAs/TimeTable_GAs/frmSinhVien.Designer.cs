@@ -1,6 +1,6 @@
 ﻿namespace TimeTable_GAs
 {
-    partial class SinhVien
+    partial class frmSinhvien
     {
         /// <summary>
         /// Required designer variable.
@@ -251,8 +251,8 @@
             // label10
             // 
             this.label10.AllowDrop = true;
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label10.Cursor = System.Windows.Forms.Cursors.Default;
