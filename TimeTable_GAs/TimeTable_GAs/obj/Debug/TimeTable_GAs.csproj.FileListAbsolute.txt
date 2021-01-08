@@ -36,3 +36,4 @@ E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\EntityFramework.SqlServer.
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\EntityFramework.xml
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\EntityFramework.SqlServer.xml
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.CopyComplete
+E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csprojAssemblyReference.cache

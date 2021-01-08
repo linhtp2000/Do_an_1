@@ -12,7 +12,7 @@ namespace TimeTable_GAs.Data
 {
     public class CourseData
     {
-        public ThoiKhoaBieuDbContext db = new ThoiKhoaBieuDbContext();
+        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
         //public CourseData(ThoiKhoaBieuEntities db)
         //{
         //    this.db = db;

@@ -12,7 +12,7 @@ namespace TimeTable_GAs.Data
 {
     public class RoomData
     {
-        public ThoiKhoaBieuDbContext db = new ThoiKhoaBieuDbContext();
+        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
         public List<Model.Phong> Index()
         {
             // DataGridView dgv = new DataGridView();

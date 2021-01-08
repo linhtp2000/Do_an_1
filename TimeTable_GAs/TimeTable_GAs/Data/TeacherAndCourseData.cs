@@ -13,7 +13,7 @@ namespace TimeTable_GAs.Data
 {
     public class TeacherAndCourseData
     {
-        public ThoiKhoaBieuDbContext db = new ThoiKhoaBieuDbContext();
+        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
         public List<GiaoVien> Index()//(string id)
         {
             //DataGridView dgv = new DataGridView();

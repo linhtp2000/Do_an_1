@@ -13,7 +13,7 @@ namespace TimeTable_GAs.Data
     public class Class
     {
 
-        public ThoiKhoaBieuDbContext db = new ThoiKhoaBieuDbContext();
+        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
         public List<BaiGiang> Index()
         {
             // DataGridView dgv = new DataGridView();
@@ -26,11 +26,11 @@ namespace TimeTable_GAs.Data
         {
             BaiGiang bg = new Model.BaiGiang();
             bg.MaBG = id;
-            bg.GiaoVien.MaGV = teacherid;
-            bg.MonHoc.MaMon = courseid;
-            bg.Phong.MaPhong = roomid;
-            bg.Lop.MaLop = studentid;
-            bg.ThoiGian.MaTG = thu;
+            bg.GiaoVien = teacherid;
+            bg.MonHoc = courseid;
+            bg.Phong = roomid;
+            bg.Lop = studentid;
+            bg.ThoiGian = thu;
 
             db.BaiGiangs.Add(bg);
             db.SaveChanges();
@@ -47,11 +47,11 @@ namespace TimeTable_GAs.Data
         public bool Update(string id, string teacherid, string courseid, string roomid, string studentid, int thu, int start, int end, ref string err)
         {
             var bg = db.BaiGiangs.Find(id);
-            bg.GiaoVien.MaGV = teacherid;
-            bg.MonHoc.MaMon = courseid;
-            bg.Phong.MaPhong = roomid;
-            bg.Lop.MaLop = studentid;
-            bg.ThoiGian.MaTG = thu;
+            bg.GiaoVien = teacherid;
+            bg.MonHoc = courseid;
+            bg.Phong = roomid;
+            bg.Lop= studentid;
+            bg.ThoiGian= thu;
            
             db.SaveChanges();
 

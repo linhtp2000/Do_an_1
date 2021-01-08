@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThoiKhoaBieuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BaiGiang">
+    <Key>
+      <PropertyRef Name="MaBG" />
+    </Key>
+    <Property Name="MaBG" Type="int" Nullable="false" />
+    <Property Name="ThoiGian" Type="int" />
+    <Property Name="Phong" Type="varchar" MaxLength="10" />
+    <Property Name="MonHoc" Type="varchar" MaxLength="10" />
+    <Property Name="GiaoVien" Type="varchar" MaxLength="10" />
+    <Property Name="Lop" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="GiaoVien">
+    <Key>
+      <PropertyRef Name="MaGV" />
+    </Key>
+    <Property Name="MaGV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenGV" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="MonHoc" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Lop">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenLop" Type="varchar" MaxLength="100" />
+    <Property Name="SiSo" Type="int" />
+    <Property Name="SinhVien" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="MaMon" />
+    </Key>
+    <Property Name="MaMon" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenMon" Type="nvarchar" MaxLength="100" />
+    <Property Name="SoTC" Type="int" />
+    <Property Name="SinhVien" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="MaPhong" />
+    </Key>
+    <Property Name="MaPhong" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenPhong" Type="nvarchar" MaxLength="100" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="SinhVien">
+    <Key>
+      <PropertyRef Name="MaNhomSV" />
+    </Key>
+    <Property Name="MaNhomSV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenNhomSV" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ThoiGian">
+    <Key>
+      <PropertyRef Name="MaTG" />
+    </Key>
+    <Property Name="MaTG" Type="int" Nullable="false" />
+    <Property Name="Buoi" Type="varchar" MaxLength="100" />
+    <Property Name="Thu" Type="varchar" MaxLength="100" />
+    <Property Name="Tuan" Type="int" />
+  </EntityType>
+  <Association Name="FK__BaiGiang__GiaoVi__45F365D3">
+    <End Role="GiaoVien" Type="Self.GiaoVien" Multiplicity="0..1" />
+    <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiaoVien">
+        <PropertyRef Name="MaGV" />
+      </Principal>
+      <Dependent Role="BaiGiang">
+        <PropertyRef Name="GiaoVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BaiGiang__Lop__46E78A0C">
+    <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+    <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lop">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="BaiGiang">
+        <PropertyRef Name="Lop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BaiGiang__MonHoc__44FF419A">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
+    <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="MaMon" />
+      </Principal>
+      <Dependent Role="BaiGiang">
+        <PropertyRef Name="MonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BaiGiang__Phong__440B1D61">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
+    <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="MaPhong" />
+      </Principal>
+      <Dependent Role="BaiGiang">
+        <PropertyRef Name="Phong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BaiGiang__ThoiGi__4316F928">
+    <End Role="ThoiGian" Type="Self.ThoiGian" Multiplicity="0..1" />
+    <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThoiGian">
+        <PropertyRef Name="MaTG" />
+      </Principal>
+      <Dependent Role="BaiGiang">
+        <PropertyRef Name="ThoiGian" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lop__SinhVien__3E52440B">
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
+    <End Role="Lop" Type="Self.Lop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SinhVien">
+        <PropertyRef Name="MaNhomSV" />
+      </Principal>
+      <Dependent Role="Lop">
+        <PropertyRef Name="SinhVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ThoiKhoaBieuModelStoreContainer">
+    <EntitySet Name="BaiGiang" EntityType="Self.BaiGiang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiaoVien" EntityType="Self.GiaoVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lop" EntityType="Self.Lop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThoiGian" EntityType="Self.ThoiGian" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BaiGiang__GiaoVi__45F365D3" Association="Self.FK__BaiGiang__GiaoVi__45F365D3">
+      <End Role="GiaoVien" EntitySet="GiaoVien" />
+      <End Role="BaiGiang" EntitySet="BaiGiang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BaiGiang__Lop__46E78A0C" Association="Self.FK__BaiGiang__Lop__46E78A0C">
+      <End Role="Lop" EntitySet="Lop" />
+      <End Role="BaiGiang" EntitySet="BaiGiang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BaiGiang__MonHoc__44FF419A" Association="Self.FK__BaiGiang__MonHoc__44FF419A">
+      <End Role="MonHoc" EntitySet="MonHoc" />
+      <End Role="BaiGiang" EntitySet="BaiGiang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BaiGiang__Phong__440B1D61" Association="Self.FK__BaiGiang__Phong__440B1D61">
+      <End Role="Phong" EntitySet="Phong" />
+      <End Role="BaiGiang" EntitySet="BaiGiang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BaiGiang__ThoiGi__4316F928" Association="Self.FK__BaiGiang__ThoiGi__4316F928">
+      <End Role="ThoiGian" EntitySet="ThoiGian" />
+      <End Role="BaiGiang" EntitySet="BaiGiang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lop__SinhVien__3E52440B" Association="Self.FK__Lop__SinhVien__3E52440B">
+      <End Role="SinhVien" EntitySet="SinhVien" />
+      <End Role="Lop" EntitySet="Lop" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

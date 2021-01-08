@@ -86,16 +86,45 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\BaiGiang.cs" />
-    <Compile Include="Model\GiaoVien.cs" />
-    <Compile Include="Model\Lop.cs" />
-    <Compile Include="Model\MonHoc.cs" />
-    <Compile Include="Model\Phong.cs" />
+    <Compile Include="Model\BaiGiang.cs">
+      <DependentUpon>ThoiKhoaBieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GiaoVien.cs">
+      <DependentUpon>ThoiKhoaBieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Lop.cs">
+      <DependentUpon>ThoiKhoaBieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MonHoc.cs">
+      <DependentUpon>ThoiKhoaBieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Phong.cs">
+      <DependentUpon>ThoiKhoaBieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SinhVien.cs">
+      <DependentUpon>ThoiKhoaBieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThoiGian.cs">
+      <DependentUpon>ThoiKhoaBieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThoiKhoaBieu.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieu.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThoiKhoaBieu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThoiKhoaBieu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieu.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Services\IMoodle.cs" />
     <Compile Include="Services\Planner.cs" />
     <Compile Include="Services\SchemaCourse.cs" />
-    <Compile Include="Model\SinhVien.cs" />
-    <Compile Include="Model\ThoiGian.cs" />
     <Compile Include="frmPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,7 +139,6 @@
     <Compile Include="frmSinhVien.Designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\ThoiKhoaBieuDbContext.cs" />
     <EmbeddedResource Include="fromBaiGiang.resx">
       <DependentUpon>fromBaiGiang.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +163,13 @@
     <EmbeddedResource Include="frmSinhVien.resx">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\ThoiKhoaBieu.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieu.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ThoiKhoaBieu.edmx.diagram">
+      <DependentUpon>ThoiKhoaBieu.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -153,6 +188,17 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\ThoiKhoaBieu.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ThoiKhoaBieu.edmx</DependentUpon>
+      <LastGenOutput>ThoiKhoaBieu.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ThoiKhoaBieu.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ThoiKhoaBieu.edmx</DependentUpon>
+      <LastGenOutput>ThoiKhoaBieu.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
