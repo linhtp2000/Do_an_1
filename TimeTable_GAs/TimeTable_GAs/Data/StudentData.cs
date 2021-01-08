@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using TimeTable_GAs.Model;
+using TimeTable_GAs.Services;
 
 namespace TimeTable_GAs.Data
 {
     public class StudentData
     {
-        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
+        public ThoiKhoaBieuDbContext db = new ThoiKhoaBieuDbContext();
         public List<Model.SinhVien> Index()
         {
             //  DataGridView dgv = new DataGridView();
@@ -28,7 +29,7 @@ namespace TimeTable_GAs.Data
         //    return db.SinhViens;
         //}
 
-        public bool Add(string id,string name, ref string err)
+        public bool Add(string id, string name, ref string err)
         {
             Model.SinhVien sv = new Model.SinhVien();
             sv.MaNhomSV = id;

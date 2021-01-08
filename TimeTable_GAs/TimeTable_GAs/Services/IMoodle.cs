@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeTable_GAs.Services
 {
-    class IMoodle
+    public class IMoodle
     {
     }
 }

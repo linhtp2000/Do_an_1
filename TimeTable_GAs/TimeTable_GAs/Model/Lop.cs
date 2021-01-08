@@ -12,5 +12,6 @@ namespace TimeTable_GAs.Model
         public string TenLop { get; set; }
         public int SiSo { get; set; }
         public SinhVien SinhVien { get; set; }
+        public ICollection<BaiGiang> BaiGiangs { get; set; }
     }
 }

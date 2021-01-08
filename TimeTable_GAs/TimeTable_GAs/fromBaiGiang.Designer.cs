@@ -1,6 +1,6 @@
 ﻿namespace TimeTable_GAs
 {
-    partial class Bài_Giảng
+    partial class frmBaiGiang
     {
         /// <summary>
         /// Required designer variable.

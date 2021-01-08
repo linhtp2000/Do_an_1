@@ -11,11 +11,11 @@ using TimeTable_GAs.Data;
 
 namespace TimeTable_GAs
 {
-    public partial class Bài_Giảng : Form
+    public partial class frmBaiGiang : Form
     {
         bool them;
         Class BaiGiang = new Class();
-        public Bài_Giảng()
+        public frmBaiGiang()
         {
             InitializeComponent();
         }

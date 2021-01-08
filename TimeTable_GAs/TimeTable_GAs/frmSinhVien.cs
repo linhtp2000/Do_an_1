@@ -36,7 +36,7 @@ namespace TimeTable_GAs
                 btnXoa.Enabled = true;
                 btnHuy.Enabled = false;
 
-                dataGridViewSV_CellClick(null, null);             
+                dataGridViewSV_CellClick(null, null);
             }
             catch
             {
@@ -125,7 +125,7 @@ namespace TimeTable_GAs
             if (txtMaSV.Text != "" && txtTenSV.Text != "")
             {
                 if (them)
-                {                   
+                {
                     try
                     {
                         //tìm xem nv đã có hay chưa

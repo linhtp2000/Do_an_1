@@ -11,12 +11,12 @@ using TimeTable_GAs.Data;
 
 namespace TimeTable_GAs
 {
-    public partial class GiaoVien : Form
+    public partial class frmGiaoVien : Form
     {
         bool them;
         string err;
         TeacherAndCourseData dbGV = new TeacherAndCourseData();
-        public GiaoVien()
+        public frmGiaoVien()
         {
             InitializeComponent();
         }
@@ -207,6 +207,11 @@ namespace TimeTable_GAs
             txtMonHoc.ResetText();
             txtMaMon.ResetText();
             txtSoTiet.ResetText();
+        }
+
+        private void GiaoVien_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

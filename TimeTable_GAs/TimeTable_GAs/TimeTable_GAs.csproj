@@ -77,7 +77,6 @@
     <Compile Include="frmGiaoVien.Designer.cs">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="IDataModel.cs" />
     <Compile Include="Data\RoomData.cs" />
     <Compile Include="Data\TeacherAndCourseData.cs" />
     <Compile Include="Data\StudentData.cs" />
@@ -87,23 +86,22 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BaiGiang.cs" />
     <Compile Include="Model\GiaoVien.cs" />
-    <Compile Include="Model\KhoaHoc.cs" />
     <Compile Include="Model\Lop.cs" />
     <Compile Include="Model\MonHoc.cs" />
-    <Compile Include="Model\SchemaCourse.cs" />
+    <Compile Include="Model\Phong.cs" />
+    <Compile Include="Services\IMoodle.cs" />
+    <Compile Include="Services\Planner.cs" />
+    <Compile Include="Services\SchemaCourse.cs" />
+    <Compile Include="Model\SinhVien.cs" />
     <Compile Include="Model\ThoiGian.cs" />
-    <Compile Include="Môn Học.cs" />
-    <Compile Include="Môn Học.Designer.cs">
-      <DependentUpon>Môn Học.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPhong.Designer.cs">
       <DependentUpon>frmPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmSinhVien.cs">
@@ -112,7 +110,7 @@
     <Compile Include="frmSinhVien.Designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlData.cs" />
+    <Compile Include="Services\ThoiKhoaBieuDbContext.cs" />
     <EmbeddedResource Include="fromBaiGiang.resx">
       <DependentUpon>fromBaiGiang.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,9 +119,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoVien.resx">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Môn Học.resx">
-      <DependentUpon>Môn Học.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhong.resx">
       <DependentUpon>frmPhong.cs</DependentUpon>
@@ -158,5 +153,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

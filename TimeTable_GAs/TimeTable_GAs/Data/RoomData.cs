@@ -6,16 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTable_GAs.Model;
+using TimeTable_GAs.Services;
+
 namespace TimeTable_GAs.Data
 {
     public class RoomData
     {
-        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
+        public ThoiKhoaBieuDbContext db = new ThoiKhoaBieuDbContext();
         public List<Model.Phong> Index()
         {
-           // DataGridView dgv = new DataGridView();
+            // DataGridView dgv = new DataGridView();
             var room = db.Phongs;
-           // dgv.DataSource = room;
+            // dgv.DataSource = room;
             return room.ToList();
         }
 
@@ -24,7 +26,7 @@ namespace TimeTable_GAs.Data
             Model.Phong room = new Model.Phong();
             room.MaPhong = id;
             room.TenPhong = name;
-            room.SoLuong = capacity;          
+            room.SoLuong = capacity;
             db.Phongs.Add(room);
             db.SaveChanges();
             return true;

@@ -6,31 +6,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTable_GAs.Model;
+using TimeTable_GAs.Services;
+
 namespace TimeTable_GAs.Data
 {
     public class Class
     {
 
-        public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
+        public ThoiKhoaBieuDbContext db = new ThoiKhoaBieuDbContext();
         public List<BaiGiang> Index()
         {
-           // DataGridView dgv = new DataGridView();
-            var baigiang= db.BaiGiangs;
-           // dgv.DataSource = ct;
+            // DataGridView dgv = new DataGridView();
+            var baigiang = db.BaiGiangs;
+            // dgv.DataSource = ct;
             return baigiang.ToList();
-       }    
+        }
 
-        public bool Add(string id, string teacherid,string courseid,string roomid, string studentid,int thu,int start, int end,ref string err)
+        public bool Add(int id, string teacherid, string courseid, string roomid, string studentid, int thu, int start, int end, ref string err)
         {
             BaiGiang bg = new Model.BaiGiang();
             bg.MaBG = id;
-            bg.MaGV = teacherid;
-            bg.MaMon = courseid;
-            bg.MaPhong = roomid;
-            bg.MaNhomSV = studentid;
-            bg.Thu = thu;
-            bg.TietBatDau = start;
-            bg.TietKetThuc = end;
+            bg.GiaoVien.MaGV = teacherid;
+            bg.MonHoc.MaMon = courseid;
+            bg.Phong.MaPhong = roomid;
+            bg.Lop.MaLop = studentid;
+            bg.ThoiGian.MaTG = thu;
+
             db.BaiGiangs.Add(bg);
             db.SaveChanges();
             return true;
@@ -46,18 +47,17 @@ namespace TimeTable_GAs.Data
         public bool Update(string id, string teacherid, string courseid, string roomid, string studentid, int thu, int start, int end, ref string err)
         {
             var bg = db.BaiGiangs.Find(id);
-            bg.MaGV = teacherid;
-            bg.MaMon = courseid;
-            bg.MaPhong = roomid;
-            bg.MaNhomSV = studentid;
-            bg.Thu = thu;
-            bg.TietBatDau = start;
-            bg.TietKetThuc = end;
+            bg.GiaoVien.MaGV = teacherid;
+            bg.MonHoc.MaMon = courseid;
+            bg.Phong.MaPhong = roomid;
+            bg.Lop.MaLop = studentid;
+            bg.ThoiGian.MaTG = thu;
+           
             db.SaveChanges();
 
             return true;
         }
-        public BaiGiang Find( string id)
+        public BaiGiang Find(string id)
         {
             var bg = db.BaiGiangs.Find(id);
             return bg;

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using TimeTable_GAs.Data;
 namespace TimeTable_GAs
 {
-    public partial class Phong : Form
+    public partial class frmPhong : Form
     {
         RoomData dbPhong = new RoomData();
         bool them;
         string err;
-        public Phong()
+        public frmPhong()
         {
             InitializeComponent();
         }
@@ -37,8 +37,8 @@ namespace TimeTable_GAs
                 btnXoaPhong.Enabled = true;
                 btnHuy.Enabled = false;
 
-               dataGridViewPhong_CellClick(null, null);
-               
+                dataGridViewPhong_CellClick(null, null);
+
             }
             catch
             {
@@ -63,7 +63,7 @@ namespace TimeTable_GAs
         {
             them = true;
             dataGridViewPhong.Enabled = true;
-         
+
             txtMaPH.Enabled = true;
             txtTenPH.Enabled = true;
             txtSoLuongSV.Enabled = true;
@@ -169,7 +169,7 @@ namespace TimeTable_GAs
                     dbPhong.Update(txtMaPH.Text, txtTenPH.Text, Int32.Parse(txtSoLuongSV.Text), ref err);
                     LoadData();
                     MessageBox.Show("Đã cập nhật xong!");
-                }    
+                }
             }
             else
             {
@@ -194,7 +194,7 @@ namespace TimeTable_GAs
             txtMaPH.ResetText();
             txtTenPH.ResetText();
             txtSoLuongSV.ResetText();
-            
+
         }
     }
 }

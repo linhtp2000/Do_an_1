@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TimeTable_GAs.Model
 {
-    class SinhVien
+    public class SinhVien
     {
+        public string MaNhomSV { get; set; }
+        public string TenNhomSV { get; set; }
+        public ICollection<MonHoc> MonHocs { get; set; }
+        public ICollection<Lop> Lops { get; set; }
     }
 }

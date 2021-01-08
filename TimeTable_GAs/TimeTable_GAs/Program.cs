@@ -16,7 +16,7 @@ namespace TimeTable_GAs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Phong());
+            Application.Run(new Form1());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TimeTable_GAs
 {
-    partial class Phong
+    partial class frmPhong
     {
         /// <summary>
         /// Required designer variable.

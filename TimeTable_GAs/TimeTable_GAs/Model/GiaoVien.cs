@@ -13,8 +13,10 @@ namespace TimeTable_GAs.Model
         public string MaGV { get; set; }
         public string TenGV { get; set; }
         public string Email { get; set; }
+        public MonHoc MonHoc { get; set; }
+        public ICollection<BaiGiang> BaiGiangs { get; set; }
 
         // [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhoaHoc> Lectures { get; set; }
+        // public virtual ICollection<KhoaHoc> Lectures { get; set; }
     }
 }
