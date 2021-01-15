@@ -1,267 +1,406 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using TimeTable_GAs.Model;
-//using TimeTable_GAs.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TimeTable_GAs.Model;
 
-//namespace TimeTable_GAs.Services
-//{
-//    public class Planner
-//    {
-//        ThoiKhoaBieuEntities tkb = new ThoiKhoaBieuEntities();
-//        public MasterSchema GenerateSchema(IMoodle moodle)
-//        {
-//            List<SchemaCourse> schemaCourses = new List<SchemaCourse>();
-//            List<Phong> allRooms = moodle.lPhong;
-//            List<MonHoc> allSubjects = tkb.MonHocs.ToList();
-//            List<GiaoVien> allTeachers = tkb.GiaoViens.ToList();
-//            List<Lop> allClass = tkb.Lops.ToList();
-//            List<ThoiGian> allTimes = tkb.ThoiGians.ToList();
+namespace TimeTable_GAs.Services
+{
 
-//            List<Khoa> allCourse = new List<Khoa>();
+    public class Planner
+    {
+        ThoiKhoaBieuEntities tkb = new ThoiKhoaBieuEntities();
+        public static List<BaiGiang> dsBaiGiang = new List<BaiGiang>();
+        public static Dictionary<GiaoVien, List<BaiGiang>> SoBuoidayCuaGV = new Dictionary<GiaoVien, List<BaiGiang>>();
 
-//            //Set all the possible timeslots in all the rooms as free 
-//            Dictionary<Phong, List<ThoiGian>> freeRoomTimes = new Dictionary<Phong, List<ThoiGian>>();
-//            foreach (Phong r in allRooms)
-//            {
-//                foreach(ThoiGian tg in allTimes)
-//                freeRoomTimes.Add(r, moodle.AllTimes());
-//            }
+        public static List<BaiGiang> test = new List<BaiGiang>();
+        static int id = 0;
+        public void SapXepTKB()
+        {
+            List<Phong> allRooms = tkb.Phongs.ToList();
+            List<MonHoc> allSubjects = tkb.MonHocs.ToList();
+            List<GiaoVien> allTeachers = tkb.GiaoViens.ToList();
+            List<Lop> allClass = tkb.Lops.ToList();
+            List<ThoiGian> allTimes = tkb.ThoiGians.ToList();
 
-//            //Tim DS GiaoVien theo MonHoc
-//            Dictionary<GiaoVien, List<MonHoc>> planSubjectsForTeacher = new Dictionary<GiaoVien, List<MonHoc>>();
-//            foreach (GiaoVien t in allTeachers)
-//            {
-//                foreach (MonHoc m in allSubjects)
-//                {
-//                    List<MonHoc> listmh = new List<MonHoc>();
-//                    if (m.GiaoVien == t.MaGV)
-//                    {
-//                        listmh.Add(m);
-//                    }
-//                    planSubjectsForTeacher.Add(t, listmh);
-//                }
-//            }
-//            //Tim DS Monhoc mà các Lop phải học
-//            //Dictionary<Lop, List<MonHoc>> planSubjectsForClass = new Dictionary<Lop, List<MonHoc>>();
-//            //foreach (Lop c in allClass)
-//            //{
-//            //    foreach (MonHoc m in allSubjects)
-//            //    {
-//            //        List<MonHoc> listmh = new List<MonHoc>();
-//            //        if (m.SinhVien == c.SinhVien)
-//            //        {
-//            //            listmh.Add(m);
-//            //        }
-//            //        planSubjectsForClass.Add(c, listmh);
-//            //    }
-//            //}
+            List<BaiGiang> allCourse = new List<BaiGiang>();
 
-//            //Tim DS GiaoVien co the cua Lop
-//            foreach (GiaoVien t in allTeachers)
-//            {
-//                var lstmon= (from mon in tkb.MonHocs
-//                             join gv in tkb.GiaoViens
-//                             on mon.GiaoVien equals gv.MaGV
-//                             select mon);
-//                foreach (var s in lstmon.ToList())
-//                {
-//                   Khoa course = new Khoa();
-//                   course.GiaoVien = t as GiaoVien;
-//                   var p = (from lop in tkb.Lops
-//                            join mon in tkb.MonHocs
-//                            on lop.SinhVien equals mon.SinhVien
-//                            select lop.MaLop);
-//                    course.MonHoc = s as MonHoc;
-//                    //course.MonHoc.MaMon = s.MaMon;
-//                    //course.MonHoc.TenMon = s.TenMon;
-//                    //course.MonHoc.SoTC = s.SoTC;
-//                    //course.MonHoc.SinhVien = s.SinhVien;
-//                    //course.MonHoc.SinhVien1 = s.SinhVien1;
-//                    if (p.ToList().Count != 0)
-//                    {
-//                         course.Lop = p as Lop;
-//                    }
-//                    else { course.Lop = null; }
-//                    allCourse.Add(course);                    
-//                }
-//            }
-         
-//            //foreach (GiaoVien t in allTeachers)
-//            //{
-//            //    foreach (MonHoc s in allSubjects)
-//            //    {
-//            //        if (s.GiaoVien == t.MaGV)
-//            //        {
-//            //            Khoa course = new Khoa();
-//            //            course.GiaoVien = t;
-//            //            foreach (MonHoc m in planSubjectsForTeacher[t])
-//            //            {
-//            //                var p = (from lop in tkb.Lops
-//            //                         join mon in tkb.MonHocs
-//            //                         on lop.SinhVien equals mon.SinhVien
-//            //                         select lop.MaLop);
-//            //                course.MonHoc = m;
-//            //                if (p.ToList().Count != 0)
-//            //                {
-//            //                    course.Lops = p as List<Lop>;
-//            //                }
-//            //            }
-//            //            allCourse.Add(course);
-//            //        }
-//            //    }
-//            //} 
-//            // make each course into a SchemaCourse, and remove the used lectureTimes from the room
-//            foreach (Khoa course in allCourse)
-//            {
-                
-//                    //lay tat ca cac phong co soluong phu hop vs siso cua lop
-//                    List<Phong> possibleRooms = FindPossibleRooms(course.Lop, allRooms);
+            Dictionary<Lop, List<MonHoc>> dsMonCuaLop = new Dictionary<Lop, List<MonHoc>>();
+            Dictionary<MonHoc, List<Phong>> dsPhongCuaMon = new Dictionary<MonHoc, List<Phong>>();
+            Dictionary<MonHoc, List<GiaoVien>> dsGVCuaMon = new Dictionary<MonHoc, List<GiaoVien>>();
+            Dictionary<Phong, List<ThoiGian>> dsTGCuaPhong = new Dictionary<Phong, List<ThoiGian>>();
 
-//                    //A possible lecture time must have no teacher clash or hold clash. 
-//                    //We already know there is no room clash because we remove the used times from the room.
-//                    Dictionary<Phong, List<ThoiGian>> possibleRoomTimes = FindPossibleRoomTimes(schemaCourses, course, freeRoomTimes, possibleRooms);
-
-//                    //Filter the lecturetimes in the room to select only the time
-//                    Dictionary<Phong, List<ThoiGian>> possibleRoomTimesFiltered = filterPossibleRoomTimes(possibleRoomTimes, course);
-
-//                    //Select those rooms where the number of possible lecturetimes is enough for the total number of modules in the course
-//                    List<Lokale> possibleRoomsWithEnoughLectureTimes = FindPossibleRoomsWithEnoughLectureTimes(possibleRoomTimesFiltered, course);
-
-//                    Lokale selectedRoom;
-//                    try
-//                    {
-//                        // the selected room is the first room on the list
-//                        selectedRoom = possibleRoomsWithEnoughLectureTimes.First();
-//                    }
-//                    catch
-//                    {
-//                        throw new ExceptionSchemaPlanning(course);
-//                    }
-
-//                    //Select a list of lecturetimes to be used in the selected room
-//                    List<LectureTime> selectedLectureTimes = SelectLectureTimes(course, possibleRoomTimesFiltered[selectedRoom]);
-
-//                    // create a new SchemaCourse and add it to the list of already planned schemacourses.
-//                    schemaCourses.Add(new SchemaCourse() { Course = course, Place = selectedRoom, LectureTimes = selectedLectureTimes });
-
-//                    // remove the used lecturetimes from the selected room.
-//                    foreach (LectureTime lt in selectedLectureTimes)
-//                    {
-//                        freeRoomTimes[selectedRoom].Remove(lt);
-//                    }
-//                }            
-//            return new MasterSchema() { SchemaCourse = schemaCourses };
-//        }
-
-//           public List<Phong> FindPossibleRooms(Lop lop , List<Phong> lstPhong)
-//            {
-//                List<Phong> possibleRooms = new List<Phong>();                
-//                foreach (Phong p in lstPhong)
-//                {
-//                    if (lop.SiSo==p.SoLuong)
-//                    {
-//                        possibleRooms.Add(p);
-//                    }                    
-//                }
-//                return possibleRooms;
-//            }
-
-//            public Dictionary<Phong, List<ThoiGian>> FindPossibleRoomTimes(List<SchemaCourse> planned, Khoa course, Dictionary<Phong,List<ThoiGian>> freeRoomTimes, List<Phong> possibleRooms)
-//            {
-//                Dictionary<Phong,List<ThoiGian>> possibleRoomTimes = new Dictionary<Phong,List<ThoiGian>>();
-//                foreach (var r in possibleRooms)
-//                {
-//                    possibleRoomTimes[r] = new List<ThoiGian>();
-
-//                    foreach (var lt in freeRoomTimes[r])
-//                    {
-//                        if (IsPossibleTimeForCourse(planned, course, lt))
-//                        {
-//                            possibleRoomTimes[r].Add(lt);
-//                        }
-//                    }
-//                }
-//                return possibleRoomTimes;
-//            }
-
-//            public bool IsPossibleTimeForCourse(List<SchemaCourse> planned, Khoa course, ThoiGian time)
-//            {
-//            return !TeacherClash(planned, course.GiaoVien, time) && ClassClash(planned, course.Lop, time);                     
-//            }
-
-//            public bool TeacherClash(List<SchemaCourse> planned, GiaoVien teacher, ThoiGian time)
-//            {
-//                bool result = false;
-//                foreach (SchemaCourse sc in planned)
-//                {
-                  
-//                    if (sc.Khoa.GiaoVien.MaGV == teacher.MaGV)
-//                    {
-//                        foreach (ThoiGian tg in sc.LThoiGian)
-//                        {
-//                            if (tg.MaTG == time.MaTG)
-//                                result = true;
-//                        }
-//                    }
-//                }
-//                return result;
-//            }
-//        public bool ClassClash(List<SchemaCourse> planned, Lop clss, ThoiGian time)
-//        {
-//            bool result = false;
-//            foreach (SchemaCourse sc in planned)
-//            {
-
-//                if (sc.Khoa.Lop.MaLop == clss.MaLop)
-//                {
-//                    foreach (ThoiGian tg in sc.LThoiGian)
-//                    {
-//                        if (tg.MaTG == time.MaTG)
-//                            result = true;
-//                    }
-//                }
-//            }
-//            return result;
-//        }
-
-//        Dictionary<Phong, List<ThoiGian>> filterPossibleRoomTimes(Dictionary<Phong, List<ThoiGian>> PossibleRoomTimes, Khoa course)
-//        {
-//            Dictionary<Phong,List<ThoiGian>> resultFilteredPossibleRoomTimes = new Dictionary<Phong, List<ThoiGian>>();
-//            foreach (var r in PossibleRoomTimes)
-//            {
-//                string todObj = course.PreferredTimeOfday;
-//                resultFilteredPossibleRoomTimes[r.Key] = new List<ThoiGian>();
-//                foreach (var lt in r.Value)
-//                {
-//                    foreach (DayOfWeek prefd in course.PreferredDays)
-//                    {
-//                        if (prefd.Equals(lt.WeekDay) && lt.TimeOfDay.Equals(todObj))
-//                        {
-//                            resultFilteredPossibleRoomTimes[r.Key].Add(lt);
-//                        }
-//                    }
-//                }
-
-//            }
-//            return resultFilteredPossibleRoomTimes;
-//        }
-
-//    }
-
-//}
+            foreach (GiaoVien gv in allTeachers)
+            {
+                SoBuoidayCuaGV.Add(gv, new List<BaiGiang>());
+            }
 
 
-//Phong phong = TimPhongPhuHop();
-//if (phong != null)
-//{
-//    baigiang.Phong1 = phong;
-//    baigiang.Phong = phong.MaPhong;
-//    ThoiGian tg = TimThoiGianPhuHop();
-//    if (tg != null)
-//    {
-//        baigiang.ThoiGian1 = tg;
-//        baigiang.ThoiGian = tg.MaTG;
-//    }    
+
+            //tạo danh sách lớp có môn học và gv phù hợp
+            XetMon(allClass, allTeachers);
+
+            //tìm các phòng phù hợp cho các môn của lớp
+            XetPhong(allClass, allTeachers);
+
+            //tìm thời gian phù hợp
+            XetThoiGian(allClass, allTeachers);
+
+            for (int i = 0; i < dsBaiGiang.Count - 1; i++)
+            {
+
+                if (dsBaiGiang[i].Lop == null || dsBaiGiang[i].MonHoc == null || dsBaiGiang[i].Phong == null || dsBaiGiang[i].ThoiGian == null)
+                {
+                    test.Add(dsBaiGiang[i]);
+                }
+                for (int j = i + 1; j < dsBaiGiang.Count; j++)
+                {
+                    if ((dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Phong == dsBaiGiang[j].Phong) ||
+                        (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Lop == dsBaiGiang[j].Lop) ||
+                         (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].GiaoVien == dsBaiGiang[j].GiaoVien))
+                    {
+                        test.Add(dsBaiGiang[i]);
+                        test.Add(dsBaiGiang[j]);
+                    }
+                }
+            }
+            //foreach (BaiGiang bg in SapXep.dsBaiGiang)
+            //{
+
+            //    BaiGiang b = new BaiGiang();
+            //    b.MaBG = bg.MaBG;
+            //    b.Lop = bg.Lop;
+            //    //b.Lop1 = bg.Lop1;
+            //    b.MonHoc = bg.MonHoc;
+            //   // b.MonHoc1 = bg.MonHoc1;
+            //    b.GiaoVien = bg.GiaoVien;
+            //   // b.GiaoVien1 = bg.GiaoVien1;
+            //    b.Phong = bg.Phong;
+            //  //  b.Phong1 = bg.Phong1;
+            //    b.ThoiGian = bg.ThoiGian;
+            //   // b.ThoiGian1 = bg.ThoiGian1;
+            //    tkb.BaiGiangs.Add(b);
+            //    tkb.SaveChanges();
+            //}
+
+        }
+
+
+
+        //xét môn
+        void XetMon(List<Lop> lstlop, List<GiaoVien> allTeachers)
+        {
+            //  List<BaiGiang> lstBaiGiang = new List<BaiGiang>();
+            for (int i = 0; i < lstlop.Count; i++)
+            {
+                string s = lstlop[i].SinhVien;
+                var lstmon = (from mon in tkb.MonHocs
+                                  // join lop in tkb.Lops
+                                  // on mon.SinhVien equals lop.SinhVien
+                              where mon.SinhVien == s
+                              select mon).ToList();
+                //Dictionary<MonHoc, GiaoVien> dsgvcuamon = new Dictionary<MonHoc, GiaoVien>();
+                int temp = 0;
+                for (int j = 0; j < lstmon.Count; j++)
+                {
+                    GiaoVien r = TimGVPhuHop(lstlop[i], lstmon[j]);
+                    if (r != null)
+                    {
+                        BaiGiang baigiang = new BaiGiang();
+                        baigiang.MaBG = id;
+                        id++;
+                        baigiang.Lop = lstlop[i].MaLop;
+                        baigiang.Lop1 = lstlop[i];
+                        baigiang.MonHoc1 = lstmon[j];
+                        baigiang.MonHoc = lstmon[j].MaMon;
+                        baigiang.GiaoVien1 = r;
+                        baigiang.GiaoVien = r.MaGV;
+                        dsBaiGiang.Add(baigiang);
+                    }
+                    else
+                    {
+                        //xét lại môn
+                        temp++;
+                        dsBaiGiang.RemoveAt(dsBaiGiang.Count - 1);
+                        j--;
+                    }
+                    if (temp > 100)
+                    {
+                        //xét lại lớp
+                        List<BaiGiang> t = dsBaiGiang.FindAll(b => b.Lop == lstlop[i].MaLop);
+                        foreach (BaiGiang item in t)
+                        {
+                            dsBaiGiang.Remove(item);
+                        }
+                        i--;
+                        break;
+                    }
+
+                }
+            }
+            //ràng buộc mỗi giáo viên phải dạy ít nhất 1 buổi
+            foreach (GiaoVien gv in allTeachers)
+            {
+                if (SoBuoidayCuaGV[gv].Count < 1)
+                {
+                    //bỏ tất cả các bài giảng đã xét
+                    dsBaiGiang.Clear();
+                    //xét lại các bài giảng
+                    XetMon(lstlop, allTeachers);
+                }
+            }
+            return;
+        }
+
+        //xét phòng
+        void XetPhong(List<Lop> allClass, List<GiaoVien> allTeachers)
+        {
+            // List<BaiGiang> lstBaiGiang = new List<BaiGiang>();
+            int temp = 0;
+            for (int i = 0; i < dsBaiGiang.Count; i++)
+            {
+                int sl = (int)dsBaiGiang[i].Lop1.SiSo;
+                var lstp = (from p in tkb.Phongs
+                            where p.SoLuong >= sl
+                            select p).ToList();
+                //Dictionary<MonHoc, GiaoVien> dsgvcuamon = new Dictionary<MonHoc, GiaoVien>();
+
+                Phong r = TimPhongPhuHop(dsBaiGiang[i], lstp);
+                if (r != null)
+                {
+                    dsBaiGiang[i].Phong1 = r;
+                    dsBaiGiang[i].Phong = r.MaPhong;
+                }
+                else
+                {
+                    //xét lại phòng của bài giảng trước
+                    temp++;
+                    dsBaiGiang[i - 1].Phong1 = new Phong();
+                    dsBaiGiang[i - 1].Phong = null;
+                    i--;
+                }
+                if (temp > 100)
+                {
+                    dsBaiGiang.Clear();
+                    XetMon(allClass, allTeachers);
+                    XetPhong(allClass, allTeachers);
+                }
+            }
+
+            return;
+        }
+
+        //xét thời gian
+        void XetThoiGian(List<Lop> allClass, List<GiaoVien> allTeachers)
+        {
+            // List<BaiGiang> lstBaiGiang = new List<BaiGiang>();
+            int temp = 0;
+            for (int i = 0; i < dsBaiGiang.Count; i++)
+            {
+                var lsttg = (from t in tkb.ThoiGians
+                             select t).ToList();
+                //Dictionary<MonHoc, GiaoVien> dsgvcuamon = new Dictionary<MonHoc, GiaoVien>();
+
+                ThoiGian r = TimTGPhuHop(dsBaiGiang[i], lsttg);
+                if (r != null)
+                {
+                    dsBaiGiang[i].ThoiGian1 = r;
+                    dsBaiGiang[i].ThoiGian = r.MaTG;
+                    //temp++;
+                }
+                else
+                {
+                    //xét lại phòng của bài giảng trước
+                    temp++;
+                    dsBaiGiang[i - 1].ThoiGian1 = new ThoiGian();
+                    dsBaiGiang[i - 1].ThoiGian = null;
+                    i--;
+                }
+                if (temp > 200)
+                {
+                    dsBaiGiang.ForEach(b => b.Phong = null);
+                    dsBaiGiang.ForEach(b => b.Phong1 = new Phong());
+                    XetPhong(allClass, allTeachers);
+                    XetThoiGian(allClass, allTeachers);
+                }
+            }
+
+            return;
+        }
+
+        ThoiGian TimTGPhuHop(BaiGiang baigiang, List<ThoiGian> lstthoigian)
+        {
+
+            Random r = new Random();
+            int index = r.Next(lstthoigian.Count);
+            List<int> temp = new List<int>();
+            temp.Add(index);
+            while (!KTTGPhuHop(baigiang, lstthoigian[index]))
+            {
+                index = r.Next(lstthoigian.Count);
+                if (!temp.Contains(index))
+                {
+                    temp.Add(index);
+                }
+                if (temp.Count == lstthoigian.Count)
+                {
+                    return null;
+                }
+            }
+
+            return lstthoigian[index];
+        }
+
+        //kiểm tra xem buổi có phù hợp hay không
+        bool KTTGPhuHop(BaiGiang bg, ThoiGian time)
+        {
+            //kiểm tra xem cùng khoảng thời gian, cùng phòng gv có dạy môn nào khác chưa
+            //if (dsBaiGiang.Exists(b => (b.ThoiGian == time.MaTG && b.Lop == bg.Lop)|| 
+            //                      (b.ThoiGian == time.MaTG && b.Phong == bg.Phong)||
+            //                      (b.ThoiGian == time.MaTG && b.GiaoVien == bg.GiaoVien)))
+            //{
+            //    return false;
+            //}
+            if (dsBaiGiang.Find(b => (b.ThoiGian == time.MaTG && b.Lop == bg.Lop)) != null)
+            {
+                return false;
+            }
+            if (dsBaiGiang.Find((b => b.ThoiGian == time.MaTG && b.Phong == bg.Phong)) != null)
+            {
+                return false;
+            }
+            if (dsBaiGiang.Find(b => (b.ThoiGian == time.MaTG && b.GiaoVien == bg.GiaoVien)) != null)
+            {
+                return false;
+            }
+
+            int t = (int)(time.TietKT - time.TietBD + 1);
+
+            //xét số tiets học của môn theo tín chỉ của môn
+            if (t < bg.MonHoc1.SoTC)
+            {
+                return false;
+            }
+
+            //Kiểm tra trùng tiết học
+            List<BaiGiang> lst = dsBaiGiang.FindAll(b => b.ThoiGian != null) as List<BaiGiang>;
+            if (lst != null)
+            {
+                List<BaiGiang> ds = new List<BaiGiang>();
+                ds = lst.FindAll(b => (b.ThoiGian1.Thu == time.Thu && b.ThoiGian1.Buoi == time.Buoi)) as List<BaiGiang>;
+                foreach (BaiGiang i in ds)
+                {
+                    if (i.Lop == bg.Lop || i.GiaoVien == bg.GiaoVien || i.Phong == bg.Phong)
+                    {
+                        int j = (int)i.ThoiGian1.TietBD;
+                        int k = (int)i.ThoiGian1.TietKT;
+                        for (; j <= k; j++)
+                        {
+                            int m = (int)time.TietBD;
+                            int n = (int)time.TietKT;
+                            for (; m <= n; m++)
+                            {
+                                if (j == m) return false;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
+
+        //tìm giáo viên dạy môn đang xét cho lớp hiện tại
+        GiaoVien TimGVPhuHop(Lop lop, MonHoc mon)
+        {
+            GiaoVien gv = new GiaoVien();
+            BaiGiang bg = new BaiGiang();
+            bg.Lop = lop.MaLop;
+            bg.MonHoc = mon.MaMon;
+            var ds = (from m in tkb.MonHocs
+                      where m.MaMon == mon.MaMon
+                      select m.GiaoVien1).ToList();
+            Random r = new Random();
+            int index = r.Next(ds.Count);
+            List<int> temp = new List<int>();
+            temp.Add(index);
+            while (!KTGVPhuHop(ds[index]))
+            {
+                index = r.Next(ds.Count);
+                if (!temp.Contains(index))
+                {
+                    temp.Add(index);
+                }
+                if (temp.Count == ds.Count)
+                {
+                    return null;
+                }
+            }
+            bg.GiaoVien = ds[index].MaGV;
+            bg.GiaoVien1 = ds[index];
+            SoBuoidayCuaGV[ds[index]].Add(bg);
+
+            return ds[index];
+        }
+        //Một gv chỉ dạy tối đa 15 buổi/ tuần
+        bool KTGVPhuHop(GiaoVien teacher)
+        {
+            //kiểm tra xem cùng khoảng thời gian, cùng phòng gv có dạy môn nào khác chưa
+            int sl = SoBuoidayCuaGV[teacher].Count;
+            if (sl < 15) return true;
+            return false;
+        }
+
+        //tìm Phòng phù hợp
+        Phong TimPhongPhuHop(BaiGiang baigiang, List<Phong> lstphong)
+        {
+
+            Random r = new Random();
+            int index = r.Next(lstphong.Count);
+            List<int> temp = new List<int>();
+            temp.Add(index);
+            while (!KTPhongPhuHop(baigiang, lstphong[index]))
+            {
+                index = r.Next(lstphong.Count);
+                if (!temp.Contains(index))
+                {
+                    temp.Add(index);
+                }
+                if (temp.Count == lstphong.Count)
+                {
+                    return null;
+                }
+            }
+
+            return lstphong[index];
+            //List<Phong> lstPhongCoThe = new List<Phong>();
+            //    foreach (Phong p in lstphong)
+            //    {
+            //        if (!ds.ToList().Contains(p)&&p.SoLuong==lop.SiSo)
+            //        {                   
+            //            lstPhongCoThe.Add(p);
+            //        }
+            //    }
+            //    for(int i=0;i<lstPhongCoThe.Count;i++)
+            //        if(KTPhongPhuHop(mon,lop,teacher,lstPhongCoThe[i]))
+            //        {
+            //            return lstPhongCoThe[i];
+            //        }
+            //    return null;
+        }
+        //kiểm tra xem phòng có phu hợp không
+        bool KTPhongPhuHop(BaiGiang baigiang, Phong phong)
+        {
+            //kiểm tra xem cùng khoảng thời gian, cùng phòng gv có dạy môn nào khác chưa
+            //var i = (from bg in tkb.BaiGiangs
+            //         where (bg.Lop != lop.MaLop && bg.Phong == room.MaPhong) ||
+            //               (bg.GiaoVien != teacher.MaGV && bg.Phong == room.MaPhong)                         
+            //         select bg).FirstOrDefault();
+            if (baigiang.Lop1.SiSo <= phong.SoLuong) return true;
+            return false;
+        }
+
+    }
+}

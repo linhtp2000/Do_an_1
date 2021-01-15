@@ -10,11 +10,11 @@
     <Property Name="MonHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="GiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Lop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="GiaoVien1" Relationship="Self.FK__BaiGiang__GiaoVi__47DBAE45" FromRole="BaiGiang" ToRole="GiaoVien" />
-    <NavigationProperty Name="Lop1" Relationship="Self.FK__BaiGiang__Lop__48CFD27E" FromRole="BaiGiang" ToRole="Lop" />
-    <NavigationProperty Name="MonHoc1" Relationship="Self.FK__BaiGiang__MonHoc__46E78A0C" FromRole="BaiGiang" ToRole="MonHoc" />
-    <NavigationProperty Name="Phong1" Relationship="Self.FK__BaiGiang__Phong__45F365D3" FromRole="BaiGiang" ToRole="Phong" />
-    <NavigationProperty Name="ThoiGian1" Relationship="Self.FK__BaiGiang__ThoiGi__44FF419A" FromRole="BaiGiang" ToRole="ThoiGian" />
+    <NavigationProperty Name="GiaoVien1" Relationship="Self.FK__BaiGiang__GiaoVi__46E78A0C" FromRole="BaiGiang" ToRole="GiaoVien" />
+    <NavigationProperty Name="Lop1" Relationship="Self.FK__BaiGiang__Lop__47DBAE45" FromRole="BaiGiang" ToRole="Lop" />
+    <NavigationProperty Name="MonHoc1" Relationship="Self.FK__BaiGiang__MonHoc__45F365D3" FromRole="BaiGiang" ToRole="MonHoc" />
+    <NavigationProperty Name="Phong1" Relationship="Self.FK__BaiGiang__Phong__44FF419A" FromRole="BaiGiang" ToRole="Phong" />
+    <NavigationProperty Name="ThoiGian1" Relationship="Self.FK__BaiGiang__ThoiGi__48CFD27E" FromRole="BaiGiang" ToRole="ThoiGian" />
   </EntityType>
   <EntityType Name="GiaoVien">
     <Key>
@@ -23,7 +23,7 @@
     <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenGV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__GiaoVi__47DBAE45" FromRole="GiaoVien" ToRole="BaiGiang" />
+    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__GiaoVi__46E78A0C" FromRole="GiaoVien" ToRole="BaiGiang" />
     <NavigationProperty Name="MonHocs" Relationship="Self.FK__MonHoc__GiaoVien__3D5E1FD2" FromRole="GiaoVien" ToRole="MonHoc" />
   </EntityType>
   <EntityType Name="Lop">
@@ -34,7 +34,7 @@
     <Property Name="TenLop" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="SiSo" Type="Int32" />
     <Property Name="SinhVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__Lop__48CFD27E" FromRole="Lop" ToRole="BaiGiang" />
+    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__Lop__47DBAE45" FromRole="Lop" ToRole="BaiGiang" />
     <NavigationProperty Name="SinhVien1" Relationship="Self.FK__Lop__SinhVien__403A8C7D" FromRole="Lop" ToRole="SinhVien" />
   </EntityType>
   <EntityType Name="MonHoc">
@@ -46,7 +46,7 @@
     <Property Name="SoTC" Type="Int32" />
     <Property Name="SinhVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="GiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__MonHoc__46E78A0C" FromRole="MonHoc" ToRole="BaiGiang" />
+    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__MonHoc__45F365D3" FromRole="MonHoc" ToRole="BaiGiang" />
     <NavigationProperty Name="GiaoVien1" Relationship="Self.FK__MonHoc__GiaoVien__3D5E1FD2" FromRole="MonHoc" ToRole="GiaoVien" />
     <NavigationProperty Name="SinhVien1" Relationship="Self.FK__MonHoc__SinhVien__3C69FB99" FromRole="MonHoc" ToRole="SinhVien" />
   </EntityType>
@@ -57,7 +57,7 @@
     <Property Name="MaPhong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenPhong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="SoLuong" Type="Int32" />
-    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__Phong__45F365D3" FromRole="Phong" ToRole="BaiGiang" />
+    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__Phong__44FF419A" FromRole="Phong" ToRole="BaiGiang" />
   </EntityType>
   <EntityType Name="SinhVien">
     <Key>
@@ -75,9 +75,11 @@
     <Property Name="MaTG" Type="Int32" Nullable="false" />
     <Property Name="Buoi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Thu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__ThoiGi__44FF419A" FromRole="ThoiGian" ToRole="BaiGiang" />
+    <Property Name="TietBD" Type="Int32" />
+    <Property Name="TietKT" Type="Int32" />
+    <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__ThoiGi__48CFD27E" FromRole="ThoiGian" ToRole="BaiGiang" />
   </EntityType>
-  <Association Name="FK__BaiGiang__GiaoVi__47DBAE45">
+  <Association Name="FK__BaiGiang__GiaoVi__46E78A0C">
     <End Role="GiaoVien" Type="Self.GiaoVien" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -89,7 +91,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BaiGiang__Lop__48CFD27E">
+  <Association Name="FK__BaiGiang__Lop__47DBAE45">
     <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -101,7 +103,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BaiGiang__MonHoc__46E78A0C">
+  <Association Name="FK__BaiGiang__MonHoc__45F365D3">
     <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -113,7 +115,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BaiGiang__Phong__45F365D3">
+  <Association Name="FK__BaiGiang__Phong__44FF419A">
     <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -125,7 +127,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BaiGiang__ThoiGi__44FF419A">
+  <Association Name="FK__BaiGiang__ThoiGi__48CFD27E">
     <End Role="ThoiGian" Type="Self.ThoiGian" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -181,23 +183,23 @@
     <EntitySet Name="Phongs" EntityType="Self.Phong" />
     <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
     <EntitySet Name="ThoiGians" EntityType="Self.ThoiGian" />
-    <AssociationSet Name="FK__BaiGiang__GiaoVi__47DBAE45" Association="Self.FK__BaiGiang__GiaoVi__47DBAE45">
+    <AssociationSet Name="FK__BaiGiang__GiaoVi__46E78A0C" Association="Self.FK__BaiGiang__GiaoVi__46E78A0C">
       <End Role="GiaoVien" EntitySet="GiaoViens" />
       <End Role="BaiGiang" EntitySet="BaiGiangs" />
     </AssociationSet>
-    <AssociationSet Name="FK__BaiGiang__Lop__48CFD27E" Association="Self.FK__BaiGiang__Lop__48CFD27E">
+    <AssociationSet Name="FK__BaiGiang__Lop__47DBAE45" Association="Self.FK__BaiGiang__Lop__47DBAE45">
       <End Role="Lop" EntitySet="Lops" />
       <End Role="BaiGiang" EntitySet="BaiGiangs" />
     </AssociationSet>
-    <AssociationSet Name="FK__BaiGiang__MonHoc__46E78A0C" Association="Self.FK__BaiGiang__MonHoc__46E78A0C">
+    <AssociationSet Name="FK__BaiGiang__MonHoc__45F365D3" Association="Self.FK__BaiGiang__MonHoc__45F365D3">
       <End Role="MonHoc" EntitySet="MonHocs" />
       <End Role="BaiGiang" EntitySet="BaiGiangs" />
     </AssociationSet>
-    <AssociationSet Name="FK__BaiGiang__Phong__45F365D3" Association="Self.FK__BaiGiang__Phong__45F365D3">
+    <AssociationSet Name="FK__BaiGiang__Phong__44FF419A" Association="Self.FK__BaiGiang__Phong__44FF419A">
       <End Role="Phong" EntitySet="Phongs" />
       <End Role="BaiGiang" EntitySet="BaiGiangs" />
     </AssociationSet>
-    <AssociationSet Name="FK__BaiGiang__ThoiGi__44FF419A" Association="Self.FK__BaiGiang__ThoiGi__44FF419A">
+    <AssociationSet Name="FK__BaiGiang__ThoiGi__48CFD27E" Association="Self.FK__BaiGiang__ThoiGi__48CFD27E">
       <End Role="ThoiGian" EntitySet="ThoiGians" />
       <End Role="BaiGiang" EntitySet="BaiGiangs" />
     </AssociationSet>

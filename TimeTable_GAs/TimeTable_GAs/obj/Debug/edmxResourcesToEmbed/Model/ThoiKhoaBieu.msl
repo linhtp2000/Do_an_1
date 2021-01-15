@@ -66,6 +66,8 @@
           <ScalarProperty Name="MaTG" ColumnName="MaTG" />
           <ScalarProperty Name="Buoi" ColumnName="Buoi" />
           <ScalarProperty Name="Thu" ColumnName="Thu" />
+          <ScalarProperty Name="TietBD" ColumnName="TietBD" />
+          <ScalarProperty Name="TietKT" ColumnName="TietKT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

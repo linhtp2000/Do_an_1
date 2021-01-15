@@ -60,8 +60,10 @@
     <Property Name="MaTG" Type="int" Nullable="false" />
     <Property Name="Buoi" Type="varchar" MaxLength="100" />
     <Property Name="Thu" Type="varchar" MaxLength="100" />
+    <Property Name="TietBD" Type="int" />
+    <Property Name="TietKT" Type="int" />
   </EntityType>
-  <Association Name="FK__BaiGiang__GiaoVi__5EBF139D">
+  <Association Name="FK__BaiGiang__GiaoVi__46E78A0C">
     <End Role="GiaoVien" Type="Self.GiaoVien" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -73,7 +75,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BaiGiang__Lop__5FB337D6">
+  <Association Name="FK__BaiGiang__Lop__47DBAE45">
     <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -85,7 +87,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BaiGiang__MonHoc__5DCAEF64">
+  <Association Name="FK__BaiGiang__MonHoc__45F365D3">
     <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -97,7 +99,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BaiGiang__Phong__5CD6CB2B">
+  <Association Name="FK__BaiGiang__Phong__44FF419A">
     <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -109,7 +111,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BaiGiang__ThoiGi__60A75C0F">
+  <Association Name="FK__BaiGiang__ThoiGi__48CFD27E">
     <End Role="ThoiGian" Type="Self.ThoiGian" Multiplicity="0..1" />
     <End Role="BaiGiang" Type="Self.BaiGiang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -165,23 +167,23 @@
     <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThoiGian" EntityType="Self.ThoiGian" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__BaiGiang__GiaoVi__5EBF139D" Association="Self.FK__BaiGiang__GiaoVi__5EBF139D">
+    <AssociationSet Name="FK__BaiGiang__GiaoVi__46E78A0C" Association="Self.FK__BaiGiang__GiaoVi__46E78A0C">
       <End Role="GiaoVien" EntitySet="GiaoVien" />
       <End Role="BaiGiang" EntitySet="BaiGiang" />
     </AssociationSet>
-    <AssociationSet Name="FK__BaiGiang__Lop__5FB337D6" Association="Self.FK__BaiGiang__Lop__5FB337D6">
+    <AssociationSet Name="FK__BaiGiang__Lop__47DBAE45" Association="Self.FK__BaiGiang__Lop__47DBAE45">
       <End Role="Lop" EntitySet="Lop" />
       <End Role="BaiGiang" EntitySet="BaiGiang" />
     </AssociationSet>
-    <AssociationSet Name="FK__BaiGiang__MonHoc__5DCAEF64" Association="Self.FK__BaiGiang__MonHoc__5DCAEF64">
+    <AssociationSet Name="FK__BaiGiang__MonHoc__45F365D3" Association="Self.FK__BaiGiang__MonHoc__45F365D3">
       <End Role="MonHoc" EntitySet="MonHoc" />
       <End Role="BaiGiang" EntitySet="BaiGiang" />
     </AssociationSet>
-    <AssociationSet Name="FK__BaiGiang__Phong__5CD6CB2B" Association="Self.FK__BaiGiang__Phong__5CD6CB2B">
+    <AssociationSet Name="FK__BaiGiang__Phong__44FF419A" Association="Self.FK__BaiGiang__Phong__44FF419A">
       <End Role="Phong" EntitySet="Phong" />
       <End Role="BaiGiang" EntitySet="BaiGiang" />
     </AssociationSet>
-    <AssociationSet Name="FK__BaiGiang__ThoiGi__60A75C0F" Association="Self.FK__BaiGiang__ThoiGi__60A75C0F">
+    <AssociationSet Name="FK__BaiGiang__ThoiGi__48CFD27E" Association="Self.FK__BaiGiang__ThoiGi__48CFD27E">
       <End Role="ThoiGian" EntitySet="ThoiGian" />
       <End Role="BaiGiang" EntitySet="BaiGiang" />
     </AssociationSet>

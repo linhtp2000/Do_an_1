@@ -22,17 +22,11 @@ namespace TimeTable_GAs
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<BaiGiang> test = new List<BaiGiang>();
-            SapXep tkb = new SapXep();
-            tkb.SapXepTKB();
-            foreach (BaiGiang bg in SapXep.dsBaiGiang)
-            {
-
-                if (bg.Lop == null || bg.MonHoc == null || bg.Phong == null || bg.ThoiGian == null)
-                {
-                    test.Add(bg);
-                }
-            }
+           // List<BaiGiang> test = new List<BaiGiang>();
+            //SapXep tkb = new SapXep();
+            //tkb.SapXepTKB();
+           //List<BaiGiang>x= SapXep.dsBaiGiang;
+           // List<BaiGiang> y = SapXep.test;
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
