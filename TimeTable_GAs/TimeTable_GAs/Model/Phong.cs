@@ -18,6 +18,7 @@ namespace TimeTable_GAs.Model
         public Phong()
         {
             this.BaiGiangs = new HashSet<BaiGiang>();
+            this.BaiGiangs1 = new HashSet<BaiGiang>();
         }
     
         public string MaPhong { get; set; }
@@ -26,5 +27,7 @@ namespace TimeTable_GAs.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiGiang> BaiGiangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BaiGiang> BaiGiangs1 { get; set; }
     }
 }

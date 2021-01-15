@@ -22,9 +22,14 @@ namespace TimeTable_GAs.Model
         public string Lop { get; set; }
     
         public virtual GiaoVien GiaoVien1 { get; set; }
+        public virtual GiaoVien GiaoVien2 { get; set; }
         public virtual Lop Lop1 { get; set; }
+        public virtual Lop Lop2 { get; set; }
         public virtual MonHoc MonHoc1 { get; set; }
+        public virtual MonHoc MonHoc2 { get; set; }
         public virtual Phong Phong1 { get; set; }
+        public virtual Phong Phong2 { get; set; }
         public virtual ThoiGian ThoiGian1 { get; set; }
+        public virtual ThoiGian ThoiGian2 { get; set; }
     }
 }

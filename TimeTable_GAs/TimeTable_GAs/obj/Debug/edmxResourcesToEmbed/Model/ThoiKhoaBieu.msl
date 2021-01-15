@@ -19,7 +19,6 @@
           <ScalarProperty Name="MaGV" ColumnName="MaGV" />
           <ScalarProperty Name="TenGV" ColumnName="TenGV" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="MonHoc" ColumnName="MonHoc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -40,6 +39,7 @@
           <ScalarProperty Name="TenMon" ColumnName="TenMon" />
           <ScalarProperty Name="SoTC" ColumnName="SoTC" />
           <ScalarProperty Name="SinhVien" ColumnName="SinhVien" />
+          <ScalarProperty Name="GiaoVien" ColumnName="GiaoVien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -66,7 +66,6 @@
           <ScalarProperty Name="MaTG" ColumnName="MaTG" />
           <ScalarProperty Name="Buoi" ColumnName="Buoi" />
           <ScalarProperty Name="Thu" ColumnName="Thu" />
-          <ScalarProperty Name="Tuan" ColumnName="Tuan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

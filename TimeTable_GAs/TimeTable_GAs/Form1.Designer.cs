@@ -98,7 +98,7 @@
             this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel18 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
@@ -117,11 +117,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(34, 54);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(30, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(410, 976);
+            this.groupBox1.Size = new System.Drawing.Size(364, 781);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -196,16 +194,14 @@
             this.groupBox2.Controls.Add(this.flowLayoutPanel16);
             this.groupBox2.Controls.Add(this.flowLayoutPanel2);
             this.groupBox2.Controls.Add(this.flowLayoutPanel17);
-            this.groupBox2.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox2.Controls.Add(this.flp);
             this.groupBox2.Controls.Add(this.flowLayoutPanel18);
             this.groupBox2.Controls.Add(this.flowLayoutPanel9);
             this.groupBox2.Controls.Add(this.flowLayoutPanel10);
             this.groupBox2.Controls.Add(this.panel1);
-            this.groupBox2.Location = new System.Drawing.Point(464, 65);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(412, 52);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1452, 1151);
+            this.groupBox2.Size = new System.Drawing.Size(1291, 921);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -218,9 +214,9 @@
             this.label17.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label17.Cursor = System.Windows.Forms.Cursors.Default;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(34, 344);
+            this.label17.Location = new System.Drawing.Point(30, 275);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 105);
+            this.label17.Size = new System.Drawing.Size(102, 84);
             this.label17.TabIndex = 34;
             this.label17.Text = "3";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,9 +230,9 @@
             this.label16.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label16.Cursor = System.Windows.Forms.Cursors.Default;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(34, 231);
+            this.label16.Location = new System.Drawing.Point(30, 185);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(115, 105);
+            this.label16.Size = new System.Drawing.Size(102, 84);
             this.label16.TabIndex = 33;
             this.label16.Text = "2";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,9 +246,9 @@
             this.label15.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label15.Cursor = System.Windows.Forms.Cursors.Default;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(34, 456);
+            this.label15.Location = new System.Drawing.Point(30, 365);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(115, 105);
+            this.label15.Size = new System.Drawing.Size(102, 84);
             this.label15.TabIndex = 32;
             this.label15.Text = "4";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,9 +262,9 @@
             this.label14.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label14.Cursor = System.Windows.Forms.Cursors.Default;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(34, 569);
+            this.label14.Location = new System.Drawing.Point(30, 455);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(115, 105);
+            this.label14.Size = new System.Drawing.Size(102, 84);
             this.label14.TabIndex = 31;
             this.label14.Text = "5";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -282,9 +278,9 @@
             this.label13.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label13.Cursor = System.Windows.Forms.Cursors.Default;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(34, 681);
+            this.label13.Location = new System.Drawing.Point(30, 545);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 105);
+            this.label13.Size = new System.Drawing.Size(102, 84);
             this.label13.TabIndex = 30;
             this.label13.Text = "6";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,9 +294,9 @@
             this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label12.Cursor = System.Windows.Forms.Cursors.Default;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(34, 794);
+            this.label12.Location = new System.Drawing.Point(30, 635);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 105);
+            this.label12.Size = new System.Drawing.Size(102, 84);
             this.label12.TabIndex = 29;
             this.label12.Text = "7";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -314,9 +310,9 @@
             this.label11.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label11.Cursor = System.Windows.Forms.Cursors.Default;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(34, 906);
+            this.label11.Location = new System.Drawing.Point(30, 725);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 105);
+            this.label11.Size = new System.Drawing.Size(102, 84);
             this.label11.TabIndex = 28;
             this.label11.Text = "8";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -330,9 +326,9 @@
             this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label10.Cursor = System.Windows.Forms.Cursors.Default;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 1019);
+            this.label10.Location = new System.Drawing.Point(30, 815);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 105);
+            this.label10.Size = new System.Drawing.Size(102, 84);
             this.label10.TabIndex = 27;
             this.label10.Text = "9";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -346,515 +342,453 @@
             this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label9.Cursor = System.Windows.Forms.Cursors.Default;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(34, 119);
+            this.label9.Location = new System.Drawing.Point(30, 95);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 105);
+            this.label9.Size = new System.Drawing.Size(102, 84);
             this.label9.TabIndex = 17;
             this.label9.Text = "1";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel55
             // 
-            this.flowLayoutPanel55.Location = new System.Drawing.Point(1249, 119);
-            this.flowLayoutPanel55.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel55.Location = new System.Drawing.Point(1110, 95);
             this.flowLayoutPanel55.Name = "flowLayoutPanel55";
-            this.flowLayoutPanel55.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel55.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel55.TabIndex = 26;
             // 
             // flowLayoutPanel56
             // 
-            this.flowLayoutPanel56.Location = new System.Drawing.Point(1249, 231);
-            this.flowLayoutPanel56.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel56.Location = new System.Drawing.Point(1110, 185);
             this.flowLayoutPanel56.Name = "flowLayoutPanel56";
-            this.flowLayoutPanel56.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel56.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel56.TabIndex = 25;
             // 
             // flowLayoutPanel46
             // 
-            this.flowLayoutPanel46.Location = new System.Drawing.Point(1066, 119);
-            this.flowLayoutPanel46.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel46.Location = new System.Drawing.Point(948, 95);
             this.flowLayoutPanel46.Name = "flowLayoutPanel46";
-            this.flowLayoutPanel46.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel46.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel46.TabIndex = 26;
             // 
             // flowLayoutPanel57
             // 
-            this.flowLayoutPanel57.Location = new System.Drawing.Point(1249, 344);
-            this.flowLayoutPanel57.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel57.Location = new System.Drawing.Point(1110, 275);
             this.flowLayoutPanel57.Name = "flowLayoutPanel57";
-            this.flowLayoutPanel57.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel57.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel57.TabIndex = 24;
             // 
             // flowLayoutPanel47
             // 
-            this.flowLayoutPanel47.Location = new System.Drawing.Point(1066, 231);
-            this.flowLayoutPanel47.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel47.Location = new System.Drawing.Point(948, 185);
             this.flowLayoutPanel47.Name = "flowLayoutPanel47";
-            this.flowLayoutPanel47.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel47.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel47.TabIndex = 25;
             // 
             // flowLayoutPanel58
             // 
-            this.flowLayoutPanel58.Location = new System.Drawing.Point(1249, 456);
-            this.flowLayoutPanel58.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel58.Location = new System.Drawing.Point(1110, 365);
             this.flowLayoutPanel58.Name = "flowLayoutPanel58";
-            this.flowLayoutPanel58.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel58.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel58.TabIndex = 23;
             // 
             // flowLayoutPanel37
             // 
-            this.flowLayoutPanel37.Location = new System.Drawing.Point(884, 119);
-            this.flowLayoutPanel37.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel37.Location = new System.Drawing.Point(786, 95);
             this.flowLayoutPanel37.Name = "flowLayoutPanel37";
-            this.flowLayoutPanel37.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel37.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel37.TabIndex = 26;
             // 
             // flowLayoutPanel59
             // 
-            this.flowLayoutPanel59.Location = new System.Drawing.Point(1249, 569);
-            this.flowLayoutPanel59.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel59.Location = new System.Drawing.Point(1110, 455);
             this.flowLayoutPanel59.Name = "flowLayoutPanel59";
-            this.flowLayoutPanel59.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel59.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel59.TabIndex = 22;
             // 
             // flowLayoutPanel48
             // 
-            this.flowLayoutPanel48.Location = new System.Drawing.Point(1066, 344);
-            this.flowLayoutPanel48.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel48.Location = new System.Drawing.Point(948, 275);
             this.flowLayoutPanel48.Name = "flowLayoutPanel48";
-            this.flowLayoutPanel48.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel48.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel48.TabIndex = 24;
             // 
             // flowLayoutPanel60
             // 
-            this.flowLayoutPanel60.Location = new System.Drawing.Point(1249, 681);
-            this.flowLayoutPanel60.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel60.Location = new System.Drawing.Point(1110, 545);
             this.flowLayoutPanel60.Name = "flowLayoutPanel60";
-            this.flowLayoutPanel60.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel60.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel60.TabIndex = 21;
             // 
             // flowLayoutPanel38
             // 
-            this.flowLayoutPanel38.Location = new System.Drawing.Point(884, 231);
-            this.flowLayoutPanel38.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel38.Location = new System.Drawing.Point(786, 185);
             this.flowLayoutPanel38.Name = "flowLayoutPanel38";
-            this.flowLayoutPanel38.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel38.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel38.TabIndex = 25;
             // 
             // flowLayoutPanel61
             // 
-            this.flowLayoutPanel61.Location = new System.Drawing.Point(1249, 794);
-            this.flowLayoutPanel61.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel61.Location = new System.Drawing.Point(1110, 635);
             this.flowLayoutPanel61.Name = "flowLayoutPanel61";
-            this.flowLayoutPanel61.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel61.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel61.TabIndex = 20;
             // 
             // flowLayoutPanel49
             // 
-            this.flowLayoutPanel49.Location = new System.Drawing.Point(1066, 456);
-            this.flowLayoutPanel49.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel49.Location = new System.Drawing.Point(948, 365);
             this.flowLayoutPanel49.Name = "flowLayoutPanel49";
-            this.flowLayoutPanel49.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel49.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel49.TabIndex = 23;
             // 
             // flowLayoutPanel62
             // 
-            this.flowLayoutPanel62.Location = new System.Drawing.Point(1249, 906);
-            this.flowLayoutPanel62.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel62.Location = new System.Drawing.Point(1110, 725);
             this.flowLayoutPanel62.Name = "flowLayoutPanel62";
-            this.flowLayoutPanel62.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel62.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel62.TabIndex = 18;
             // 
             // flowLayoutPanel28
             // 
-            this.flowLayoutPanel28.Location = new System.Drawing.Point(702, 119);
-            this.flowLayoutPanel28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel28.Location = new System.Drawing.Point(624, 95);
             this.flowLayoutPanel28.Name = "flowLayoutPanel28";
-            this.flowLayoutPanel28.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel28.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel28.TabIndex = 26;
             // 
             // flowLayoutPanel63
             // 
-            this.flowLayoutPanel63.Location = new System.Drawing.Point(1249, 1019);
-            this.flowLayoutPanel63.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel63.Location = new System.Drawing.Point(1110, 815);
             this.flowLayoutPanel63.Name = "flowLayoutPanel63";
-            this.flowLayoutPanel63.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel63.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel63.TabIndex = 19;
             // 
             // flowLayoutPanel50
             // 
-            this.flowLayoutPanel50.Location = new System.Drawing.Point(1066, 569);
-            this.flowLayoutPanel50.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel50.Location = new System.Drawing.Point(948, 455);
             this.flowLayoutPanel50.Name = "flowLayoutPanel50";
-            this.flowLayoutPanel50.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel50.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel50.TabIndex = 22;
             // 
             // flowLayoutPanel39
             // 
-            this.flowLayoutPanel39.Location = new System.Drawing.Point(884, 344);
-            this.flowLayoutPanel39.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel39.Location = new System.Drawing.Point(786, 275);
             this.flowLayoutPanel39.Name = "flowLayoutPanel39";
-            this.flowLayoutPanel39.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel39.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel39.TabIndex = 24;
             // 
             // flowLayoutPanel51
             // 
-            this.flowLayoutPanel51.Location = new System.Drawing.Point(1066, 681);
-            this.flowLayoutPanel51.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel51.Location = new System.Drawing.Point(948, 545);
             this.flowLayoutPanel51.Name = "flowLayoutPanel51";
-            this.flowLayoutPanel51.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel51.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel51.TabIndex = 21;
             // 
             // flowLayoutPanel29
             // 
-            this.flowLayoutPanel29.Location = new System.Drawing.Point(702, 231);
-            this.flowLayoutPanel29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel29.Location = new System.Drawing.Point(624, 185);
             this.flowLayoutPanel29.Name = "flowLayoutPanel29";
-            this.flowLayoutPanel29.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel29.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel29.TabIndex = 25;
             // 
             // flowLayoutPanel52
             // 
-            this.flowLayoutPanel52.Location = new System.Drawing.Point(1066, 794);
-            this.flowLayoutPanel52.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel52.Location = new System.Drawing.Point(948, 635);
             this.flowLayoutPanel52.Name = "flowLayoutPanel52";
-            this.flowLayoutPanel52.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel52.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel52.TabIndex = 20;
             // 
             // flowLayoutPanel40
             // 
-            this.flowLayoutPanel40.Location = new System.Drawing.Point(884, 456);
-            this.flowLayoutPanel40.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel40.Location = new System.Drawing.Point(786, 365);
             this.flowLayoutPanel40.Name = "flowLayoutPanel40";
-            this.flowLayoutPanel40.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel40.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel40.TabIndex = 23;
             // 
             // flowLayoutPanel53
             // 
-            this.flowLayoutPanel53.Location = new System.Drawing.Point(1066, 906);
-            this.flowLayoutPanel53.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel53.Location = new System.Drawing.Point(948, 725);
             this.flowLayoutPanel53.Name = "flowLayoutPanel53";
-            this.flowLayoutPanel53.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel53.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel53.TabIndex = 18;
             // 
             // flowLayoutPanel19
             // 
-            this.flowLayoutPanel19.Location = new System.Drawing.Point(520, 119);
-            this.flowLayoutPanel19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel19.Location = new System.Drawing.Point(462, 95);
             this.flowLayoutPanel19.Name = "flowLayoutPanel19";
-            this.flowLayoutPanel19.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel19.TabIndex = 26;
             // 
             // flowLayoutPanel54
             // 
-            this.flowLayoutPanel54.Location = new System.Drawing.Point(1066, 1019);
-            this.flowLayoutPanel54.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel54.Location = new System.Drawing.Point(948, 815);
             this.flowLayoutPanel54.Name = "flowLayoutPanel54";
-            this.flowLayoutPanel54.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel54.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel54.TabIndex = 19;
             // 
             // flowLayoutPanel41
             // 
-            this.flowLayoutPanel41.Location = new System.Drawing.Point(884, 569);
-            this.flowLayoutPanel41.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel41.Location = new System.Drawing.Point(786, 455);
             this.flowLayoutPanel41.Name = "flowLayoutPanel41";
-            this.flowLayoutPanel41.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel41.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel41.TabIndex = 22;
             // 
             // flowLayoutPanel30
             // 
-            this.flowLayoutPanel30.Location = new System.Drawing.Point(702, 344);
-            this.flowLayoutPanel30.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel30.Location = new System.Drawing.Point(624, 275);
             this.flowLayoutPanel30.Name = "flowLayoutPanel30";
-            this.flowLayoutPanel30.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel30.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel30.TabIndex = 24;
             // 
             // flowLayoutPanel42
             // 
-            this.flowLayoutPanel42.Location = new System.Drawing.Point(884, 681);
-            this.flowLayoutPanel42.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel42.Location = new System.Drawing.Point(786, 545);
             this.flowLayoutPanel42.Name = "flowLayoutPanel42";
-            this.flowLayoutPanel42.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel42.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel42.TabIndex = 21;
             // 
             // flowLayoutPanel20
             // 
-            this.flowLayoutPanel20.Location = new System.Drawing.Point(520, 231);
-            this.flowLayoutPanel20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel20.Location = new System.Drawing.Point(462, 185);
             this.flowLayoutPanel20.Name = "flowLayoutPanel20";
-            this.flowLayoutPanel20.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel20.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel20.TabIndex = 25;
             // 
             // flowLayoutPanel43
             // 
-            this.flowLayoutPanel43.Location = new System.Drawing.Point(884, 794);
-            this.flowLayoutPanel43.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel43.Location = new System.Drawing.Point(786, 635);
             this.flowLayoutPanel43.Name = "flowLayoutPanel43";
-            this.flowLayoutPanel43.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel43.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel43.TabIndex = 20;
             // 
             // flowLayoutPanel31
             // 
-            this.flowLayoutPanel31.Location = new System.Drawing.Point(702, 456);
-            this.flowLayoutPanel31.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel31.Location = new System.Drawing.Point(624, 365);
             this.flowLayoutPanel31.Name = "flowLayoutPanel31";
-            this.flowLayoutPanel31.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel31.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel31.TabIndex = 23;
             // 
             // flowLayoutPanel44
             // 
-            this.flowLayoutPanel44.Location = new System.Drawing.Point(884, 906);
-            this.flowLayoutPanel44.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel44.Location = new System.Drawing.Point(786, 725);
             this.flowLayoutPanel44.Name = "flowLayoutPanel44";
-            this.flowLayoutPanel44.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel44.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel44.TabIndex = 18;
             // 
             // flowLayoutPanel5
             // 
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(338, 119);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(300, 95);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel5.TabIndex = 26;
             // 
             // flowLayoutPanel45
             // 
-            this.flowLayoutPanel45.Location = new System.Drawing.Point(884, 1019);
-            this.flowLayoutPanel45.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel45.Location = new System.Drawing.Point(786, 815);
             this.flowLayoutPanel45.Name = "flowLayoutPanel45";
-            this.flowLayoutPanel45.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel45.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel45.TabIndex = 19;
             // 
             // flowLayoutPanel32
             // 
-            this.flowLayoutPanel32.Location = new System.Drawing.Point(702, 569);
-            this.flowLayoutPanel32.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel32.Location = new System.Drawing.Point(624, 455);
             this.flowLayoutPanel32.Name = "flowLayoutPanel32";
-            this.flowLayoutPanel32.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel32.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel32.TabIndex = 22;
             // 
             // flowLayoutPanel21
             // 
-            this.flowLayoutPanel21.Location = new System.Drawing.Point(520, 344);
-            this.flowLayoutPanel21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel21.Location = new System.Drawing.Point(462, 275);
             this.flowLayoutPanel21.Name = "flowLayoutPanel21";
-            this.flowLayoutPanel21.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel21.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel21.TabIndex = 24;
             // 
             // flowLayoutPanel33
             // 
-            this.flowLayoutPanel33.Location = new System.Drawing.Point(702, 681);
-            this.flowLayoutPanel33.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel33.Location = new System.Drawing.Point(624, 545);
             this.flowLayoutPanel33.Name = "flowLayoutPanel33";
-            this.flowLayoutPanel33.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel33.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel33.TabIndex = 21;
             // 
             // flowLayoutPanel6
             // 
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(338, 231);
-            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(300, 185);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel6.TabIndex = 25;
             // 
             // flowLayoutPanel34
             // 
-            this.flowLayoutPanel34.Location = new System.Drawing.Point(702, 794);
-            this.flowLayoutPanel34.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel34.Location = new System.Drawing.Point(624, 635);
             this.flowLayoutPanel34.Name = "flowLayoutPanel34";
-            this.flowLayoutPanel34.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel34.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel34.TabIndex = 20;
             // 
             // flowLayoutPanel22
             // 
-            this.flowLayoutPanel22.Location = new System.Drawing.Point(520, 456);
-            this.flowLayoutPanel22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel22.Location = new System.Drawing.Point(462, 365);
             this.flowLayoutPanel22.Name = "flowLayoutPanel22";
-            this.flowLayoutPanel22.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel22.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel22.TabIndex = 23;
             // 
             // flowLayoutPanel35
             // 
-            this.flowLayoutPanel35.Location = new System.Drawing.Point(702, 906);
-            this.flowLayoutPanel35.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel35.Location = new System.Drawing.Point(624, 725);
             this.flowLayoutPanel35.Name = "flowLayoutPanel35";
-            this.flowLayoutPanel35.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel35.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel35.TabIndex = 18;
             // 
             // flowLayoutPanel13
             // 
-            this.flowLayoutPanel13.Location = new System.Drawing.Point(155, 794);
-            this.flowLayoutPanel13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel13.Location = new System.Drawing.Point(138, 635);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel13.TabIndex = 17;
             // 
             // flowLayoutPanel36
             // 
-            this.flowLayoutPanel36.Location = new System.Drawing.Point(702, 1019);
-            this.flowLayoutPanel36.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel36.Location = new System.Drawing.Point(624, 815);
             this.flowLayoutPanel36.Name = "flowLayoutPanel36";
-            this.flowLayoutPanel36.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel36.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel36.TabIndex = 19;
             // 
             // flowLayoutPanel23
             // 
-            this.flowLayoutPanel23.Location = new System.Drawing.Point(520, 569);
-            this.flowLayoutPanel23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel23.Location = new System.Drawing.Point(462, 455);
             this.flowLayoutPanel23.Name = "flowLayoutPanel23";
-            this.flowLayoutPanel23.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel23.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel23.TabIndex = 22;
             // 
             // flowLayoutPanel7
             // 
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(338, 344);
-            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(300, 275);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel7.TabIndex = 24;
             // 
             // flowLayoutPanel24
             // 
-            this.flowLayoutPanel24.Location = new System.Drawing.Point(520, 681);
-            this.flowLayoutPanel24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel24.Location = new System.Drawing.Point(462, 545);
             this.flowLayoutPanel24.Name = "flowLayoutPanel24";
-            this.flowLayoutPanel24.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel24.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel24.TabIndex = 21;
             // 
             // flowLayoutPanel12
             // 
-            this.flowLayoutPanel12.Location = new System.Drawing.Point(155, 681);
-            this.flowLayoutPanel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel12.Location = new System.Drawing.Point(138, 545);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel12.TabIndex = 16;
             // 
             // flowLayoutPanel25
             // 
-            this.flowLayoutPanel25.Location = new System.Drawing.Point(520, 794);
-            this.flowLayoutPanel25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel25.Location = new System.Drawing.Point(462, 635);
             this.flowLayoutPanel25.Name = "flowLayoutPanel25";
-            this.flowLayoutPanel25.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel25.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel25.TabIndex = 20;
             // 
             // flowLayoutPanel8
             // 
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(338, 456);
-            this.flowLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(300, 365);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel8.TabIndex = 23;
             // 
             // flowLayoutPanel26
             // 
-            this.flowLayoutPanel26.Location = new System.Drawing.Point(520, 906);
-            this.flowLayoutPanel26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel26.Location = new System.Drawing.Point(462, 725);
             this.flowLayoutPanel26.Name = "flowLayoutPanel26";
-            this.flowLayoutPanel26.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel26.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel26.TabIndex = 18;
             // 
             // flowLayoutPanel11
             // 
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(155, 569);
-            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(138, 455);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel11.TabIndex = 15;
             // 
             // flowLayoutPanel27
             // 
-            this.flowLayoutPanel27.Location = new System.Drawing.Point(520, 1019);
-            this.flowLayoutPanel27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel27.Location = new System.Drawing.Point(462, 815);
             this.flowLayoutPanel27.Name = "flowLayoutPanel27";
-            this.flowLayoutPanel27.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel27.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel27.TabIndex = 19;
             // 
             // flowLayoutPanel14
             // 
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(338, 569);
-            this.flowLayoutPanel14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(300, 455);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel14.TabIndex = 22;
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(155, 456);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(138, 365);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel4.TabIndex = 14;
             // 
             // flowLayoutPanel15
             // 
-            this.flowLayoutPanel15.Location = new System.Drawing.Point(338, 681);
-            this.flowLayoutPanel15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel15.Location = new System.Drawing.Point(300, 545);
             this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel15.TabIndex = 21;
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(155, 344);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(138, 275);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel3.TabIndex = 13;
             // 
             // flowLayoutPanel16
             // 
-            this.flowLayoutPanel16.Location = new System.Drawing.Point(338, 794);
-            this.flowLayoutPanel16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel16.Location = new System.Drawing.Point(300, 635);
             this.flowLayoutPanel16.Name = "flowLayoutPanel16";
-            this.flowLayoutPanel16.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel16.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel16.TabIndex = 20;
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(155, 231);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(138, 185);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel2.TabIndex = 12;
             // 
             // flowLayoutPanel17
             // 
-            this.flowLayoutPanel17.Location = new System.Drawing.Point(338, 906);
-            this.flowLayoutPanel17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel17.Location = new System.Drawing.Point(300, 725);
             this.flowLayoutPanel17.Name = "flowLayoutPanel17";
-            this.flowLayoutPanel17.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel17.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel17.TabIndex = 18;
             // 
-            // flowLayoutPanel1
+            // flp
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(155, 119);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(176, 105);
-            this.flowLayoutPanel1.TabIndex = 11;
+            this.flp.Location = new System.Drawing.Point(138, 95);
+            this.flp.Name = "flp";
+            this.flp.Size = new System.Drawing.Size(156, 84);
+            this.flp.TabIndex = 11;
+            this.flp.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // flowLayoutPanel18
             // 
-            this.flowLayoutPanel18.Location = new System.Drawing.Point(338, 1019);
-            this.flowLayoutPanel18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel18.Location = new System.Drawing.Point(300, 815);
             this.flowLayoutPanel18.Name = "flowLayoutPanel18";
-            this.flowLayoutPanel18.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel18.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel18.TabIndex = 19;
             // 
             // flowLayoutPanel9
             // 
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(155, 1019);
-            this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(138, 815);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel9.TabIndex = 10;
             // 
             // flowLayoutPanel10
             // 
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(155, 906);
-            this.flowLayoutPanel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(138, 725);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel10.TabIndex = 10;
             // 
             // panel1
@@ -867,10 +801,9 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(20, 26);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(18, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1411, 85);
+            this.panel1.Size = new System.Drawing.Size(1254, 68);
             this.panel1.TabIndex = 8;
             // 
             // label2
@@ -882,9 +815,9 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1228, 11);
+            this.label2.Location = new System.Drawing.Point(1092, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 62);
+            this.label2.Size = new System.Drawing.Size(156, 50);
             this.label2.TabIndex = 11;
             this.label2.Text = "Sunday";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -898,9 +831,9 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.label3.Cursor = System.Windows.Forms.Cursors.Default;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1046, 11);
+            this.label3.Location = new System.Drawing.Point(930, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 62);
+            this.label3.Size = new System.Drawing.Size(156, 50);
             this.label3.TabIndex = 12;
             this.label3.Text = "Saturday";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -914,9 +847,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(864, 11);
+            this.label4.Location = new System.Drawing.Point(768, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 62);
+            this.label4.Size = new System.Drawing.Size(156, 50);
             this.label4.TabIndex = 13;
             this.label4.Text = "Friday";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -930,9 +863,9 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label5.Cursor = System.Windows.Forms.Cursors.Default;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(682, 11);
+            this.label5.Location = new System.Drawing.Point(606, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 62);
+            this.label5.Size = new System.Drawing.Size(156, 50);
             this.label5.TabIndex = 14;
             this.label5.Text = "Thusday";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -946,9 +879,9 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label6.Cursor = System.Windows.Forms.Cursors.Default;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(500, 11);
+            this.label6.Location = new System.Drawing.Point(444, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(176, 62);
+            this.label6.Size = new System.Drawing.Size(156, 50);
             this.label6.TabIndex = 15;
             this.label6.Text = "Wednesday";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -962,9 +895,9 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.label8.Cursor = System.Windows.Forms.Cursors.Default;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(317, 11);
+            this.label8.Location = new System.Drawing.Point(282, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 62);
+            this.label8.Size = new System.Drawing.Size(156, 50);
             this.label8.TabIndex = 16;
             this.label8.Text = "Tuesday";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -978,9 +911,9 @@
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 11);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 62);
+            this.label1.Size = new System.Drawing.Size(102, 50);
             this.label1.TabIndex = 10;
             this.label1.Text = "Class";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -994,21 +927,20 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label7.Cursor = System.Windows.Forms.Cursors.Default;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(135, 11);
+            this.label7.Location = new System.Drawing.Point(120, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(176, 62);
+            this.label7.Size = new System.Drawing.Size(156, 50);
             this.label7.TabIndex = 9;
             this.label7.Text = "Monday";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.ClientSize = new System.Drawing.Size(1710, 840);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1090,7 +1022,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel16;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel17;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flp;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel18;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;

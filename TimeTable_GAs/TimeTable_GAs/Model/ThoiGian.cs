@@ -18,14 +18,18 @@ namespace TimeTable_GAs.Model
         public ThoiGian()
         {
             this.BaiGiangs = new HashSet<BaiGiang>();
+            this.BaiGiangs1 = new HashSet<BaiGiang>();
         }
     
         public int MaTG { get; set; }
         public string Buoi { get; set; }
         public string Thu { get; set; }
-        public Nullable<int> Tuan { get; set; }
+        public Nullable<int> TietBD { get; set; }
+        public Nullable<int> TietKT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiGiang> BaiGiangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BaiGiang> BaiGiangs1 { get; set; }
     }
 }

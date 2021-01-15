@@ -18,6 +18,7 @@ namespace TimeTable_GAs.Model
         public SinhVien()
         {
             this.Lops = new HashSet<Lop>();
+            this.MonHocs = new HashSet<MonHoc>();
         }
     
         public string MaNhomSV { get; set; }
@@ -25,5 +26,7 @@ namespace TimeTable_GAs.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Lop> Lops { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MonHoc> MonHocs { get; set; }
     }
 }

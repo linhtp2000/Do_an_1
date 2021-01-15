@@ -18,14 +18,19 @@ namespace TimeTable_GAs.Model
         public GiaoVien()
         {
             this.BaiGiangs = new HashSet<BaiGiang>();
+            this.BaiGiangs1 = new HashSet<BaiGiang>();
+            this.MonHocs = new HashSet<MonHoc>();
         }
     
         public string MaGV { get; set; }
         public string TenGV { get; set; }
         public string Email { get; set; }
-        public string MonHoc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BaiGiang> BaiGiangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BaiGiang> BaiGiangs1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MonHoc> MonHocs { get; set; }
     }
 }
