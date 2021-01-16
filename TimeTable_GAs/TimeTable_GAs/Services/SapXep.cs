@@ -101,7 +101,7 @@ namespace TimeTable_GAs.Services
                               where mon.SinhVien == s
                               select mon).ToList();
                 //Dictionary<MonHoc, GiaoVien> dsgvcuamon = new Dictionary<MonHoc, GiaoVien>();
-                int temp = 0;
+               // int temp = 0;
                 for (int j = 0; j < lstmon.Count; j++)
                 {
                     GiaoVien r = TimGVPhuHop(lstlop[i], lstmon[j]);
