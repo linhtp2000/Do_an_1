@@ -62,12 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="fromBaiGiang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,7 +70,6 @@
     </Compile>
     <Compile Include="Data\CourseData.cs" />
     <Compile Include="Data\LectureData.cs" />
-    <Compile Include="ExceptionPlanning.cs" />
     <Compile Include="frmGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,11 +121,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ThoiKhoaBieu.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Services\IMoodle.cs" />
-    <Compile Include="Services\MasterSchema.cs" />
     <Compile Include="Services\Planner.cs" />
     <Compile Include="Services\SapXep.cs" />
-    <Compile Include="Services\SchemaCourse.cs" />
     <Compile Include="frmPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,9 +137,11 @@
     <Compile Include="frmSinhVien.Designer.cs">
       <DependentUpon>frmSinhVien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="ThoiKhoaBieuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieuDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="fromBaiGiang.resx">
       <DependentUpon>fromBaiGiang.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +183,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ThoiKhoaBieuDataSet.xsc">
+      <DependentUpon>ThoiKhoaBieuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieuDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet.xss">
+      <DependentUpon>ThoiKhoaBieuDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -199,6 +202,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model\ThoiKhoaBieu.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

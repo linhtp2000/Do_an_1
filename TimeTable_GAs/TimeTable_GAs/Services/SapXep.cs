@@ -47,24 +47,58 @@ namespace TimeTable_GAs.Services
             //tìm thời gian phù hợp
             XetThoiGian(allClass, allTeachers);
 
-            for (int i = 0; i < dsBaiGiang.Count - 1; i++)
+            
+            for (int i = 0; i < dsBaiGiang.Count-1; i++)
             {
-
                 if (dsBaiGiang[i].Lop == null || dsBaiGiang[i].MonHoc == null || dsBaiGiang[i].Phong == null || dsBaiGiang[i].ThoiGian == null)
                 {
                     test.Add(dsBaiGiang[i]);
                 }
                 for (int j = i + 1; j < dsBaiGiang.Count; j++)
                 {
-                    if ((dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Phong == dsBaiGiang[j].Phong) ||
-                        (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Lop == dsBaiGiang[j].Lop) ||
-                         (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].GiaoVien == dsBaiGiang[j].GiaoVien))
+                    if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Lop == dsBaiGiang[j].Lop)
                     {
                         test.Add(dsBaiGiang[i]);
                         test.Add(dsBaiGiang[j]);
                     }
+                    if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Phong == dsBaiGiang[j].Phong)
+                    {
+                        test.Add(dsBaiGiang[i]);
+                        test.Add(dsBaiGiang[j]);
+                    }
+                    if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].GiaoVien == dsBaiGiang[j].GiaoVien)
+                    {
+                        test.Add(dsBaiGiang[i]);
+                        test.Add(dsBaiGiang[j]);
+                    }
+
+
+                   // Kiểm tra trùng tiết học
+                    if (dsBaiGiang[i].ThoiGian1.Thu == dsBaiGiang[j].ThoiGian1.Thu && dsBaiGiang[i].ThoiGian1.Buoi == dsBaiGiang[j].ThoiGian1.Buoi)
+                    {
+                        if (dsBaiGiang[i].Lop == dsBaiGiang[j].Lop || dsBaiGiang[i].GiaoVien == dsBaiGiang[j].GiaoVien || dsBaiGiang[i].Phong == dsBaiGiang[j].Phong)
+                        {
+                            int h = (int)dsBaiGiang[i].ThoiGian1.TietBD;
+                            int k = (int)dsBaiGiang[i].ThoiGian1.TietKT;
+                           
+                            for (; h <= k; h++)
+                            {
+                                int m = (int)dsBaiGiang[j].ThoiGian1.TietBD;
+                                int n = (int)dsBaiGiang[j].ThoiGian1.TietKT;
+
+                                for (; m <= n; m++)
+                                {
+                                    if (h == m) test.Add(dsBaiGiang[i]);
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
+            }
+
+
             //foreach (BaiGiang bg in SapXep.dsBaiGiang)
             //{
 
@@ -84,7 +118,7 @@ namespace TimeTable_GAs.Services
             //    tkb.SaveChanges();
             //}
 
-        }
+        
 
 
 
@@ -163,7 +197,7 @@ namespace TimeTable_GAs.Services
         void XetPhong(List<Lop> allClass, List<GiaoVien> allTeachers)
         {
             // List<BaiGiang> lstBaiGiang = new List<BaiGiang>();
-            int temp = 0;
+            //int temp = 0;
             for (int i = 0; i < dsBaiGiang.Count; i++)
             {
                 int sl = (int)dsBaiGiang[i].Lop1.SiSo;
@@ -181,13 +215,14 @@ namespace TimeTable_GAs.Services
                 else
                 {
                     //xét lại phòng của bài giảng trước
-                    temp++;
-                   foreach(BaiGiang g in dsBaiGiang)
+                    // temp++;
+                    for (int j = 0; j < dsBaiGiang.Count; j++)
                     {
-                        g.Phong1 = new Phong();
-                        g.Phong = null;
-                    }  
-                   break;
+                        dsBaiGiang[j].Phong1 = null;
+                        dsBaiGiang[j].Phong = null;
+                    }
+                    XetPhong(allClass, allTeachers);
+                    return; ;
                     //dsBaiGiang[i - 1].Phong1 = new Phong();
                     //dsBaiGiang[i - 1].Phong = null;
                     //i--;
@@ -207,7 +242,7 @@ namespace TimeTable_GAs.Services
         void XetThoiGian(List<Lop> allClass, List<GiaoVien> allTeachers)
         {
             // List<BaiGiang> lstBaiGiang = new List<BaiGiang>();
-            int temp = 0;
+           // int temp = 0;
             for (int i = 0; i < dsBaiGiang.Count; i++)
             {
                 var lsttg = (from t in tkb.ThoiGians
@@ -219,23 +254,38 @@ namespace TimeTable_GAs.Services
                 {
                     dsBaiGiang[i].ThoiGian1 = r;
                     dsBaiGiang[i].ThoiGian = r.MaTG;
-                    //temp++;
+                  //  temp++;
                 }
                 else
                 {
                     //xét lại phòng của bài giảng trước
-                    temp++;
-                    foreach (BaiGiang g in dsBaiGiang)
+                   // temp++;
+                    for(int j=0;j<dsBaiGiang.Count;j++) 
                     {
-                        g.ThoiGian1 = new ThoiGian();
-                        g.ThoiGian= null;
+                        dsBaiGiang[j].ThoiGian1 = null;
+                        dsBaiGiang[j].ThoiGian = null;
                     }
-                    XetThoiGian(allClass, allTeachers);
+                       XetThoiGian(allClass, allTeachers);
                     return;
                 }
-                if (temp > 200)
-                {
-                    foreach (BaiGiang g in dsBaiGiang)
+                //if (temp > 200)
+                //{
+                //    foreach (BaiGiang g in dsBaiGiang)
+                //    {
+                //        g.Phong1 = new Phong();
+                //        g.Phong = null;
+                //        g.ThoiGian1 = new ThoiGian();
+                //        g.ThoiGian = null;
+                //    }
+                //    XetPhong(allClass, allTeachers);
+                //    XetThoiGian(allClass, allTeachers);
+                //    return;
+                //}
+            }
+
+            if (dsBaiGiang.Exists(b => b.ThoiGian == null))
+            {
+                foreach (BaiGiang g in dsBaiGiang)
                     {
                         g.Phong1 = new Phong();
                         g.Phong = null;
@@ -245,12 +295,10 @@ namespace TimeTable_GAs.Services
                     XetPhong(allClass, allTeachers);
                     XetThoiGian(allClass, allTeachers);
                     return;
-                }
+         
             }
-
-           
         }
-
+      
         ThoiGian TimTGPhuHop(BaiGiang baigiang, List<ThoiGian> lstthoigian)
         {
 
@@ -305,30 +353,31 @@ namespace TimeTable_GAs.Services
                 return false;
             }
 
-            ////Kiểm tra trùng tiết học
-            //List<BaiGiang> lst = dsBaiGiang.FindAll(b => b.ThoiGian != null) as List<BaiGiang>;
-            //if (lst != null)
-            //{
-            //    List<BaiGiang> ds = new List<BaiGiang>();
-            //    ds = lst.FindAll(b => (b.ThoiGian1.Thu == time.Thu && b.ThoiGian1.Buoi == time.Buoi)) as List<BaiGiang>;
-            //    foreach (BaiGiang i in ds)
-            //    {
-            //        if (i.Lop == bg.Lop || i.GiaoVien == bg.GiaoVien || i.Phong == bg.Phong)
-            //        {
-            //            int j = (int)i.ThoiGian1.TietBD;
-            //            int k = (int)i.ThoiGian1.TietKT;
-            //            for (; j <= k; j++)
-            //            {
-            //                int m = (int)time.TietBD;
-            //                int n = (int)time.TietKT;
-            //                for (; m <= n; m++)
-            //                {
-            //                    if (j == m) return false;
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
+            //Kiểm tra trùng tiết học
+           var lst = dsBaiGiang.FindAll(b => b.ThoiGian != null).ToList();
+            if (lst.Count!=0)
+            {
+               // List<BaiGiang> ds = new List<BaiGiang>();
+               var ds = lst.FindAll(b => (b.ThoiGian1.Thu == time.Thu && b.ThoiGian1.Buoi == time.Buoi)).ToList();
+                foreach (BaiGiang i in ds)
+                {
+                    if (i.Lop == bg.Lop || i.GiaoVien == bg.GiaoVien || i.Phong == bg.Phong)
+                    {
+                        int j = (int)i.ThoiGian1.TietBD;
+                        int k = (int)i.ThoiGian1.TietKT;
+                       
+                        for (; j <= k; j++)
+                        {
+                            int m = (int)time.TietBD;
+                            int n = (int)time.TietKT;
+                            for (; m <= n; m++)
+                            {
+                                if (j == m) return false;
+                            }
+                        }
+                    }
+                }
+            }
 
             return true;
         }
