@@ -6,16 +6,16 @@
     </Key>
     <Property Name="MaBG" Type="int" Nullable="false" />
     <Property Name="ThoiGian" Type="int" />
-    <Property Name="Phong" Type="varchar" MaxLength="10" />
-    <Property Name="MonHoc" Type="varchar" MaxLength="10" />
-    <Property Name="GiaoVien" Type="varchar" MaxLength="10" />
-    <Property Name="Lop" Type="varchar" MaxLength="10" />
+    <Property Name="Phong" Type="nvarchar" MaxLength="10" />
+    <Property Name="MonHoc" Type="nvarchar" MaxLength="10" />
+    <Property Name="GiaoVien" Type="nvarchar" MaxLength="10" />
+    <Property Name="Lop" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="GiaoVien">
     <Key>
       <PropertyRef Name="MaGV" />
     </Key>
-    <Property Name="MaGV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaGV" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="TenGV" Type="nvarchar" MaxLength="100" />
     <Property Name="Email" Type="nvarchar(max)" />
   </EntityType>
@@ -23,26 +23,26 @@
     <Key>
       <PropertyRef Name="MaLop" />
     </Key>
-    <Property Name="MaLop" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="TenLop" Type="varchar" MaxLength="100" />
+    <Property Name="MaLop" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenLop" Type="nvarchar" MaxLength="100" />
     <Property Name="SiSo" Type="int" />
-    <Property Name="SinhVien" Type="varchar" MaxLength="10" />
+    <Property Name="SinhVien" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="MonHoc">
     <Key>
       <PropertyRef Name="MaMon" />
     </Key>
-    <Property Name="MaMon" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaMon" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="TenMon" Type="nvarchar" MaxLength="100" />
     <Property Name="SoTC" Type="int" />
-    <Property Name="SinhVien" Type="varchar" MaxLength="10" />
-    <Property Name="GiaoVien" Type="varchar" MaxLength="10" />
+    <Property Name="SinhVien" Type="nvarchar" MaxLength="10" />
+    <Property Name="GiaoVien" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Phong">
     <Key>
       <PropertyRef Name="MaPhong" />
     </Key>
-    <Property Name="MaPhong" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaPhong" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="TenPhong" Type="nvarchar" MaxLength="100" />
     <Property Name="SoLuong" Type="int" />
   </EntityType>
@@ -50,16 +50,16 @@
     <Key>
       <PropertyRef Name="MaNhomSV" />
     </Key>
-    <Property Name="MaNhomSV" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="TenNhomSV" Type="varchar" MaxLength="100" />
+    <Property Name="MaNhomSV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenNhomSV" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="ThoiGian">
     <Key>
       <PropertyRef Name="MaTG" />
     </Key>
     <Property Name="MaTG" Type="int" Nullable="false" />
-    <Property Name="Buoi" Type="varchar" MaxLength="100" />
-    <Property Name="Thu" Type="varchar" MaxLength="100" />
+    <Property Name="Buoi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Thu" Type="nvarchar" MaxLength="100" />
     <Property Name="TietBD" Type="int" />
     <Property Name="TietKT" Type="int" />
   </EntityType>

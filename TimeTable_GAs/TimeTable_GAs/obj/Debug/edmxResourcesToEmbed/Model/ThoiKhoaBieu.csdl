@@ -6,10 +6,10 @@
     </Key>
     <Property Name="MaBG" Type="Int32" Nullable="false" />
     <Property Name="ThoiGian" Type="Int32" />
-    <Property Name="Phong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="MonHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="GiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Lop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Phong" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MonHoc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Lop" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="GiaoVien1" Relationship="Self.FK__BaiGiang__GiaoVi__46E78A0C" FromRole="BaiGiang" ToRole="GiaoVien" />
     <NavigationProperty Name="Lop1" Relationship="Self.FK__BaiGiang__Lop__47DBAE45" FromRole="BaiGiang" ToRole="Lop" />
     <NavigationProperty Name="MonHoc1" Relationship="Self.FK__BaiGiang__MonHoc__45F365D3" FromRole="BaiGiang" ToRole="MonHoc" />
@@ -20,7 +20,7 @@
     <Key>
       <PropertyRef Name="MaGV" />
     </Key>
-    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaGV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TenGV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__GiaoVi__46E78A0C" FromRole="GiaoVien" ToRole="BaiGiang" />
@@ -30,10 +30,10 @@
     <Key>
       <PropertyRef Name="MaLop" />
     </Key>
-    <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TenLop" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenLop" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="SiSo" Type="Int32" />
-    <Property Name="SinhVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SinhVien" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__Lop__47DBAE45" FromRole="Lop" ToRole="BaiGiang" />
     <NavigationProperty Name="SinhVien1" Relationship="Self.FK__Lop__SinhVien__403A8C7D" FromRole="Lop" ToRole="SinhVien" />
   </EntityType>
@@ -41,11 +41,11 @@
     <Key>
       <PropertyRef Name="MaMon" />
     </Key>
-    <Property Name="MaMon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaMon" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TenMon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="SoTC" Type="Int32" />
-    <Property Name="SinhVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="GiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SinhVien" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GiaoVien" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__MonHoc__45F365D3" FromRole="MonHoc" ToRole="BaiGiang" />
     <NavigationProperty Name="GiaoVien1" Relationship="Self.FK__MonHoc__GiaoVien__3D5E1FD2" FromRole="MonHoc" ToRole="GiaoVien" />
     <NavigationProperty Name="SinhVien1" Relationship="Self.FK__MonHoc__SinhVien__3C69FB99" FromRole="MonHoc" ToRole="SinhVien" />
@@ -54,7 +54,7 @@
     <Key>
       <PropertyRef Name="MaPhong" />
     </Key>
-    <Property Name="MaPhong" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaPhong" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TenPhong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="SoLuong" Type="Int32" />
     <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__Phong__44FF419A" FromRole="Phong" ToRole="BaiGiang" />
@@ -63,8 +63,8 @@
     <Key>
       <PropertyRef Name="MaNhomSV" />
     </Key>
-    <Property Name="MaNhomSV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TenNhomSV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MaNhomSV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNhomSV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Lops" Relationship="Self.FK__Lop__SinhVien__403A8C7D" FromRole="SinhVien" ToRole="Lop" />
     <NavigationProperty Name="MonHocs" Relationship="Self.FK__MonHoc__SinhVien__3C69FB99" FromRole="SinhVien" ToRole="MonHoc" />
   </EntityType>
@@ -73,8 +73,8 @@
       <PropertyRef Name="MaTG" />
     </Key>
     <Property Name="MaTG" Type="Int32" Nullable="false" />
-    <Property Name="Buoi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Thu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Buoi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Thu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="TietBD" Type="Int32" />
     <Property Name="TietKT" Type="Int32" />
     <NavigationProperty Name="BaiGiangs" Relationship="Self.FK__BaiGiang__ThoiGi__48CFD27E" FromRole="ThoiGian" ToRole="BaiGiang" />

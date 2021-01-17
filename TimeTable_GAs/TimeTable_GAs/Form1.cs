@@ -24,15 +24,15 @@ namespace TimeTable_GAs
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
-       // TODO: This line of code loads data into the 'thoiKhoaBieuDataSet.Lop' table.You can move, or remove it, as needed.
-             //this.lopTableAdapter.Fill(this.thoiKhoaBieuDataSet.Lop);
-            List<BaiGiang> test = new List<BaiGiang>();
-            SapXep tkb = new SapXep();
-            tkb.SapXepTKB();
-            List<BaiGiang> x = SapXep.dsBaiGiang;
-            List<BaiGiang> y = SapXep.test;
-            LoadplTkb();
+
+            // TODO: This line of code loads data into the 'thoiKhoaBieuDataSet.Lop' table.You can move, or remove it, as needed.
+            //this.lopTableAdapter.Fill(this.thoiKhoaBieuDataSet.Lop);
+
+            //SapXep tkb = new SapXep();
+            //tkb.SapXepTKB();
+            //List<BaiGiang> x = SapXep.dsBaiGiang;
+            //List<BaiGiang> y = SapXep.test;
+            //LoadplTkb();
 
         }
 
@@ -42,34 +42,90 @@ namespace TimeTable_GAs
         }
         void LoadplTkb()
         {
-            string s = /*cmbTKBLop.ValueMember;*/"1";
-            var dsbaigaing = SapXep.dsBaiGiang.FindAll(b => b.Lop == s).ToList();
+            string s = cmbXemTKB.SelectedValue.ToString();
+            if (s != null)
+            {
+                var dsbaigiang = db.BaiGiangs.Where(b => b.Lop == s).ToList();
+
+                fplTkb.Controls.Clear();
+                listFlp.Clear();
+                for (int i = 0; i < 18; i++)
+                {
+                    FlowLayoutPanel fl = new FlowLayoutPanel();
+                    fl.Name = $"flp{i}";
+                    fl.Size = new Size(170, 140);
+                    fl.BackColor = Color.White;
+                    fl.BorderStyle = BorderStyle.FixedSingle;
+                    fplTkb.Controls.Add(fl);
+
+                    listFlp.Add(fl);
+
+                }
+                LoadTheoThu(s, "Hai", 0);
+                LoadTheoThu(s, "Ba", 1);
+                LoadTheoThu(s, "Tư", 2);
+                LoadTheoThu(s, "Năm", 3);
+                LoadTheoThu(s, "Sáu", 4);
+                LoadTheoThu(s, "Bảy", 5);
+            }
+        }
            
-            fplTkb.Controls.Clear();
-            listFlp.Clear();
-            for (int i = 0; i < dsbaigaing.Count; i++)
-            {
-                LoadLabelPhong(dsbaigaing[i], i);
-            }
-                for (int i=0;i<dsbaigaing.Count;i++)
-            {
-                FlowLayoutPanel fl = new FlowLayoutPanel();
-                fl.Name = $"flp{i}";
-                fl.Size = new Size(190, 90);
-                fl.BackColor = Color.White;
-                fl.BorderStyle = BorderStyle.FixedSingle;
-                fplTkb.Controls.Add(fl);
+        void LoadTheoThu(string s,string thu, int p)
+        {
+           List<BaiGiang> dstheothu = db.BaiGiangs.Where(b => b.Lop == s && b.ThoiGian1.Thu == thu).ToList();           
 
-                listFlp.Add(fl);
-                LoadLabelMon(dsbaigaing[i], i);
-                LoadLabelGV(dsbaigaing[i],i );
-                LoadLabelBuoi(dsbaigaing[i], i);
-                LoadLabelTiet(dsbaigaing[i],i );
+            for (int i = 0; i < dstheothu.Count-1; i++)
+            {
+                for (int j = i + 1; j < dstheothu.Count; j++)
+                {
+                    int a = (int)dstheothu[i].ThoiGian1.TietBD;
+                    if (dstheothu[i].ThoiGian1.Buoi == "Chiều")
+                    {
+                        a += 6;
+                    }
+                    int b = (int)dstheothu[j].ThoiGian1.TietBD;
+                    if (dstheothu[j].ThoiGian1.Buoi == "Chiều")
+                    {
+                        b += 6;
+                    }
+
+                    if (a > b)
+                    {
+                        BaiGiang g = new BaiGiang();
+                        g = dstheothu.Find(bg => bg.MaBG == dstheothu[i].MaBG) as BaiGiang;
+                        dstheothu[i] = new BaiGiang();
+                        dstheothu[i] = dstheothu.Find(bg => bg.MaBG == dstheothu[j].MaBG) as BaiGiang;
+                        dstheothu[j] = new BaiGiang();
+                        dstheothu[j] = g ;
+                        j--;
+                    }
+                }
             }
-          //  var mon = db.BaiGiangs.Where(b => b.Lop == s).Select(b=>b.MonHoc).ToList();
+            if(dstheothu.Count>3)
+            {
+                for (int i = 18; i < 24; i++)
+                {
+                    FlowLayoutPanel fl = new FlowLayoutPanel();
+                    fl.Name = $"flp{i}";
+                    fl.Size = new Size(170, 140);
+                    fl.BackColor = Color.White;
+                    fl.BorderStyle = BorderStyle.FixedSingle;
+                    fplTkb.Controls.Add(fl);
+
+                    listFlp.Add(fl);
+                }
+            }    
+            for (int i = 0; i < dstheothu.Count; i++)
+            {
+               
+                        LoadLabelMon(dstheothu[i], p);
+                        LoadLabelGV(dstheothu[i], p);
+                        LoadLabelPhong(dstheothu[i], p);
+                        LoadLabelTiet(dstheothu[i], p);
+                
+                        p += 6;
           
-
-
+            }
         }
         void LoadLabelMon(BaiGiang bg, int index)
         {
@@ -81,21 +137,21 @@ namespace TimeTable_GAs
             lb.Text = bg.MonHoc1.TenMon;
             listFlp[index].Controls.Add(lb);
         }
-        void LoadLabelBuoi(BaiGiang bg, int index)
-        {
-            Label lb = new Label();
-            lb.Name = $"lblBuoi{index}";
-            lb.Size = new Size(160, 24);
-            lb.AutoSize = false;
-            lb.TextAlign = ContentAlignment.MiddleLeft;
-            lb.Text = bg.ThoiGian1.Buoi+"-"+bg.ThoiGian1.Thu;
-            listFlp[index].Controls.Add(lb);
-        }
+        //void LoadLabelBuoi(BaiGiang bg, int index)
+        //{
+        //    Label lb = new Label();
+        //    lb.Name = $"lblBuoi{index}";
+        //    lb.Size = new Size(160, 24);
+        //    lb.AutoSize = false;
+        //    lb.TextAlign = ContentAlignment.MiddleLeft;
+        //    lb.Text = bg.ThoiGian1.Buoi + "-" + bg.ThoiGian1.Thu + "-" + bg.Phong1.TenPhong;
+        //    listFlp[index].Controls.Add(lb);
+        //}
         void LoadLabelGV(BaiGiang bg, int index)
         {
             Label lb = new Label();
             lb.Name = $"lblGV{index}";
-            lb.Size = new Size(169, 24);
+            lb.Size = new Size(160, 24);
             lb.AutoSize = false;
             lb.TextAlign = ContentAlignment.MiddleLeft;
             lb.Text = bg.GiaoVien1.TenGV;
@@ -105,31 +161,143 @@ namespace TimeTable_GAs
         {
             Label lb = new Label();
             lb.Name = $"lblTiet{index}";
-            lb.Size = new Size(169, 24);
+            lb.Size = new Size(160, 24);            
             lb.AutoSize = false;
             lb.TextAlign = ContentAlignment.MiddleLeft;
-            lb.Text = "Tiết: " + bg.ThoiGian1.TietBD + "-" + bg.ThoiGian1.TietKT;
+            if (bg.ThoiGian1.Buoi == "Chiều")
+            {
+                int x = (int)bg.ThoiGian1.TietBD + 6;
+                int y = (int)(bg.ThoiGian1.TietKT + 6);
+                lb.Text = "Tiết: " + x.ToString() + "-" + y.ToString();
+            }
+            else
+            {
+                lb.Text = "Tiết: " + bg.ThoiGian1.TietBD + "-" + bg.ThoiGian1.TietKT;
+            }
             listFlp[index].Controls.Add(lb);
         }
         void LoadLabelPhong(BaiGiang bg, int index)
         {
             Label lb = new Label();
             lb.Name = $"lblPhong{index}";
-            lb.Size = new Size(111, 90);
+            lb.Size = new Size(160, 24);         
             lb.AutoSize = false;
             lb.TextAlign = ContentAlignment.MiddleLeft;
-            lb.Text = bg.Phong1.TenPhong;
-            flpPhong.Controls.Add(lb);
+            lb.Text = "Phòng: " + bg.Phong1.TenPhong;
+            listFlp[index].Controls.Add(lb);
             //listPhongLabel[index].Controls.Add(lb);
         }
         private void btnXemTKB_Click(object sender, EventArgs e)
         {
+            //int index = cmbXemTKB.SelectedIndex;
             LoadplTkb();
         }
 
         private void cmbTKBLop_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbXemTKB_DropDown(object sender, EventArgs e)
+        {
+            
+            //DataSet ds = new DataSet();
+            //=db.Lops.fill
+            cmbXemTKB.DataSource = db.Lops.ToList();
+            cmbXemTKB.ValueMember = "MaLop";
+            cmbXemTKB.DisplayMember = "TenLop";
+        }
+
+        private void fplTkb_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void mnAddClass_Click(object sender, EventArgs e)
+        {
+            frmClassList frm = new frmClassList();
+            frm.Show();
+        }
+
+        private void mnEditClass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnAddStudent_Click(object sender, EventArgs e)
+        {
+            frmSinhvien frm = new frmSinhvien();
+            frm.Show();
+        }
+
+        private void mnEditStudent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnAddSubject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnEditSubject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnAddTeacher_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnEditTeacher_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRearrange_Click(object sender, EventArgs e)
+        {
+            //dễ lỗi không chạy đc
+
+            //foreach (BaiGiang bg in db.BaiGiangs.ToList())
+            //{
+            //    db.BaiGiangs.Remove(bg);
+            //    db.SaveChanges();
+            //}
+
+            //SapXep.dsBaiGiang.Clear();
+            //SapXep sx = new SapXep();
+            //sx.SapXepTKB();
+            //LoadplTkb();
+        }
+
+        private void mnlClass_Click(object sender, EventArgs e)
+        {
+            frmClassList frm = new frmClassList();
+            frm.Show();
+        }
+
+        private void mnlRoom_Click(object sender, EventArgs e)
+        {
+            frmRoomList frm = new frmRoomList();
+            frm.Show();
+        }
+
+        private void mnlSubject_Click(object sender, EventArgs e)
+        {
+            frmSubjectList frm = new frmSubjectList();
+            frm.Show();
+        }
+
+        private void mnlTeacher_Click(object sender, EventArgs e)
+        {
+            frmTeacherList frm = new frmTeacherList();
+            frm.Show();
         }
     }
 }

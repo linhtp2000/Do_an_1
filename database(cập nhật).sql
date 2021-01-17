@@ -4,13 +4,13 @@ GO
 
 CREATE TABLE Phong
 (
-MaPhong varchar(10) PRIMARY KEY,
+MaPhong nvarchar(10) PRIMARY KEY,
 TenPhong nvarchar(100),
 SoLuong int
 )
 CREATE TABLE GiaoVien
 (
-MaGV varchar(10),
+MaGV nvarchar(10),
 TenGV nvarchar(100),
 Email nvarchar(max),
 PRIMARY KEY(MaGV)
@@ -18,31 +18,31 @@ PRIMARY KEY(MaGV)
 
 CREATE TABLE SinhVien
 (
-MaNhomSV varchar(10) PRIMARY KEY,
-TenNhomSV varchar(100)
+MaNhomSV nvarchar(10) PRIMARY KEY,
+TenNhomSV nvarchar(100)
 )
 CREATE TABLE MonHoc
 (
-MaMon varchar(10) PRIMARY KEY,
+MaMon nvarchar(10) PRIMARY KEY,
 TenMon nvarchar(100),
 SoTC int,
-SinhVien varchar(10) FOREIGN KEY(SinhVien) REFERENCES SinhVien(MaNhomSV),
-GiaoVien varchar(10) FOREIGN KEY(GiaoVien) REFERENCES GiaoVien(MaGV),
+SinhVien nvarchar(10) FOREIGN KEY(SinhVien) REFERENCES SinhVien(MaNhomSV),
+GiaoVien nvarchar(10) FOREIGN KEY(GiaoVien) REFERENCES GiaoVien(MaGV),
 --Lab int FOREIGN KEY(Lab) REFERENCES LoaiPhong(Lab),
 )
 
 CREATE TABLE Lop
 (
-MaLop varchar(10) PRIMARY KEY,
-TenLop varchar(100),
+MaLop nvarchar(10) PRIMARY KEY,
+TenLop nvarchar(100),
 SiSo int,
-SinhVien varchar(10) FOREIGN KEY(SinhVien) REFERENCES SinhVien(MaNhomSV)
+SinhVien nvarchar(10) FOREIGN KEY(SinhVien) REFERENCES SinhVien(MaNhomSV)
 )
 CREATE TABLE ThoiGian
 (
 MaTG int PRIMARY KEY,
-Buoi varchar(100),
-Thu varchar(100),
+Buoi nvarchar(100),
+Thu nvarchar(100),
 TietBD int,
 TietKT int
 )
@@ -51,10 +51,10 @@ CREATE TABLE BaiGiang
 (
 MaBG int PRIMARY KEY,
 ThoiGian int ,
-Phong varchar(10), 
-MonHoc varchar(10),
-GiaoVien varchar(10),
-Lop varchar(10) 
+Phong nvarchar(10), 
+MonHoc nvarchar(10),
+GiaoVien nvarchar(10),
+Lop nvarchar(10) 
 )
 alter table BaiGiang add  FOREIGN KEY(Phong) REFERENCES Phong(MaPhong);
 alter table BaiGiang add FOREIGN KEY(MonHoc) REFERENCES MonHoc(MaMon);
@@ -208,77 +208,77 @@ INSERT INTO Lop VALUES ('20','171101E',30,'4');
 --INSERT INTO Lop VALUES ('24','181101CLA',30,'3');
 --INSERT INTO Lop VALUES ('25','171101CLA',30,'4');
 
-INSERT INTO ThoiGian VALUES (1,N'Sáng','Hai',1,3);
-INSERT INTO ThoiGian VALUES (2,N'Sáng','Hai',1,2);
-INSERT INTO ThoiGian VALUES (3,N'Sáng','Hai',2,3);
-INSERT INTO ThoiGian VALUES (4,N'Sáng','Hai',3,5);
-INSERT INTO ThoiGian VALUES (5,N'Sáng','Hai',4,5);
+INSERT INTO ThoiGian VALUES (1,N'Sáng',N'Hai',1,3);
+INSERT INTO ThoiGian VALUES (2,N'Sáng',N'Hai',1,2);
+INSERT INTO ThoiGian VALUES (3,N'Sáng',N'Hai',2,3);
+INSERT INTO ThoiGian VALUES (4,N'Sáng',N'Hai',3,5);
+INSERT INTO ThoiGian VALUES (5,N'Sáng',N'Hai',4,5);
 --INSERT INTO ThoiGian VALUES (6,N'Sáng','Hai',1,5);
-INSERT INTO ThoiGian VALUES (7,N'Sáng','Ba',1,3);
-INSERT INTO ThoiGian VALUES (8,N'Sáng','Ba',1,2);
-INSERT INTO ThoiGian VALUES (9,N'Sáng','Ba',2,3);
-INSERT INTO ThoiGian VALUES (10,N'Sáng','Ba',3,5);
-INSERT INTO ThoiGian VALUES (11,N'Sáng','Ba',4,5);
+INSERT INTO ThoiGian VALUES (7,N'Sáng',N'Ba',1,3);
+INSERT INTO ThoiGian VALUES (8,N'Sáng',N'Ba',1,2);
+INSERT INTO ThoiGian VALUES (9,N'Sáng',N'Ba',2,3);
+INSERT INTO ThoiGian VALUES (10,N'Sáng',N'Ba',3,5);
+INSERT INTO ThoiGian VALUES (11,N'Sáng',N'Ba',4,5);
 --INSERT INTO ThoiGian VALUES (12,N'Sáng','Ba',1,5);
-INSERT INTO ThoiGian VALUES (13,N'Sáng','Tư',1,3);
-INSERT INTO ThoiGian VALUES (14,N'Sáng','Tư',1,2);
-INSERT INTO ThoiGian VALUES (15,N'Sáng','Tư',2,3);
-INSERT INTO ThoiGian VALUES (16,N'Sáng','Tư',3,5);
-INSERT INTO ThoiGian VALUES (17,N'Sáng','Tư',4,5);
+INSERT INTO ThoiGian VALUES (13,N'Sáng',N'Tư',1,3);
+INSERT INTO ThoiGian VALUES (14,N'Sáng',N'Tư',1,2);
+INSERT INTO ThoiGian VALUES (15,N'Sáng',N'Tư',2,3);
+INSERT INTO ThoiGian VALUES (16,N'Sáng',N'Tư',3,5);
+INSERT INTO ThoiGian VALUES (17,N'Sáng',N'Tư',4,5);
 --INSERT INTO ThoiGian VALUES (18,N'Sáng','Tư',1,5);
-INSERT INTO ThoiGian VALUES (19,N'Sáng','Năm',1,3);
-INSERT INTO ThoiGian VALUES (20,N'Sáng','Năm',1,2);
-INSERT INTO ThoiGian VALUES (21,N'Sáng','Năm',2,3);
-INSERT INTO ThoiGian VALUES (22,N'Sáng','Năm',3,5);
-INSERT INTO ThoiGian VALUES (23,N'Sáng','Năm',4,5);
+INSERT INTO ThoiGian VALUES (19,N'Sáng',N'Năm',1,3);
+INSERT INTO ThoiGian VALUES (20,N'Sáng',N'Năm',1,2);
+INSERT INTO ThoiGian VALUES (21,N'Sáng',N'Năm',2,3);
+INSERT INTO ThoiGian VALUES (22,N'Sáng',N'Năm',3,5);
+INSERT INTO ThoiGian VALUES (23,N'Sáng',N'Năm',4,5);
 --INSERT INTO ThoiGian VALUES (24,N'Sáng','Năm',1,5);
-INSERT INTO ThoiGian VALUES (25,N'Sáng','Sáu',1,3);
-INSERT INTO ThoiGian VALUES (26,N'Sáng','Sáu',1,2);
-INSERT INTO ThoiGian VALUES (27,N'Sáng','Sáu',2,3);
-INSERT INTO ThoiGian VALUES (28,N'Sáng','Sáu',3,5);
-INSERT INTO ThoiGian VALUES (29,N'Sáng','Sáu',4,5);
+INSERT INTO ThoiGian VALUES (25,N'Sáng',N'Sáu',1,3);
+INSERT INTO ThoiGian VALUES (26,N'Sáng',N'Sáu',1,2);
+INSERT INTO ThoiGian VALUES (27,N'Sáng',N'Sáu',2,3);
+INSERT INTO ThoiGian VALUES (28,N'Sáng',N'Sáu',3,5);
+INSERT INTO ThoiGian VALUES (29,N'Sáng',N'Sáu',4,5);
 --INSERT INTO ThoiGian VALUES (30,N'Sáng','Sáu',1,5);
-INSERT INTO ThoiGian VALUES (31,N'Sáng','Bảy',1,3);
-INSERT INTO ThoiGian VALUES (32,N'Sáng','Bảy',1,2);
-INSERT INTO ThoiGian VALUES (33,N'Sáng','Bảy',2,3);
-INSERT INTO ThoiGian VALUES (34,N'Sáng','Bảy',3,5);
-INSERT INTO ThoiGian VALUES (35,N'Sáng','Bảy',4,5);
+INSERT INTO ThoiGian VALUES (31,N'Sáng',N'Bảy',1,3);
+INSERT INTO ThoiGian VALUES (32,N'Sáng',N'Bảy',1,2);
+INSERT INTO ThoiGian VALUES (33,N'Sáng',N'Bảy',2,3);
+INSERT INTO ThoiGian VALUES (34,N'Sáng',N'Bảy',3,5);
+INSERT INTO ThoiGian VALUES (35,N'Sáng',N'Bảy',4,5);
 --INSERT INTO ThoiGian VALUES (36,N'Sáng','Bảy',1,5);
-INSERT INTO ThoiGian VALUES (37,N'Chiều','Hai',1,3);
-INSERT INTO ThoiGian VALUES (38,N'Chiều','Hai',1,2);
-INSERT INTO ThoiGian VALUES (39,N'Chiều','Hai',2,3);
-INSERT INTO ThoiGian VALUES (40,N'Chiều','Hai',3,5);
-INSERT INTO ThoiGian VALUES (41,N'Chiều','Hai',4,5);
+INSERT INTO ThoiGian VALUES (37,N'Chiều',N'Hai',1,3);
+INSERT INTO ThoiGian VALUES (38,N'Chiều',N'Hai',1,2);
+INSERT INTO ThoiGian VALUES (39,N'Chiều',N'Hai',2,3);
+INSERT INTO ThoiGian VALUES (40,N'Chiều',N'Hai',3,5);
+INSERT INTO ThoiGian VALUES (41,N'Chiều',N'Hai',4,5);
 --INSERT INTO ThoiGian VALUES (42,N'Chiều','Hai',1,5);
-INSERT INTO ThoiGian VALUES (43,N'Chiều','Ba',1,3);
-INSERT INTO ThoiGian VALUES (44,N'Chiều','Ba',1,2);
-INSERT INTO ThoiGian VALUES (45,N'Chiều','Ba',2,3);
-INSERT INTO ThoiGian VALUES (46,N'Chiều','Ba',3,5);
-INSERT INTO ThoiGian VALUES (47,N'Chiều','Ba',4,5);
+INSERT INTO ThoiGian VALUES (43,N'Chiều',N'Ba',1,3);
+INSERT INTO ThoiGian VALUES (44,N'Chiều',N'Ba',1,2);
+INSERT INTO ThoiGian VALUES (45,N'Chiều',N'Ba',2,3);
+INSERT INTO ThoiGian VALUES (46,N'Chiều',N'Ba',3,5);
+INSERT INTO ThoiGian VALUES (47,N'Chiều',N'Ba',4,5);
 --INSERT INTO ThoiGian VALUES (48,N'Chiều','Ba',1,5);
-INSERT INTO ThoiGian VALUES (49,N'Chiều','Tư',1,3);
-INSERT INTO ThoiGian VALUES (50,N'Chiều','Tư',1,2);
-INSERT INTO ThoiGian VALUES (51,N'Chiều','Tư',2,3);
-INSERT INTO ThoiGian VALUES (52,N'Chiều','Tư',3,5);
-INSERT INTO ThoiGian VALUES (53,N'Chiều','Tư',4,5);
+INSERT INTO ThoiGian VALUES (49,N'Chiều',N'Tư',1,3);
+INSERT INTO ThoiGian VALUES (50,N'Chiều',N'Tư',1,2);
+INSERT INTO ThoiGian VALUES (51,N'Chiều',N'Tư',2,3);
+INSERT INTO ThoiGian VALUES (52,N'Chiều',N'Tư',3,5);
+INSERT INTO ThoiGian VALUES (53,N'Chiều',N'Tư',4,5);
 --INSERT INTO ThoiGian VALUES (54,N'Chiều','Tư',1,5);
-INSERT INTO ThoiGian VALUES (55,N'Chiều','Năm',1,3);
-INSERT INTO ThoiGian VALUES (56,N'Chiều','Năm',1,2);
-INSERT INTO ThoiGian VALUES (57,N'Chiều','Năm',2,3);
-INSERT INTO ThoiGian VALUES (58,N'Chiều','Năm',3,5);
-INSERT INTO ThoiGian VALUES (59,N'Chiều','Năm',4,5);
+INSERT INTO ThoiGian VALUES (55,N'Chiều',N'Năm',1,3);
+INSERT INTO ThoiGian VALUES (56,N'Chiều',N'Năm',1,2);
+INSERT INTO ThoiGian VALUES (57,N'Chiều',N'Năm',2,3);
+INSERT INTO ThoiGian VALUES (58,N'Chiều',N'Năm',3,5);
+INSERT INTO ThoiGian VALUES (59,N'Chiều',N'Năm',4,5);
 --INSERT INTO ThoiGian VALUES (60,N'Chiều','Năm',1,5);
-INSERT INTO ThoiGian VALUES (61,N'Chiều','Sáu',1,3);
-INSERT INTO ThoiGian VALUES (62,N'Chiều','Sáu',1,2);
-INSERT INTO ThoiGian VALUES (63,N'Chiều','Sáu',2,3);
-INSERT INTO ThoiGian VALUES (64,N'Chiều','Sáu',3,5);
-INSERT INTO ThoiGian VALUES (65,N'Chiều','Sáu',4,5);
+INSERT INTO ThoiGian VALUES (61,N'Chiều',N'Sáu',1,3);
+INSERT INTO ThoiGian VALUES (62,N'Chiều',N'Sáu',1,2);
+INSERT INTO ThoiGian VALUES (63,N'Chiều',N'Sáu',2,3);
+INSERT INTO ThoiGian VALUES (64,N'Chiều',N'Sáu',3,5);
+INSERT INTO ThoiGian VALUES (65,N'Chiều',N'Sáu',4,5);
 --INSERT INTO ThoiGian VALUES (66,N'Chiều','Sáu',1,5);
-INSERT INTO ThoiGian VALUES (67,N'Chiều','Bảy',1,3);
-INSERT INTO ThoiGian VALUES (68,N'Chiều','Bảy',1,2);
-INSERT INTO ThoiGian VALUES (69,N'Chiều','Bảy',2,3);
-INSERT INTO ThoiGian VALUES (70,N'Chiều','Bảy',3,5);
-INSERT INTO ThoiGian VALUES (71,N'Chiều','Bảy',4,5);
+INSERT INTO ThoiGian VALUES (67,N'Chiều',N'Bảy',1,3);
+INSERT INTO ThoiGian VALUES (68,N'Chiều',N'Bảy',1,2);
+INSERT INTO ThoiGian VALUES (69,N'Chiều',N'Bảy',2,3);
+INSERT INTO ThoiGian VALUES (70,N'Chiều',N'Bảy',3,5);
+INSERT INTO ThoiGian VALUES (71,N'Chiều',N'Bảy',4,5);
 --INSERT INTO ThoiGian VALUES (72,N'Chiều','Bảy',1,5);
 
 drop database ThoiKhoaBieu

@@ -47,83 +47,84 @@ namespace TimeTable_GAs.Services
             //tìm thời gian phù hợp
             XetThoiGian(allClass, allTeachers);
 
-            
-            for (int i = 0; i < dsBaiGiang.Count-1; i++)
-            {
-                if (dsBaiGiang[i].Lop == null || dsBaiGiang[i].MonHoc == null || dsBaiGiang[i].Phong == null || dsBaiGiang[i].ThoiGian == null)
-                {
-                    test.Add(dsBaiGiang[i]);
-                }
-                for (int j = i + 1; j < dsBaiGiang.Count; j++)
-                {
-                    if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Lop == dsBaiGiang[j].Lop)
-                    {
-                        test.Add(dsBaiGiang[i]);
-                        test.Add(dsBaiGiang[j]);
-                    }
-                    if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Phong == dsBaiGiang[j].Phong)
-                    {
-                        test.Add(dsBaiGiang[i]);
-                        test.Add(dsBaiGiang[j]);
-                    }
-                    if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].GiaoVien == dsBaiGiang[j].GiaoVien)
-                    {
-                        test.Add(dsBaiGiang[i]);
-                        test.Add(dsBaiGiang[j]);
-                    }
 
-
-                   // Kiểm tra trùng tiết học
-                    if (dsBaiGiang[i].ThoiGian1.Thu == dsBaiGiang[j].ThoiGian1.Thu && dsBaiGiang[i].ThoiGian1.Buoi == dsBaiGiang[j].ThoiGian1.Buoi)
-                    {
-                        if (dsBaiGiang[i].Lop == dsBaiGiang[j].Lop || dsBaiGiang[i].GiaoVien == dsBaiGiang[j].GiaoVien || dsBaiGiang[i].Phong == dsBaiGiang[j].Phong)
-                        {
-                            int h = (int)dsBaiGiang[i].ThoiGian1.TietBD;
-                            int k = (int)dsBaiGiang[i].ThoiGian1.TietKT;
-                           
-                            for (; h <= k; h++)
-                            {
-                                int m = (int)dsBaiGiang[j].ThoiGian1.TietBD;
-                                int n = (int)dsBaiGiang[j].ThoiGian1.TietKT;
-
-                                for (; m <= n; m++)
-                                {
-                                    if (h == m) test.Add(dsBaiGiang[i]);
-                                }
-                            }
-                        }
-                    }
-
-                }
-            }
-            }
-
-
-            //foreach (BaiGiang bg in SapXep.dsBaiGiang)
+            //for (int i = 0; i < dsBaiGiang.Count-1; i++)
             //{
+            //    if (dsBaiGiang[i].Lop == null || dsBaiGiang[i].MonHoc == null || dsBaiGiang[i].Phong == null || dsBaiGiang[i].ThoiGian == null)
+            //    {
+            //        test.Add(dsBaiGiang[i]);
+            //    }
+            //    for (int j = i + 1; j < dsBaiGiang.Count; j++)
+            //    {
+            //        if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Lop == dsBaiGiang[j].Lop)
+            //        {
+            //            test.Add(dsBaiGiang[i]);
+            //            test.Add(dsBaiGiang[j]);
+            //        }
+            //        if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].Phong == dsBaiGiang[j].Phong)
+            //        {
+            //            test.Add(dsBaiGiang[i]);
+            //            test.Add(dsBaiGiang[j]);
+            //        }
+            //        if (dsBaiGiang[i].ThoiGian == dsBaiGiang[j].ThoiGian && dsBaiGiang[i].GiaoVien == dsBaiGiang[j].GiaoVien)
+            //        {
+            //            test.Add(dsBaiGiang[i]);
+            //            test.Add(dsBaiGiang[j]);
+            //        }
 
-            //    BaiGiang b = new BaiGiang();
-            //    b.MaBG = bg.MaBG;
-            //    b.Lop = bg.Lop;
-            //    //b.Lop1 = bg.Lop1;
-            //    b.MonHoc = bg.MonHoc;
-            //   // b.MonHoc1 = bg.MonHoc1;
-            //    b.GiaoVien = bg.GiaoVien;
-            //   // b.GiaoVien1 = bg.GiaoVien1;
-            //    b.Phong = bg.Phong;
-            //  //  b.Phong1 = bg.Phong1;
-            //    b.ThoiGian = bg.ThoiGian;
-            //   // b.ThoiGian1 = bg.ThoiGian1;
-            //    tkb.BaiGiangs.Add(b);
-            //    tkb.SaveChanges();
+
+            //       // Kiểm tra trùng tiết học
+            //        if (dsBaiGiang[i].ThoiGian1.Thu == dsBaiGiang[j].ThoiGian1.Thu && dsBaiGiang[i].ThoiGian1.Buoi == dsBaiGiang[j].ThoiGian1.Buoi)
+            //        {
+            //            if (dsBaiGiang[i].Lop == dsBaiGiang[j].Lop || dsBaiGiang[i].GiaoVien == dsBaiGiang[j].GiaoVien || dsBaiGiang[i].Phong == dsBaiGiang[j].Phong)
+            //            {
+            //                int h = (int)dsBaiGiang[i].ThoiGian1.TietBD;
+            //                int k = (int)dsBaiGiang[i].ThoiGian1.TietKT;
+
+            //                for (; h <= k; h++)
+            //                {
+            //                    int m = (int)dsBaiGiang[j].ThoiGian1.TietBD;
+            //                    int n = (int)dsBaiGiang[j].ThoiGian1.TietKT;
+
+            //                    for (; m <= n; m++)
+            //                    {
+            //                        if (h == m) test.Add(dsBaiGiang[i]);
+            //                    }
+            //                }
+            //            }
+            //        }
+
+            //    }
             //}
+            foreach (BaiGiang bg in dsBaiGiang)
+            {
 
-        
+                BaiGiang b = new BaiGiang();
+                b.MaBG = bg.MaBG;
+                b.Lop = bg.Lop;
+                b.Lop1 = bg.Lop1;
+                b.MonHoc = bg.MonHoc;
+                 b.MonHoc1 = bg.MonHoc1;
+                b.GiaoVien = bg.GiaoVien;
+                 b.GiaoVien1 = bg.GiaoVien1;
+                b.Phong = bg.Phong;
+                  b.Phong1 = bg.Phong1;
+                b.ThoiGian = bg.ThoiGian;
+                 b.ThoiGian1 = bg.ThoiGian1;
+                tkb.BaiGiangs.Add(b);
+                tkb.SaveChanges();
+            }
+        }
+
+
+          
 
 
 
-        //xét môn
-        void XetMon(List<Lop> lstlop, List<GiaoVien> allTeachers)
+
+
+    //xét môn
+    void XetMon(List<Lop> lstlop, List<GiaoVien> allTeachers)
         {
             //  List<BaiGiang> lstBaiGiang = new List<BaiGiang>();
             for (int i = 0; i < lstlop.Count; i++)

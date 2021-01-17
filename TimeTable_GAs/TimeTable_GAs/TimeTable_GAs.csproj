@@ -62,6 +62,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmClassList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClassList.Designer.cs">
+      <DependentUpon>frmClassList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLectureList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLectureList.Designer.cs">
+      <DependentUpon>frmLectureList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoomList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoomList.Designer.cs">
+      <DependentUpon>frmRoomList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentList.Designer.cs">
+      <DependentUpon>frmStudentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubjectList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubjectList.Designer.cs">
+      <DependentUpon>frmSubjectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeacherList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherList.Designer.cs">
+      <DependentUpon>frmTeacherList.cs</DependentUpon>
+    </Compile>
     <Compile Include="fromBaiGiang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +178,59 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ThoiKhoaBieuDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ThoiKhoaBieuDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieuDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThoiKhoaBieuDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieuDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThoiKhoaBieuDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieuDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThoiKhoaBieuDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieuDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThoiKhoaBieuDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieuDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThoiKhoaBieuDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieuDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThoiKhoaBieuDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThoiKhoaBieuDataSet7.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmClassList.resx">
+      <DependentUpon>frmClassList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLectureList.resx">
+      <DependentUpon>frmLectureList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoomList.resx">
+      <DependentUpon>frmRoomList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentList.resx">
+      <DependentUpon>frmStudentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubjectList.resx">
+      <DependentUpon>frmSubjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacherList.resx">
+      <DependentUpon>frmTeacherList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fromBaiGiang.resx">
       <DependentUpon>fromBaiGiang.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +282,83 @@
     </None>
     <None Include="ThoiKhoaBieuDataSet.xss">
       <DependentUpon>ThoiKhoaBieuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet1.xsc">
+      <DependentUpon>ThoiKhoaBieuDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieuDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet1.xss">
+      <DependentUpon>ThoiKhoaBieuDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet2.xsc">
+      <DependentUpon>ThoiKhoaBieuDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieuDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet2.xss">
+      <DependentUpon>ThoiKhoaBieuDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet3.xsc">
+      <DependentUpon>ThoiKhoaBieuDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieuDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet3.xss">
+      <DependentUpon>ThoiKhoaBieuDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet4.xsc">
+      <DependentUpon>ThoiKhoaBieuDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieuDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet4.xss">
+      <DependentUpon>ThoiKhoaBieuDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet5.xsc">
+      <DependentUpon>ThoiKhoaBieuDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieuDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet5.xss">
+      <DependentUpon>ThoiKhoaBieuDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet6.xsc">
+      <DependentUpon>ThoiKhoaBieuDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieuDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet6.xss">
+      <DependentUpon>ThoiKhoaBieuDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet7.xsc">
+      <DependentUpon>ThoiKhoaBieuDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThoiKhoaBieuDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ThoiKhoaBieuDataSet7.xss">
+      <DependentUpon>ThoiKhoaBieuDataSet7.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
