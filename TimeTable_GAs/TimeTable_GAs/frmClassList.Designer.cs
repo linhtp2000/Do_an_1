@@ -31,22 +31,22 @@ namespace TimeTable_GAs
         {
             this.components = new System.ComponentModel.Container();
             this.dvgStudentList = new System.Windows.Forms.DataGridView();
-            this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.thoiKhoaBieuDataSet2 = new TimeTable_GAs.ThoiKhoaBieuDataSet2();
-            this.sinhVienTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet2TableAdapters.SinhVienTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.thoiKhoaBieuDataSet5 = new TimeTable_GAs.ThoiKhoaBieuDataSet5();
-            this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lopTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet5TableAdapters.LopTableAdapter();
             this.maLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siSoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sinhVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.thoiKhoaBieuDataSet5 = new TimeTable_GAs.ThoiKhoaBieuDataSet5();
+            this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.thoiKhoaBieuDataSet2 = new TimeTable_GAs.ThoiKhoaBieuDataSet2();
+            this.sinhVienTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet2TableAdapters.SinhVienTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lopTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet5TableAdapters.LopTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dvgStudentList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dvgStudentList
@@ -59,50 +59,13 @@ namespace TimeTable_GAs
             this.siSoDataGridViewTextBoxColumn,
             this.sinhVienDataGridViewTextBoxColumn});
             this.dvgStudentList.DataSource = this.lopBindingSource;
-            this.dvgStudentList.Location = new System.Drawing.Point(28, 72);
+            this.dvgStudentList.Location = new System.Drawing.Point(32, 90);
+            this.dvgStudentList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dvgStudentList.Name = "dvgStudentList";
             this.dvgStudentList.RowHeadersWidth = 51;
             this.dvgStudentList.RowTemplate.Height = 24;
-            this.dvgStudentList.Size = new System.Drawing.Size(580, 363);
+            this.dvgStudentList.Size = new System.Drawing.Size(652, 454);
             this.dvgStudentList.TabIndex = 3;
-            // 
-            // sinhVienBindingSource
-            // 
-            this.sinhVienBindingSource.DataMember = "SinhVien";
-            this.sinhVienBindingSource.DataSource = this.thoiKhoaBieuDataSet2;
-            // 
-            // thoiKhoaBieuDataSet2
-            // 
-            this.thoiKhoaBieuDataSet2.DataSetName = "ThoiKhoaBieuDataSet2";
-            this.thoiKhoaBieuDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sinhVienTableAdapter
-            // 
-            this.sinhVienTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(62, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(513, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "DANH SÁCH NHÓM SINH VIÊN";
-            // 
-            // thoiKhoaBieuDataSet5
-            // 
-            this.thoiKhoaBieuDataSet5.DataSetName = "ThoiKhoaBieuDataSet5";
-            this.thoiKhoaBieuDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lopBindingSource
-            // 
-            this.lopBindingSource.DataMember = "Lop";
-            this.lopBindingSource.DataSource = this.thoiKhoaBieuDataSet5;
-            // 
-            // lopTableAdapter
-            // 
-            this.lopTableAdapter.ClearBeforeFill = true;
             // 
             // maLopDataGridViewTextBoxColumn
             // 
@@ -136,21 +99,60 @@ namespace TimeTable_GAs
             this.sinhVienDataGridViewTextBoxColumn.Name = "sinhVienDataGridViewTextBoxColumn";
             this.sinhVienDataGridViewTextBoxColumn.Width = 125;
             // 
+            // lopBindingSource
+            // 
+            this.lopBindingSource.DataMember = "Lop";
+            this.lopBindingSource.DataSource = this.thoiKhoaBieuDataSet5;
+            // 
+            // thoiKhoaBieuDataSet5
+            // 
+            this.thoiKhoaBieuDataSet5.DataSetName = "ThoiKhoaBieuDataSet5";
+            this.thoiKhoaBieuDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sinhVienBindingSource
+            // 
+            this.sinhVienBindingSource.DataMember = "SinhVien";
+            this.sinhVienBindingSource.DataSource = this.thoiKhoaBieuDataSet2;
+            // 
+            // thoiKhoaBieuDataSet2
+            // 
+            this.thoiKhoaBieuDataSet2.DataSetName = "ThoiKhoaBieuDataSet2";
+            this.thoiKhoaBieuDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sinhVienTableAdapter
+            // 
+            this.sinhVienTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label1.Location = new System.Drawing.Point(149, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(577, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "DANH SÁCH LỚP HỌC";
+            // 
+            // lopTableAdapter
+            // 
+            this.lopTableAdapter.ClearBeforeFill = true;
+            // 
             // frmClassList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 450);
+            this.ClientSize = new System.Drawing.Size(747, 562);
             this.Controls.Add(this.dvgStudentList);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmClassList";
             this.Text = "frmClassList";
             this.Load += new System.EventHandler(this.frmClassList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgStudentList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

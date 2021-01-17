@@ -31,23 +31,23 @@ namespace TimeTable_GAs
         {
             this.components = new System.ComponentModel.Container();
             this.dvgStudentList = new System.Windows.Forms.DataGridView();
-            this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.thoiKhoaBieuDataSet2 = new TimeTable_GAs.ThoiKhoaBieuDataSet2();
-            this.sinhVienTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet2TableAdapters.SinhVienTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.thoiKhoaBieuDataSet7 = new TimeTable_GAs.ThoiKhoaBieuDataSet7();
-            this.monHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.monHocTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet7TableAdapters.MonHocTableAdapter();
             this.maMonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenMonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soTCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sinhVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giaoVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.thoiKhoaBieuDataSet7 = new TimeTable_GAs.ThoiKhoaBieuDataSet7();
+            this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.thoiKhoaBieuDataSet2 = new TimeTable_GAs.ThoiKhoaBieuDataSet2();
+            this.sinhVienTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet2TableAdapters.SinhVienTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.monHocTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet7TableAdapters.MonHocTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dvgStudentList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHocBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHocBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dvgStudentList
@@ -61,50 +61,13 @@ namespace TimeTable_GAs
             this.sinhVienDataGridViewTextBoxColumn,
             this.giaoVienDataGridViewTextBoxColumn});
             this.dvgStudentList.DataSource = this.monHocBindingSource;
-            this.dvgStudentList.Location = new System.Drawing.Point(58, 72);
+            this.dvgStudentList.Location = new System.Drawing.Point(65, 90);
+            this.dvgStudentList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dvgStudentList.Name = "dvgStudentList";
             this.dvgStudentList.RowHeadersWidth = 51;
             this.dvgStudentList.RowTemplate.Height = 24;
-            this.dvgStudentList.Size = new System.Drawing.Size(712, 363);
+            this.dvgStudentList.Size = new System.Drawing.Size(801, 454);
             this.dvgStudentList.TabIndex = 3;
-            // 
-            // sinhVienBindingSource
-            // 
-            this.sinhVienBindingSource.DataMember = "SinhVien";
-            this.sinhVienBindingSource.DataSource = this.thoiKhoaBieuDataSet2;
-            // 
-            // thoiKhoaBieuDataSet2
-            // 
-            this.thoiKhoaBieuDataSet2.DataSetName = "ThoiKhoaBieuDataSet2";
-            this.thoiKhoaBieuDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sinhVienTableAdapter
-            // 
-            this.sinhVienTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(92, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(645, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "DANH SÁCH NHÓM SINH VIÊN";
-            // 
-            // thoiKhoaBieuDataSet7
-            // 
-            this.thoiKhoaBieuDataSet7.DataSetName = "ThoiKhoaBieuDataSet7";
-            this.thoiKhoaBieuDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // monHocBindingSource
-            // 
-            this.monHocBindingSource.DataMember = "MonHoc";
-            this.monHocBindingSource.DataSource = this.thoiKhoaBieuDataSet7;
-            // 
-            // monHocTableAdapter
-            // 
-            this.monHocTableAdapter.ClearBeforeFill = true;
             // 
             // maMonDataGridViewTextBoxColumn
             // 
@@ -146,21 +109,60 @@ namespace TimeTable_GAs
             this.giaoVienDataGridViewTextBoxColumn.Name = "giaoVienDataGridViewTextBoxColumn";
             this.giaoVienDataGridViewTextBoxColumn.Width = 125;
             // 
+            // monHocBindingSource
+            // 
+            this.monHocBindingSource.DataMember = "MonHoc";
+            this.monHocBindingSource.DataSource = this.thoiKhoaBieuDataSet7;
+            // 
+            // thoiKhoaBieuDataSet7
+            // 
+            this.thoiKhoaBieuDataSet7.DataSetName = "ThoiKhoaBieuDataSet7";
+            this.thoiKhoaBieuDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sinhVienBindingSource
+            // 
+            this.sinhVienBindingSource.DataMember = "SinhVien";
+            this.sinhVienBindingSource.DataSource = this.thoiKhoaBieuDataSet2;
+            // 
+            // thoiKhoaBieuDataSet2
+            // 
+            this.thoiKhoaBieuDataSet2.DataSetName = "ThoiKhoaBieuDataSet2";
+            this.thoiKhoaBieuDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sinhVienTableAdapter
+            // 
+            this.sinhVienTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label1.Location = new System.Drawing.Point(216, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(516, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "DANH SÁCH MÔN HỌC";
+            // 
+            // monHocTableAdapter
+            // 
+            this.monHocTableAdapter.ClearBeforeFill = true;
+            // 
             // frmSubjectList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.dvgStudentList);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmSubjectList";
             this.Text = "frmSubjectList";
             this.Load += new System.EventHandler(this.frmSubjectList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgStudentList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monHocBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monHocBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

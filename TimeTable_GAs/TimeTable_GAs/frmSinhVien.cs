@@ -34,7 +34,7 @@ namespace TimeTable_GAs
 
                 btnThemSV.Enabled = true;
                 btnSuaSV.Enabled = true;
-                btnXacNhan.Enabled = true;
+                btnXacNhan.Enabled = false;
                 btnXoa.Enabled = true;
                 btnHuy.Enabled = false;
 
@@ -56,6 +56,8 @@ namespace TimeTable_GAs
 
         private void SinhVien_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'thoiKhoaBieuDataSet2.SinhVien' table. You can move, or remove it, as needed.
+            this.sinhVienTableAdapter.Fill(this.thoiKhoaBieuDataSet2.SinhVien);
             LoadData();
         }
 
@@ -175,6 +177,16 @@ namespace TimeTable_GAs
                 DialogResult tl;
                 tl = MessageBox.Show("Điền đầy đủ thông tin", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
+            txtMaSV.Enabled = false;
+            txtTenSV.Enabled = false;
+
+            dataGridViewSV.Enabled = true;
+            btnThemSV.Enabled = true;
+            btnSuaSV.Enabled = true;
+            btnXacNhan.Enabled = false;
+            btnXoa.Enabled = true;
+            btnHuy.Enabled = false;
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

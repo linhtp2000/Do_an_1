@@ -36,7 +36,7 @@ namespace TimeTable_GAs
 
                 btnThemPhong.Enabled = true;
                 btnSuaPhong.Enabled = true;
-                btnXacNhan.Enabled = true;
+                btnXacNhan.Enabled = false;
                 btnXoaPhong.Enabled = true;
                 btnHuy.Enabled = false;
 
@@ -182,6 +182,16 @@ namespace TimeTable_GAs
                 DialogResult tl;
                 tl = MessageBox.Show("Điền đầy đủ thông tin", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
+            txtMaPH.Enabled = false;
+            txtTenPH.Enabled = false;
+            txtSoLuongSV.Enabled = false;
+
+            dataGridViewPhong.Enabled = true;
+            btnThemPhong.Enabled = true;
+            btnSuaPhong.Enabled = true;
+            btnXacNhan.Enabled = false;
+            btnXoaPhong.Enabled = true;
+            btnHuy.Enabled = false;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -201,6 +211,13 @@ namespace TimeTable_GAs
             txtMaPH.ResetText();
             txtTenPH.ResetText();
             txtSoLuongSV.ResetText();
+
+        }
+
+        private void frmPhong_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'thoiKhoaBieuDataSet4.Phong' table. You can move, or remove it, as needed.
+            this.phongTableAdapter.Fill(this.thoiKhoaBieuDataSet4.Phong);
 
         }
     }

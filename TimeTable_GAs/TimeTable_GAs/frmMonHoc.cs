@@ -41,7 +41,7 @@ namespace TimeTable_GAs
 
                 btnThemMon.Enabled = true;
                 btnSuaMon.Enabled = true;
-                btnXacNhan.Enabled = true;
+                btnXacNhan.Enabled = false;
                 btnXoaMon.Enabled = true;
                 btnHuy.Enabled = false;
 
@@ -67,6 +67,8 @@ namespace TimeTable_GAs
 
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'thoiKhoaBieuDataSet7.MonHoc' table. You can move, or remove it, as needed.
+            this.monHocTableAdapter.Fill(this.thoiKhoaBieuDataSet7.MonHoc);
             LoadData();
         }
 
@@ -198,6 +200,18 @@ namespace TimeTable_GAs
                 DialogResult tl;
                 tl = MessageBox.Show("Điền đầy đủ thông tin", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
+            txtMaMon.Enabled = false;
+            txtGV.Enabled = false;
+            txtNhomSV.Enabled = false;
+            txtSoTC.Enabled = false;
+            txtTenMon.Enabled = false;
+
+            dataGridViewMon.Enabled = true;
+            btnThemMon.Enabled = true;
+            btnSuaMon.Enabled = true;
+            btnXacNhan.Enabled = false;
+            btnXoaMon.Enabled = true;
+            btnHuy.Enabled = false;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

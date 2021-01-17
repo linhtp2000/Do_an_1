@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnSuaSV = new System.Windows.Forms.Button();
             this.btnThemSV = new System.Windows.Forms.Button();
@@ -49,9 +50,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.flowLayoutPanel63 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel54 = new System.Windows.Forms.FlowLayoutPanel();
+            this.thoiKhoaBieuDataSet2 = new TimeTable_GAs.ThoiKhoaBieuDataSet2();
+            this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sinhVienTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet2TableAdapters.SinhVienTableAdapter();
+            this.maNhomSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhomSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSV)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXacNhan
@@ -133,14 +141,19 @@
             // 
             // dataGridViewSV
             // 
+            this.dataGridViewSV.AutoGenerateColumns = false;
             this.dataGridViewSV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridViewSV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridViewSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maNhomSVDataGridViewTextBoxColumn,
+            this.tenNhomSVDataGridViewTextBoxColumn});
+            this.dataGridViewSV.DataSource = this.sinhVienBindingSource;
             this.dataGridViewSV.Location = new System.Drawing.Point(47, 60);
             this.dataGridViewSV.Name = "dataGridViewSV";
             this.dataGridViewSV.RowHeadersWidth = 62;
             this.dataGridViewSV.RowTemplate.Height = 28;
-            this.dataGridViewSV.Size = new System.Drawing.Size(1360, 532);
+            this.dataGridViewSV.Size = new System.Drawing.Size(625, 532);
             this.dataGridViewSV.TabIndex = 28;
             this.dataGridViewSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSV_CellClick);
             // 
@@ -244,22 +257,22 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1422, 641);
+            this.groupBox2.Size = new System.Drawing.Size(741, 641);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
             // label10
             // 
             this.label10.AllowDrop = true;
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label10.Cursor = System.Windows.Forms.Cursors.Default;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(34, 1019);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 0);
+            this.label10.Size = new System.Drawing.Size(0, 0);
             this.label10.TabIndex = 27;
             this.label10.Text = "9";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -280,11 +293,41 @@
             this.flowLayoutPanel54.Size = new System.Drawing.Size(176, 105);
             this.flowLayoutPanel54.TabIndex = 19;
             // 
+            // thoiKhoaBieuDataSet2
+            // 
+            this.thoiKhoaBieuDataSet2.DataSetName = "ThoiKhoaBieuDataSet2";
+            this.thoiKhoaBieuDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sinhVienBindingSource
+            // 
+            this.sinhVienBindingSource.DataMember = "SinhVien";
+            this.sinhVienBindingSource.DataSource = this.thoiKhoaBieuDataSet2;
+            // 
+            // sinhVienTableAdapter
+            // 
+            this.sinhVienTableAdapter.ClearBeforeFill = true;
+            // 
+            // maNhomSVDataGridViewTextBoxColumn
+            // 
+            this.maNhomSVDataGridViewTextBoxColumn.DataPropertyName = "MaNhomSV";
+            this.maNhomSVDataGridViewTextBoxColumn.HeaderText = "MaNhomSV";
+            this.maNhomSVDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.maNhomSVDataGridViewTextBoxColumn.Name = "maNhomSVDataGridViewTextBoxColumn";
+            this.maNhomSVDataGridViewTextBoxColumn.Width = 131;
+            // 
+            // tenNhomSVDataGridViewTextBoxColumn
+            // 
+            this.tenNhomSVDataGridViewTextBoxColumn.DataPropertyName = "TenNhomSV";
+            this.tenNhomSVDataGridViewTextBoxColumn.HeaderText = "TenNhomSV";
+            this.tenNhomSVDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tenNhomSVDataGridViewTextBoxColumn.Name = "tenNhomSVDataGridViewTextBoxColumn";
+            this.tenNhomSVDataGridViewTextBoxColumn.Width = 136;
+            // 
             // frmSinhvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1878, 721);
+            this.ClientSize = new System.Drawing.Size(1249, 721);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmSinhvien";
@@ -294,6 +337,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +366,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel63;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel54;
         private System.Windows.Forms.Button btnHuy;
+        private ThoiKhoaBieuDataSet2 thoiKhoaBieuDataSet2;
+        private System.Windows.Forms.BindingSource sinhVienBindingSource;
+        private ThoiKhoaBieuDataSet2TableAdapters.SinhVienTableAdapter sinhVienTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhomSVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhomSVDataGridViewTextBoxColumn;
     }
 }

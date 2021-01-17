@@ -26,19 +26,33 @@ namespace TimeTable_GAs
         {
 
             // TODO: This line of code loads data into the 'thoiKhoaBieuDataSet.Lop' table.You can move, or remove it, as needed.
-            //this.lopTableAdapter.Fill(this.thoiKhoaBieuDataSet.Lop);
+           // this.lopTableAdapter.Fill(this.thoiKhoaBieuDataSet.Lop);
 
+            //Xóa bài giảng cũ trước khi sắp xếp lại
+            if (db.BaiGiangs.Count() != 0)
+            {
+                foreach (BaiGiang bg in db.BaiGiangs.ToList())
+                {
+                    db.BaiGiangs.Remove(bg);
+                    db.SaveChanges();
+                }
+                SapXep.dsBaiGiang.Clear();
+            }
+            SapXep sx = new SapXep();
+            sx.SapXepTKB();
+
+            this.lopTableAdapter.Fill(this.thoiKhoaBieuDataSet.Lop);
             //SapXep tkb = new SapXep();
             //tkb.SapXepTKB();
             //List<BaiGiang> x = SapXep.dsBaiGiang;
             //List<BaiGiang> y = SapXep.test;
-            //LoadplTkb();
+            // LoadplTkb();
 
         }
 
         private void cmbChonLop_Click(object sender, EventArgs e)
         {
-            
+
         }
         void LoadplTkb()
         {
@@ -69,12 +83,12 @@ namespace TimeTable_GAs
                 LoadTheoThu(s, "Bảy", 5);
             }
         }
-           
-        void LoadTheoThu(string s,string thu, int p)
-        {
-           List<BaiGiang> dstheothu = db.BaiGiangs.Where(b => b.Lop == s && b.ThoiGian1.Thu == thu).ToList();           
 
-            for (int i = 0; i < dstheothu.Count-1; i++)
+        void LoadTheoThu(string s, string thu, int p)
+        {
+            List<BaiGiang> dstheothu = db.BaiGiangs.Where(b => b.Lop == s && b.ThoiGian1.Thu == thu).ToList();
+
+            for (int i = 0; i < dstheothu.Count - 1; i++)
             {
                 for (int j = i + 1; j < dstheothu.Count; j++)
                 {
@@ -96,12 +110,12 @@ namespace TimeTable_GAs
                         dstheothu[i] = new BaiGiang();
                         dstheothu[i] = dstheothu.Find(bg => bg.MaBG == dstheothu[j].MaBG) as BaiGiang;
                         dstheothu[j] = new BaiGiang();
-                        dstheothu[j] = g ;
+                        dstheothu[j] = g;
                         j--;
                     }
                 }
             }
-            if(dstheothu.Count>3)
+            if (dstheothu.Count > 3)
             {
                 for (int i = 18; i < 24; i++)
                 {
@@ -114,17 +128,17 @@ namespace TimeTable_GAs
 
                     listFlp.Add(fl);
                 }
-            }    
+            }
             for (int i = 0; i < dstheothu.Count; i++)
             {
-               
-                        LoadLabelMon(dstheothu[i], p);
-                        LoadLabelGV(dstheothu[i], p);
-                        LoadLabelPhong(dstheothu[i], p);
-                        LoadLabelTiet(dstheothu[i], p);
-                
-                        p += 6;
-          
+
+                LoadLabelMon(dstheothu[i], p);
+                LoadLabelGV(dstheothu[i], p);
+                LoadLabelPhong(dstheothu[i], p);
+                LoadLabelTiet(dstheothu[i], p);
+
+                p += 6;
+
             }
         }
         void LoadLabelMon(BaiGiang bg, int index)
@@ -161,7 +175,7 @@ namespace TimeTable_GAs
         {
             Label lb = new Label();
             lb.Name = $"lblTiet{index}";
-            lb.Size = new Size(160, 24);            
+            lb.Size = new Size(160, 24);
             lb.AutoSize = false;
             lb.TextAlign = ContentAlignment.MiddleLeft;
             if (bg.ThoiGian1.Buoi == "Chiều")
@@ -180,10 +194,10 @@ namespace TimeTable_GAs
         {
             Label lb = new Label();
             lb.Name = $"lblPhong{index}";
-            lb.Size = new Size(160, 24);         
+            lb.Size = new Size(160, 24);
             lb.AutoSize = false;
             lb.TextAlign = ContentAlignment.MiddleLeft;
-            lb.Text = "Phòng: " + bg.Phong1.TenPhong+"-"+bg.ThoiGian1.Thu;
+            lb.Text = "Phòng: " + bg.Phong1.TenPhong + "-" + bg.ThoiGian1.Thu;
             listFlp[index].Controls.Add(lb);
             //listPhongLabel[index].Controls.Add(lb);
         }
@@ -200,7 +214,7 @@ namespace TimeTable_GAs
 
         private void cmbXemTKB_DropDown(object sender, EventArgs e)
         {
-            
+
             //DataSet ds = new DataSet();
             //=db.Lops.fill
             cmbXemTKB.DataSource = db.Lops.ToList();
@@ -225,42 +239,47 @@ namespace TimeTable_GAs
         }
 
         private void mnEditClass_Click(object sender, EventArgs e)
-        {
-
+        { 
+            
         }
 
         private void mnAddStudent_Click(object sender, EventArgs e)
         {
-            frmSinhvien frm = new frmSinhvien();
+            frmStudentList frm = new frmStudentList();
             frm.Show();
         }
 
         private void mnEditStudent_Click(object sender, EventArgs e)
         {
-
+            frmSinhvien frm = new frmSinhvien();
+            frm.Show();
         }
 
         private void mnAddSubject_Click(object sender, EventArgs e)
         {
-
+            frmMonHoc frm = new frmMonHoc();
+            frm.Show();
         }
 
         private void mnEditSubject_Click(object sender, EventArgs e)
         {
-
+            frmMonHoc frm = new frmMonHoc();
+            frm.Show();
         }
 
         private void mnAddTeacher_Click(object sender, EventArgs e)
         {
-
+            frmGiaoVien frm = new frmGiaoVien();            
+            frm.Show();
         }
 
         private void mnEditTeacher_Click(object sender, EventArgs e)
         {
+            frmGiaoVien frm = new frmGiaoVien();
+            frm.Show();
+        } 
 
-        }
-
-        private void btnRearrange_Click(object sender, EventArgs e)
+            private void btnRearrange_Click(object sender, EventArgs e)
         {
             //dễ lỗi không chạy đc
 
@@ -273,6 +292,9 @@ namespace TimeTable_GAs
             //SapXep.dsBaiGiang.Clear();
             //SapXep sx = new SapXep();
             //sx.SapXepTKB();
+            //frmBaiGiang fm = new frmBaiGiang();
+            //fm.Show();
+
             //LoadplTkb();
         }
 
@@ -298,6 +320,22 @@ namespace TimeTable_GAs
         {
             frmTeacherList frm = new frmTeacherList();
             frm.Show();
+        }
+
+        private void Menu_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnEditRoom_Click(object sender, EventArgs e)
+        {
+            frmPhong frm = new frmPhong();
+            frm.Show();
+        }
+
+        private void mnSubject_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
         }
     }
 }

@@ -1,13 +1,8 @@
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csprojAssemblyReference.cache
-D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Bài_Giảng.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Form1.resources
-D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.GiaoVien.resources
-D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Phong.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Properties.Resources.resources
-D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.SinhVien.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.GenerateResource.cache
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.CoreCompileInputs.cache
-D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Môn Học.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\TimeTable_GAs.exe.config
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\TimeTable_GAs.exe
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\TimeTable_GAs.pdb
@@ -43,3 +38,14 @@ E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmRoomList.
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmSubjectList.resources
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmTeacherList.resources
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmMonHoc.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmClassList.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmGiaoVien.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmLectureList.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmMonHoc.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmPhong.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmRoomList.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmStudentList.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmSubjectList.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmTeacherList.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmBaiGiang.resources
+D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmSinhvien.resources

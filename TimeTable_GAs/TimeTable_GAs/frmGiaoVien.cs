@@ -25,9 +25,10 @@ namespace TimeTable_GAs
         {
             try
             {
+
                 dataGridView1.DataSource = dbGV.Index();
                 dataGridView1.AutoResizeColumns();
-
+                
                 txtMaGiaoVien.ResetText();
                 txtTenGiaoVien.ResetText();
                 txtEmailGV.ResetText();
@@ -38,7 +39,7 @@ namespace TimeTable_GAs
 
                 btnThemGiaoVien.Enabled = true;
                 btnSuaGiaoVien.Enabled = true;
-                btnXacNhanGV.Enabled = true;
+                btnXacNhanGV.Enabled = false;
                 btnXoaGiaoVien.Enabled = true;
                 btnHuyGV.Enabled = false;
 
@@ -61,6 +62,8 @@ namespace TimeTable_GAs
 
         private void GiaoVien_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'thoiKhoaBieuDataSet3.GiaoVien' table. You can move, or remove it, as needed.
+            this.giaoVienTableAdapter.Fill(this.thoiKhoaBieuDataSet3.GiaoVien);
             LoadData();
         }
         private void btnThemGiaoVien_Click(object sender, EventArgs e)
@@ -183,6 +186,16 @@ namespace TimeTable_GAs
                 DialogResult tl;
                 tl = MessageBox.Show("Điền đầy đủ thông tin", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
+            txtMaGiaoVien.Enabled = false;
+            txtTenGiaoVien.Enabled = false;
+            txtEmailGV.Enabled = false;
+
+            dataGridView1.Enabled = true;
+            btnThemGiaoVien.Enabled = true;
+            btnSuaGiaoVien.Enabled = true;
+            btnXacNhanGV.Enabled = false;
+            btnXoaGiaoVien.Enabled = true;
+            btnHuyGV.Enabled = false;
         }
 
         private void btnHuyGV_Click(object sender, EventArgs e)
