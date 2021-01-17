@@ -183,7 +183,7 @@ namespace TimeTable_GAs
             lb.Size = new Size(160, 24);         
             lb.AutoSize = false;
             lb.TextAlign = ContentAlignment.MiddleLeft;
-            lb.Text = "Phòng: " + bg.Phong1.TenPhong;
+            lb.Text = "Phòng: " + bg.Phong1.TenPhong+"-"+bg.ThoiGian1.Thu;
             listFlp[index].Controls.Add(lb);
             //listPhongLabel[index].Controls.Add(lb);
         }

@@ -84,9 +84,9 @@
             this.btnThemSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemSV.Location = new System.Drawing.Point(125, 243);
             this.btnThemSV.Name = "btnThemSV";
-            this.btnThemSV.Size = new System.Drawing.Size(125, 44);
+            this.btnThemSV.Size = new System.Drawing.Size(125, 58);
             this.btnThemSV.TabIndex = 7;
-            this.btnThemSV.Text = "Thêm Môn";
+            this.btnThemSV.Text = "Thêm Nhóm SV";
             this.btnThemSV.UseVisualStyleBackColor = false;
             this.btnThemSV.Click += new System.EventHandler(this.btnThemSV_Click);
             // 
@@ -160,7 +160,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(403, 875);
+            this.groupBox1.Size = new System.Drawing.Size(403, 540);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tùy chọn";
@@ -240,11 +240,11 @@
             this.groupBox2.Controls.Add(this.flowLayoutPanel27);
             this.groupBox2.Controls.Add(this.flowLayoutPanel18);
             this.groupBox2.Controls.Add(this.flowLayoutPanel9);
-            this.groupBox2.Location = new System.Drawing.Point(453, 67);
+            this.groupBox2.Location = new System.Drawing.Point(476, 67);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1445, 900);
+            this.groupBox2.Size = new System.Drawing.Size(1422, 641);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
@@ -259,7 +259,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(34, 1019);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 0);
+            this.label10.Size = new System.Drawing.Size(85, 0);
             this.label10.TabIndex = 27;
             this.label10.Text = "9";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -280,14 +280,14 @@
             this.flowLayoutPanel54.Size = new System.Drawing.Size(176, 105);
             this.flowLayoutPanel54.TabIndex = 19;
             // 
-            // SinhVien
+            // frmSinhvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1878, 944);
+            this.ClientSize = new System.Drawing.Size(1878, 721);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Name = "SinhVien";
+            this.Name = "frmSinhvien";
             this.Text = "Sinh Viên";
             this.Load += new System.EventHandler(this.SinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSV)).EndInit();

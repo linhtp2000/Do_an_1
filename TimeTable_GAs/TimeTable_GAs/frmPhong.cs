@@ -30,6 +30,9 @@ namespace TimeTable_GAs
                 txtTenPH.ResetText();
                 txtSoLuongSV.ResetText();
 
+                txtMaPH.Enabled = false;
+                txtTenPH.Enabled = false;
+                txtSoLuongSV.Enabled = false;
 
                 btnThemPhong.Enabled = true;
                 btnSuaPhong.Enabled = true;
@@ -62,7 +65,7 @@ namespace TimeTable_GAs
         private void btnThemPhong_Click(object sender, EventArgs e)
         {
             them = true;
-            dataGridViewPhong.Enabled = true;
+            dataGridViewPhong.Enabled = false;
 
             txtMaPH.Enabled = true;
             txtTenPH.Enabled = true;
@@ -84,6 +87,9 @@ namespace TimeTable_GAs
         private void btnSuaPhong_Click(object sender, EventArgs e)
         {
             them = false;
+            txtTenPH.Enabled = true;
+            txtSoLuongSV.Enabled = true;
+
             dataGridViewPhong.Enabled = true;
             dataGridViewPhong_CellClick(null, null);
 
@@ -181,6 +187,7 @@ namespace TimeTable_GAs
         private void btnHuy_Click(object sender, EventArgs e)
         {
             dataGridViewPhong_CellClick(null, null);
+            dataGridViewPhong.Enabled = true;
 
             txtMaPH.Enabled = true;
             txtTenPH.Enabled = true;

@@ -36,11 +36,11 @@ namespace TimeTable_GAs
                 txtTietBatDau.Enabled = false;
                 txtTietKetThuc.Enabled = false;
 
-                btnThemBaiGiang.Enabled = true;
-                btnSuaBG.Enabled = true;
-                btnXacNhan.Enabled = true;
-                btnXoa.Enabled = true;
-                cmbLocBG.Enabled = true;
+                //btnThemBaiGiang.Enabled = true;
+                //btnSuaBG.Enabled = true;
+                //btnXacNhan.Enabled = true;
+                //btnXoa.Enabled = true;
+                //cmbLocBG.Enabled = true;
 
                 txtMaBG.ResetText();
                 txtMaGV.ResetText();
@@ -52,7 +52,7 @@ namespace TimeTable_GAs
                 txtTietBatDau.ResetText();
                 txtTietKetThuc.ResetText();
 
-                dataGridViewBG_CellClick(null, null);               
+                dataGridViewBG_CellClick(null, null);
             }
             catch
             {
@@ -61,39 +61,39 @@ namespace TimeTable_GAs
         }
 
 
-        private void btnThemBaiGiang_Click(object sender, EventArgs e)
-        {
-            them = true;
-            dataGridViewBG.Enabled = true;
-           
-            txtMaBG.Enabled = true;
-            txtMaGV.Enabled = true;
-            txtMaMH.Enabled = true;
-            txtMaPhong.Enabled = true;
-            txtMaSV.Enabled = true;
-            txtSTTTuan.Enabled = true;
-            txtThu.Enabled = true;
-            txtTietBatDau.Enabled = true;
-            txtTietKetThuc.Enabled = true;
+        //private void btnThemBaiGiang_Click(object sender, EventArgs e)
+        //{
+        //    them = true;
+        //    dataGridViewBG.Enabled = true;
 
-            btnThemBaiGiang.Enabled = false;
-            btnSuaBG.Enabled = false;
-            btnXacNhan.Enabled = true;
-            btnXoa.Enabled = false;
-            cmbLocBG.Enabled = false;
+        //    txtMaBG.Enabled = true;
+        //    txtMaGV.Enabled = true;
+        //    txtMaMH.Enabled = true;
+        //    txtMaPhong.Enabled = true;
+        //    txtMaSV.Enabled = true;
+        //    txtSTTTuan.Enabled = true;
+        //    txtThu.Enabled = true;
+        //    txtTietBatDau.Enabled = true;
+        //    txtTietKetThuc.Enabled = true;
 
-            txtMaBG.ResetText();
-            txtMaGV.ResetText();
-            txtMaMH.ResetText();
-            txtMaPhong.ResetText();
-            txtMaSV.ResetText();
-            txtSTTTuan.ResetText();
-            txtThu.ResetText();
-            txtTietBatDau.ResetText();
-            txtTietKetThuc.ResetText();
+        //    btnThemBaiGiang.Enabled = false;
+        //    btnSuaBG.Enabled = false;
+        //    btnXacNhan.Enabled = true;
+        //    btnXoa.Enabled = false;
+        //    cmbLocBG.Enabled = false;
 
-            txtMaBG.Focus();
-        }
+        //    txtMaBG.ResetText();
+        //    txtMaGV.ResetText();
+        //    txtMaMH.ResetText();
+        //    txtMaPhong.ResetText();
+        //    txtMaSV.ResetText();
+        //    txtSTTTuan.ResetText();
+        //    txtThu.ResetText();
+        //    txtTietBatDau.ResetText();
+        //    txtTietKetThuc.ResetText();
+
+        //    txtMaBG.Focus();
+        //}
 
         private void dataGridViewBG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -107,23 +107,23 @@ namespace TimeTable_GAs
             txtSTTTuan.Text = dataGridViewBG.Rows[r].Cells[5].Value.ToString();
             txtThu.Text = dataGridViewBG.Rows[r].Cells[6].Value.ToString();
             txtTietBatDau.Text = dataGridViewBG.Rows[r].Cells[7].Value.ToString();
-            txtTietKetThuc.Text = dataGridViewBG.Rows[r].Cells[8].Value.ToString();   
+            txtTietKetThuc.Text = dataGridViewBG.Rows[r].Cells[8].Value.ToString();
         }
 
-        private void btnXacNhan_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
+        //private void btnXacNhan_Click(object sender, EventArgs e)
+        //{
 
-        private void btnSuaBG_Click(object sender, EventArgs e)
-        {
 
-        }
+        //}
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
+        //private void btnSuaBG_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
+
+        //private void btnXoa_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }

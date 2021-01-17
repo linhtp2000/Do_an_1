@@ -14,10 +14,11 @@ namespace TimeTable_GAs.Data
     public class StudentData
     {
         public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
-        public List<Model.SinhVien> Index()
+        public List<SinhVien> Index()
         {
             //  DataGridView dgv = new DataGridView();
-            var sv = db.SinhViens;
+            var sv = from sinhvien in db.SinhViens
+                     select sinhvien;
             // dgv.DataSource = teacher;
             return sv.ToList();
 
@@ -55,7 +56,9 @@ namespace TimeTable_GAs.Data
         }
         public Model.SinhVien Find(string id)
         {
-            var tg = db.SinhViens.Find(id);
+            var tg = (from sv in db.SinhViens
+                      where sv.MaNhomSV == id
+                      select sv).FirstOrDefault();
             return tg;
         }
     }

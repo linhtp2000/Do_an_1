@@ -68,11 +68,29 @@
     <Compile Include="frmClassList.Designer.cs">
       <DependentUpon>frmClassList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiaoVien.Designer.cs">
+      <DependentUpon>frmGiaoVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLectureList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLectureList.Designer.cs">
       <DependentUpon>frmLectureList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonHoc.Designer.cs">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhong.Designer.cs">
+      <DependentUpon>frmPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRoomList.cs">
       <SubType>Form</SubType>
@@ -98,22 +116,16 @@
     <Compile Include="frmTeacherList.Designer.cs">
       <DependentUpon>frmTeacherList.cs</DependentUpon>
     </Compile>
-    <Compile Include="fromBaiGiang.cs">
+    <Compile Include="frmBaiGiang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fromBaiGiang.Designer.cs">
-      <DependentUpon>fromBaiGiang.cs</DependentUpon>
+    <Compile Include="frmBaiGiang.Designer.cs">
+      <DependentUpon>frmBaiGiang.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\CourseData.cs" />
     <Compile Include="Data\LectureData.cs" />
-    <Compile Include="frmGiaoVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGiaoVien.Designer.cs">
-      <DependentUpon>frmGiaoVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Data\RoomData.cs" />
-    <Compile Include="Data\TeacherAndCourseData.cs" />
+    <Compile Include="Data\TeacherData.cs" />
     <Compile Include="Data\StudentData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -159,12 +171,6 @@
     </Compile>
     <Compile Include="Services\Planner.cs" />
     <Compile Include="Services\SapXep.cs" />
-    <Compile Include="frmPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhong.Designer.cs">
-      <DependentUpon>frmPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmSinhVien.cs">
@@ -216,8 +222,17 @@
     <EmbeddedResource Include="frmClassList.resx">
       <DependentUpon>frmClassList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGiaoVien.resx">
+      <DependentUpon>frmGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLectureList.resx">
       <DependentUpon>frmLectureList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonHoc.resx">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhong.resx">
+      <DependentUpon>frmPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRoomList.resx">
       <DependentUpon>frmRoomList.cs</DependentUpon>
@@ -231,17 +246,11 @@
     <EmbeddedResource Include="frmTeacherList.resx">
       <DependentUpon>frmTeacherList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fromBaiGiang.resx">
-      <DependentUpon>fromBaiGiang.cs</DependentUpon>
+    <EmbeddedResource Include="frmBaiGiang.resx">
+      <DependentUpon>frmBaiGiang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGiaoVien.resx">
-      <DependentUpon>frmGiaoVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPhong.resx">
-      <DependentUpon>frmPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

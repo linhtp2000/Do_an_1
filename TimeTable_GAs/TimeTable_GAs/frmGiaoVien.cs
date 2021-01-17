@@ -15,7 +15,7 @@ namespace TimeTable_GAs
     {
         bool them;
         string err;
-        TeacherAndCourseData dbGV = new TeacherAndCourseData();
+        TeacherData dbGV = new TeacherData();
         public frmGiaoVien()
         {
             InitializeComponent();
@@ -25,18 +25,22 @@ namespace TimeTable_GAs
         {
             try
             {
-                dataGridViewGV.DataSource = dbGV.Index();
-                dataGridViewGV.AutoResizeColumns();
+                dataGridView1.DataSource = dbGV.Index();
+                dataGridView1.AutoResizeColumns();
 
-                txtMaGV.ResetText();
-                txtTenGV.ResetText();
-                txtEmail.ResetText();
+                txtMaGiaoVien.ResetText();
+                txtTenGiaoVien.ResetText();
+                txtEmailGV.ResetText();
 
-                btnThemGV.Enabled = true;
-                btnSuaGV.Enabled = true;
-                btnXacNhan.Enabled = true;
-                btnXoa.Enabled = true;
-                btnHuy.Enabled = false;
+                txtMaGiaoVien.Enabled = false;
+                txtTenGiaoVien.Enabled = false;
+                txtEmailGV.Enabled = false;
+
+                btnThemGiaoVien.Enabled = true;
+                btnSuaGiaoVien.Enabled = true;
+                btnXacNhanGV.Enabled = true;
+                btnXoaGiaoVien.Enabled = true;
+                btnHuyGV.Enabled = false;
 
                 dataGridViewGV_CellClick(null, null);
             }
@@ -48,69 +52,62 @@ namespace TimeTable_GAs
 
         private void dataGridViewGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dataGridViewGV.CurrentCell.RowIndex;
+            int r = dataGridView1.CurrentCell.RowIndex;
 
-            txtMaGV.Text = dataGridViewGV.Rows[r].Cells[0].Value.ToString();
-            txtTenGV.Text = dataGridViewGV.Rows[r].Cells[1].Value.ToString();
-            txtEmail.Text = dataGridViewGV.Rows[r].Cells[2].Value.ToString();
-            txtMonHoc.Text = dataGridViewGV.Rows[r].Cells[3].Value.ToString();
-            txtMaMon.Text = dataGridViewGV.Rows[r].Cells[4].Value.ToString();
-            txtSoTiet.Text = dataGridViewGV.Rows[r].Cells[5].Value.ToString();
-
-
+            txtMaGiaoVien.Text = dataGridView1.Rows[r].Cells[0].Value.ToString();
+            txtTenGiaoVien.Text = dataGridView1.Rows[r].Cells[1].Value.ToString();
+            txtEmailGV.Text = dataGridView1.Rows[r].Cells[2].Value.ToString();
         }
 
         private void GiaoVien_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-
-        private void btnThemGV_Click(object sender, EventArgs e)
+        private void btnThemGiaoVien_Click(object sender, EventArgs e)
         {
             them = true;
-            dataGridViewGV.Enabled = true;
+            dataGridView1.Enabled = false;
 
-            txtMaGV.Enabled = true;
-            txtTenGV.Enabled = true;
-            txtEmail.Enabled = true;
+            txtMaGiaoVien.Enabled = true;
+            txtTenGiaoVien.Enabled = true;
+            txtEmailGV.Enabled = true;
 
-            btnThemGV.Enabled = false;
-            btnSuaGV.Enabled = false;
-            btnXacNhan.Enabled = true;
-            btnXoa.Enabled = false;
-            btnHuy.Enabled = true;
+            btnThemGiaoVien.Enabled = false;
+            btnSuaGiaoVien.Enabled = false;
+            btnXacNhanGV.Enabled = true;
+            btnXoaGiaoVien.Enabled = false;
+            btnHuyGV.Enabled = true;
 
-            txtMaGV.ResetText();
-            txtTenGV.ResetText();
-            txtEmail.ResetText();
-            txtMonHoc.ResetText();
-            txtMaMon.ResetText();
-            txtSoTiet.ResetText();
+            txtMaGiaoVien.ResetText();
+            txtTenGiaoVien.ResetText();
+            txtEmailGV.ResetText();
 
-            txtMaGV.Focus();
+            txtMaGiaoVien.Focus();
         }
 
-        private void btnSuaGV_Click(object sender, EventArgs e)
+        private void btnSuaGiaoVien_Click(object sender, EventArgs e)
         {
             them = false;
-            dataGridViewGV.Enabled = true;
+            txtTenGiaoVien.Enabled = true;
+            txtEmailGV.Enabled = true;
+            dataGridView1.Enabled = true;
             dataGridViewGV_CellClick(null, null);
 
 
-            btnThemGV.Enabled = false;
-            btnSuaGV.Enabled = false;
-            btnXacNhan.Enabled = true;
-            btnXoa.Enabled = false;
-            btnHuy.Enabled = true;
+            btnThemGiaoVien.Enabled = false;
+            btnSuaGiaoVien.Enabled = false;
+            btnXacNhanGV.Enabled = true;
+            btnXoaGiaoVien.Enabled = false;
+            btnHuyGV.Enabled = true;
 
-            txtTenGV.Focus();
+            txtTenGiaoVien.Focus();
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btnXoaGiaoVien_Click(object sender, EventArgs e)
         {
             try
             {
-                int r = dataGridViewGV.CurrentCell.RowIndex;
+                int r = dataGridView1.CurrentCell.RowIndex;
 
                 DialogResult traloi;
                 traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
@@ -118,7 +115,7 @@ namespace TimeTable_GAs
                 if (traloi == DialogResult.Yes)
                 {
 
-                    dbGV.Detele(ref err, txtMaGV.Text);
+                    dbGV.Detele(ref err, txtMaGiaoVien.Text);
                     LoadData();
                     MessageBox.Show("Đã xóa xong!");
                 }
@@ -133,9 +130,9 @@ namespace TimeTable_GAs
             }
         }
 
-        private void btnXacNhan_Click(object sender, EventArgs e)
+        private void btnXacNhanGV_Click(object sender, EventArgs e)
         {
-            if (txtMaGV.Text != "" && txtTenGV.Text != "")
+            if (txtMaGiaoVien.Text != "" && txtTenGiaoVien.Text != "")
             {
                 if (them)
                 {
@@ -145,9 +142,9 @@ namespace TimeTable_GAs
                     try
                     {
                         //tìm xem nv đã có hay chưa
-                        if (dbGV.Find(txtMaGV.Text) == null)
+                        if (dbGV.Find(txtMaGiaoVien.Text) == null)
                         {
-                            dbGV.Add(txtMaGV.Text, txtTenGV.Text, txtEmail.Text, ref err);
+                            dbGV.Add(txtMaGiaoVien.Text, txtTenGiaoVien.Text, txtEmailGV.Text, ref err);
                             LoadData();
                             MessageBox.Show("Đã thêm xong!");
                         }
@@ -158,7 +155,7 @@ namespace TimeTable_GAs
                             if (tl == DialogResult.OK)
                             {
                                 //nếu ok--> cập nhật lại nv 
-                                dbGV.Update(txtMaGV.Text, txtTenGV.Text, txtEmail.Text, ref err);
+                                dbGV.Update(txtMaGiaoVien.Text, txtTenGiaoVien.Text, txtEmailGV.Text, ref err);
                                 LoadData();
                                 MessageBox.Show("Đã cập nhật xong!");
                             }
@@ -175,7 +172,7 @@ namespace TimeTable_GAs
                 }
                 else
                 {
-                    dbGV.Update(txtMaGV.Text, txtTenGV.Text, txtEmail.Text, ref err);
+                    dbGV.Update(txtMaGiaoVien.Text, txtTenGiaoVien.Text, txtEmailGV.Text, ref err);
                     LoadData();
                     MessageBox.Show("Đã cập nhật xong!");
                 }
@@ -188,29 +185,23 @@ namespace TimeTable_GAs
             }
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
+        private void btnHuyGV_Click(object sender, EventArgs e)
         {
-            dataGridViewGV_CellClick(null,null);
+            dataGridViewGV_CellClick(null, null);
+            dataGridView1.Enabled = true;
 
-            txtMaGV.Enabled = true;
-            txtTenGV.Enabled = true;
-            txtEmail.Enabled = true;
+            txtMaGiaoVien.Enabled = true;
+            txtTenGiaoVien.Enabled = true;
+            txtEmailGV.Enabled = true;
 
-            btnThemGV.Enabled = true;
-            btnSuaGV.Enabled = true;
-            btnXacNhan.Enabled = true;
-            btnXoa.Enabled = true;
+            btnThemGiaoVien.Enabled = true;
+            btnSuaGiaoVien.Enabled = true;
+            btnXacNhanGV.Enabled = true;
+            btnXoaGiaoVien.Enabled = true;
 
-            txtMaGV.ResetText();
-            txtTenGV.ResetText();
-            txtEmail.ResetText();
-            txtMonHoc.ResetText();
-            txtMaMon.ResetText();
-            txtSoTiet.ResetText();
-        }
-
-        private void GiaoVien_Load_1(object sender, EventArgs e)
-        {
+            txtMaGiaoVien.ResetText();
+            txtTenGiaoVien.ResetText();
+            txtEmailGV.ResetText();
 
         }
     }

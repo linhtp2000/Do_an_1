@@ -19,20 +19,23 @@ namespace TimeTable_GAs.Data
         // }
         public List<MonHoc> Index()
         {
-            return (List<MonHoc>)(from gv in db.GiaoViens
-                                  orderby gv.TenGV
-                                  select gv);
+            //return (List<MonHoc>)(from gv in db.GiaoViens
+            //                      orderby gv.TenGV
+            //                      select gv);
             ////DataGridView dgv = new DataGridView();
-            //var course = db.MonHocs;
+            var course = db.MonHocs;
             ////dgv.DataSource = ct;
-            //return course.ToList();
+            return course.ToList();
         }
 
-        public bool Add(string id, string name, ref string err)
+        public bool Add(string id, string name, int SoTC, string sinhvien, string giaovien, ref string err)
         {
             Model.MonHoc course = new Model.MonHoc();
             course.MaMon = id;
             course.TenMon = name;
+            course.SoTC = SoTC;
+            course.SinhVien = sinhvien;
+            course.GiaoVien = giaovien;
             db.MonHocs.Add(course);
             db.SaveChanges();
             return true;
@@ -45,11 +48,14 @@ namespace TimeTable_GAs.Data
             db.SaveChanges();
             return true;
         }
-        public bool Update(string id, string name, ref string err)
+        public bool Update(string id, string name, int SoTC, string sinhvien, string giaovien, ref string err)
         {
             var course = db.MonHocs.Find(id);
             //course.MaMon = id;
             course.TenMon = name;
+            course.SoTC = SoTC;
+            course.SinhVien = sinhvien;
+            course.GiaoVien = giaovien;
             db.SaveChanges();
 
             return true;

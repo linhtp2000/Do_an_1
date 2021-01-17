@@ -50,9 +50,9 @@ namespace TimeTable_GAs.Data
             bg.GiaoVien = teacherid;
             bg.MonHoc = courseid;
             bg.Phong = roomid;
-            bg.Lop= studentid;
-            bg.ThoiGian= thu;
-           
+            bg.Lop = studentid;
+            bg.ThoiGian = thu;
+
             db.SaveChanges();
 
             return true;

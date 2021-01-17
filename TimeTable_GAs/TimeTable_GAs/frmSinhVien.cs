@@ -29,6 +29,8 @@ namespace TimeTable_GAs
                 txtMaSV.ResetText();
                 txtTenSV.ResetText();
 
+                txtMaSV.Enabled = false;
+                txtTenSV.Enabled = false;
 
                 btnThemSV.Enabled = true;
                 btnSuaSV.Enabled = true;
@@ -60,7 +62,7 @@ namespace TimeTable_GAs
         private void btnThemSV_Click(object sender, EventArgs e)
         {
             them = true;
-            dataGridViewSV.Enabled = true;
+            dataGridViewSV.Enabled = false;
 
             txtMaSV.Enabled = true;
             txtTenSV.Enabled = true;
@@ -80,6 +82,9 @@ namespace TimeTable_GAs
         private void btnSuaSV_Click(object sender, EventArgs e)
         {
             them = false;
+            //txtMaSV.Enabled = true;
+            txtTenSV.Enabled = true;
+
             dataGridViewSV.Enabled = true;
             dataGridViewSV_CellClick(null, null);
 
@@ -129,6 +134,7 @@ namespace TimeTable_GAs
                     try
                     {
                         //tìm xem nv đã có hay chưa
+
                         if (dbSV.Find(txtMaSV.Text) == null)
                         {
                             dbSV.Add(txtMaSV.Text, txtTenSV.Text, ref err);
@@ -138,7 +144,7 @@ namespace TimeTable_GAs
                         else
                         {
                             DialogResult tl;
-                            tl = MessageBox.Show("Phòng đã tồn tại. bạn có muốn cập nhật lại chi tiết phòng?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            tl = MessageBox.Show("Sinh viên đã tồn tại. bạn có muốn cập nhật lại chi tiết sinh viên?", "Trả lời", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                             if (tl == DialogResult.OK)
                             {
                                 //nếu ok--> cập nhật lại nv 
@@ -174,6 +180,7 @@ namespace TimeTable_GAs
         private void btnHuy_Click(object sender, EventArgs e)
         {
             dataGridViewSV_CellClick(null, null);
+            dataGridViewSV.Enabled = true;
 
             txtMaSV.Enabled = true;
             txtTenSV.Enabled = true;

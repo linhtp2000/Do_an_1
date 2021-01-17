@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTable_GAs.Model;
 using TimeTable_GAs.Services;
-using TimeTable_GAs.Model;
 
 namespace TimeTable_GAs.Data
 {
-    public class TeacherAndCourseData
+    public class TeacherData
     {
         public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
         public List<GiaoVien> Index()//(string id)
