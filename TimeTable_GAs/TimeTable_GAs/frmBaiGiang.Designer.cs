@@ -34,6 +34,14 @@
             this.flowLayoutPanel54 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewBG = new System.Windows.Forms.DataGridView();
+            this.maBGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monHocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaoVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baiGiangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.thoiKhoaBieuDataSet1 = new TimeTable_GAs.ThoiKhoaBieuDataSet1();
             this.flowLayoutPanel45 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel36 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel27 = new System.Windows.Forms.FlowLayoutPanel();
@@ -59,20 +67,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtTietKetThuc = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.thoiKhoaBieuDataSet1 = new TimeTable_GAs.ThoiKhoaBieuDataSet1();
-            this.baiGiangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.baiGiangTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet1TableAdapters.BaiGiangTableAdapter();
-            this.maBGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thoiGianDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monHocDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaoVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBG)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baiGiangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
@@ -84,7 +84,7 @@
             this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label10.Cursor = System.Windows.Forms.Cursors.Default;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 1019);
+            this.label10.Location = new System.Drawing.Point(30, 815);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(0, 0);
             this.label10.TabIndex = 27;
@@ -93,18 +93,16 @@
             // 
             // flowLayoutPanel63
             // 
-            this.flowLayoutPanel63.Location = new System.Drawing.Point(1249, 1019);
-            this.flowLayoutPanel63.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel63.Location = new System.Drawing.Point(1110, 815);
             this.flowLayoutPanel63.Name = "flowLayoutPanel63";
-            this.flowLayoutPanel63.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel63.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel63.TabIndex = 19;
             // 
             // flowLayoutPanel54
             // 
-            this.flowLayoutPanel54.Location = new System.Drawing.Point(1066, 1019);
-            this.flowLayoutPanel54.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel54.Location = new System.Drawing.Point(948, 815);
             this.flowLayoutPanel54.Name = "flowLayoutPanel54";
-            this.flowLayoutPanel54.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel54.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel54.TabIndex = 19;
             // 
             // groupBox2
@@ -118,11 +116,9 @@
             this.groupBox2.Controls.Add(this.flowLayoutPanel27);
             this.groupBox2.Controls.Add(this.flowLayoutPanel18);
             this.groupBox2.Controls.Add(this.flowLayoutPanel9);
-            this.groupBox2.Location = new System.Drawing.Point(431, 47);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(383, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1170, 610);
+            this.groupBox2.Size = new System.Drawing.Size(1040, 488);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
@@ -140,205 +136,268 @@
             this.giaoVienDataGridViewTextBoxColumn,
             this.lopDataGridViewTextBoxColumn});
             this.dataGridViewBG.DataSource = this.baiGiangBindingSource;
-            this.dataGridViewBG.Location = new System.Drawing.Point(47, 60);
+            this.dataGridViewBG.Location = new System.Drawing.Point(42, 48);
+            this.dataGridViewBG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewBG.Name = "dataGridViewBG";
             this.dataGridViewBG.RowHeadersWidth = 62;
             this.dataGridViewBG.RowTemplate.Height = 28;
-            this.dataGridViewBG.Size = new System.Drawing.Size(1061, 532);
+            this.dataGridViewBG.Size = new System.Drawing.Size(943, 426);
             this.dataGridViewBG.TabIndex = 28;
             this.dataGridViewBG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBG_CellClick);
             // 
+            // maBGDataGridViewTextBoxColumn
+            // 
+            this.maBGDataGridViewTextBoxColumn.DataPropertyName = "MaBG";
+            this.maBGDataGridViewTextBoxColumn.HeaderText = "MaBG";
+            this.maBGDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.maBGDataGridViewTextBoxColumn.Name = "maBGDataGridViewTextBoxColumn";
+            this.maBGDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // thoiGianDataGridViewTextBoxColumn
+            // 
+            this.thoiGianDataGridViewTextBoxColumn.DataPropertyName = "ThoiGian";
+            this.thoiGianDataGridViewTextBoxColumn.HeaderText = "ThoiGian";
+            this.thoiGianDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.thoiGianDataGridViewTextBoxColumn.Name = "thoiGianDataGridViewTextBoxColumn";
+            this.thoiGianDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // phongDataGridViewTextBoxColumn
+            // 
+            this.phongDataGridViewTextBoxColumn.DataPropertyName = "Phong";
+            this.phongDataGridViewTextBoxColumn.HeaderText = "Phong";
+            this.phongDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.phongDataGridViewTextBoxColumn.Name = "phongDataGridViewTextBoxColumn";
+            this.phongDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // monHocDataGridViewTextBoxColumn
+            // 
+            this.monHocDataGridViewTextBoxColumn.DataPropertyName = "MonHoc";
+            this.monHocDataGridViewTextBoxColumn.HeaderText = "MonHoc";
+            this.monHocDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.monHocDataGridViewTextBoxColumn.Name = "monHocDataGridViewTextBoxColumn";
+            this.monHocDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // giaoVienDataGridViewTextBoxColumn
+            // 
+            this.giaoVienDataGridViewTextBoxColumn.DataPropertyName = "GiaoVien";
+            this.giaoVienDataGridViewTextBoxColumn.HeaderText = "GiaoVien";
+            this.giaoVienDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.giaoVienDataGridViewTextBoxColumn.Name = "giaoVienDataGridViewTextBoxColumn";
+            this.giaoVienDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // lopDataGridViewTextBoxColumn
+            // 
+            this.lopDataGridViewTextBoxColumn.DataPropertyName = "Lop";
+            this.lopDataGridViewTextBoxColumn.HeaderText = "Lop";
+            this.lopDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.lopDataGridViewTextBoxColumn.Name = "lopDataGridViewTextBoxColumn";
+            this.lopDataGridViewTextBoxColumn.Width = 61;
+            // 
+            // baiGiangBindingSource
+            // 
+            this.baiGiangBindingSource.DataMember = "BaiGiang";
+            this.baiGiangBindingSource.DataSource = this.thoiKhoaBieuDataSet1;
+            // 
+            // thoiKhoaBieuDataSet1
+            // 
+            this.thoiKhoaBieuDataSet1.DataSetName = "ThoiKhoaBieuDataSet1";
+            this.thoiKhoaBieuDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // flowLayoutPanel45
             // 
-            this.flowLayoutPanel45.Location = new System.Drawing.Point(884, 1019);
-            this.flowLayoutPanel45.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel45.Location = new System.Drawing.Point(786, 815);
             this.flowLayoutPanel45.Name = "flowLayoutPanel45";
-            this.flowLayoutPanel45.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel45.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel45.TabIndex = 19;
             // 
             // flowLayoutPanel36
             // 
-            this.flowLayoutPanel36.Location = new System.Drawing.Point(702, 1019);
-            this.flowLayoutPanel36.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel36.Location = new System.Drawing.Point(624, 815);
             this.flowLayoutPanel36.Name = "flowLayoutPanel36";
-            this.flowLayoutPanel36.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel36.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel36.TabIndex = 19;
             // 
             // flowLayoutPanel27
             // 
-            this.flowLayoutPanel27.Location = new System.Drawing.Point(520, 1019);
-            this.flowLayoutPanel27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel27.Location = new System.Drawing.Point(462, 815);
             this.flowLayoutPanel27.Name = "flowLayoutPanel27";
-            this.flowLayoutPanel27.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel27.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel27.TabIndex = 19;
             // 
             // flowLayoutPanel18
             // 
-            this.flowLayoutPanel18.Location = new System.Drawing.Point(338, 1019);
-            this.flowLayoutPanel18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel18.Location = new System.Drawing.Point(300, 815);
             this.flowLayoutPanel18.Name = "flowLayoutPanel18";
-            this.flowLayoutPanel18.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel18.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel18.TabIndex = 19;
             // 
             // flowLayoutPanel9
             // 
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(155, 1019);
-            this.flowLayoutPanel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(138, 815);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(176, 105);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(156, 84);
             this.flowLayoutPanel9.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 53);
+            this.label2.Location = new System.Drawing.Point(5, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Thông tin";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 96);
+            this.label3.Location = new System.Drawing.Point(22, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
+            this.label3.Size = new System.Drawing.Size(94, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Mã Bài giảng:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(-4, 141);
+            this.label4.Location = new System.Drawing.Point(-4, 113);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 20);
+            this.label4.Size = new System.Drawing.Size(132, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Mã Nhóm sinh viên:";
             // 
             // txtMaBG
             // 
-            this.txtMaBG.Location = new System.Drawing.Point(140, 90);
+            this.txtMaBG.Location = new System.Drawing.Point(124, 72);
+            this.txtMaBG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaBG.Name = "txtMaBG";
-            this.txtMaBG.Size = new System.Drawing.Size(198, 26);
+            this.txtMaBG.Size = new System.Drawing.Size(176, 22);
             this.txtMaBG.TabIndex = 3;
             // 
             // txtMaSV
             // 
-            this.txtMaSV.Location = new System.Drawing.Point(140, 138);
+            this.txtMaSV.Location = new System.Drawing.Point(124, 110);
+            this.txtMaSV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(198, 26);
+            this.txtMaSV.Size = new System.Drawing.Size(176, 22);
             this.txtMaSV.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 192);
+            this.label1.Location = new System.Drawing.Point(51, 154);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "Mã Môn:";
             // 
             // txtMaMH
             // 
-            this.txtMaMH.Location = new System.Drawing.Point(140, 186);
+            this.txtMaMH.Location = new System.Drawing.Point(124, 149);
+            this.txtMaMH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaMH.Name = "txtMaMH";
-            this.txtMaMH.Size = new System.Drawing.Size(198, 26);
+            this.txtMaMH.Size = new System.Drawing.Size(176, 22);
             this.txtMaMH.TabIndex = 12;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 240);
+            this.label8.Location = new System.Drawing.Point(22, 192);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 20);
+            this.label8.Size = new System.Drawing.Size(95, 17);
             this.label8.TabIndex = 13;
             this.label8.Text = "Mã Giáo viên:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 282);
+            this.label7.Location = new System.Drawing.Point(37, 226);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 20);
+            this.label7.Size = new System.Drawing.Size(76, 17);
             this.label7.TabIndex = 14;
             this.label7.Text = "Mã Phòng:";
             // 
             // txtMaGV
             // 
-            this.txtMaGV.Location = new System.Drawing.Point(140, 234);
+            this.txtMaGV.Location = new System.Drawing.Point(124, 187);
+            this.txtMaGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaGV.Name = "txtMaGV";
-            this.txtMaGV.Size = new System.Drawing.Size(198, 26);
+            this.txtMaGV.Size = new System.Drawing.Size(176, 22);
             this.txtMaGV.TabIndex = 15;
             // 
             // txtMaPhong
             // 
-            this.txtMaPhong.Location = new System.Drawing.Point(140, 282);
+            this.txtMaPhong.Location = new System.Drawing.Point(124, 226);
+            this.txtMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(198, 26);
+            this.txtMaPhong.Size = new System.Drawing.Size(176, 22);
             this.txtMaPhong.TabIndex = 16;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 336);
+            this.label6.Location = new System.Drawing.Point(38, 269);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.Size = new System.Drawing.Size(69, 17);
             this.label6.TabIndex = 17;
             this.label6.Text = "Tuần thứ:";
             // 
             // txtSTTTuan
             // 
-            this.txtSTTTuan.Location = new System.Drawing.Point(140, 330);
+            this.txtSTTTuan.Location = new System.Drawing.Point(124, 264);
+            this.txtSTTTuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSTTTuan.Name = "txtSTTTuan";
-            this.txtSTTTuan.Size = new System.Drawing.Size(198, 26);
+            this.txtSTTTuan.Size = new System.Drawing.Size(176, 22);
             this.txtSTTTuan.TabIndex = 18;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(83, 386);
+            this.label12.Location = new System.Drawing.Point(74, 309);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 20);
+            this.label12.Size = new System.Drawing.Size(33, 17);
             this.label12.TabIndex = 19;
             this.label12.Text = "Thứ";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(28, 428);
+            this.label11.Location = new System.Drawing.Point(25, 342);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 20);
+            this.label11.Size = new System.Drawing.Size(89, 17);
             this.label11.TabIndex = 20;
             this.label11.Text = "Tiết Bắt đầu:";
             // 
             // txtThu
             // 
-            this.txtThu.Location = new System.Drawing.Point(143, 380);
+            this.txtThu.Location = new System.Drawing.Point(127, 304);
+            this.txtThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtThu.Name = "txtThu";
-            this.txtThu.Size = new System.Drawing.Size(198, 26);
+            this.txtThu.Size = new System.Drawing.Size(176, 22);
             this.txtThu.TabIndex = 21;
             // 
             // txtTietBatDau
             // 
-            this.txtTietBatDau.Location = new System.Drawing.Point(143, 428);
+            this.txtTietBatDau.Location = new System.Drawing.Point(127, 342);
+            this.txtTietBatDau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTietBatDau.Name = "txtTietBatDau";
-            this.txtTietBatDau.Size = new System.Drawing.Size(198, 26);
+            this.txtTietBatDau.Size = new System.Drawing.Size(176, 22);
             this.txtTietBatDau.TabIndex = 22;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 482);
+            this.label9.Location = new System.Drawing.Point(25, 386);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 20);
+            this.label9.Size = new System.Drawing.Size(92, 17);
             this.label9.TabIndex = 23;
             this.label9.Text = "Tiết Kết thúc:";
             // 
             // txtTietKetThuc
             // 
-            this.txtTietKetThuc.Location = new System.Drawing.Point(143, 476);
+            this.txtTietKetThuc.Location = new System.Drawing.Point(127, 381);
+            this.txtTietKetThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTietKetThuc.Name = "txtTietKetThuc";
-            this.txtTietKetThuc.Size = new System.Drawing.Size(198, 26);
+            this.txtTietKetThuc.Size = new System.Drawing.Size(176, 22);
             this.txtTietKetThuc.TabIndex = 24;
             // 
             // groupBox1
@@ -362,93 +421,34 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(22, 36);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(403, 565);
+            this.groupBox1.Size = new System.Drawing.Size(366, 452);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tùy chọn";
-            // 
-            // thoiKhoaBieuDataSet1
-            // 
-            this.thoiKhoaBieuDataSet1.DataSetName = "ThoiKhoaBieuDataSet1";
-            this.thoiKhoaBieuDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // baiGiangBindingSource
-            // 
-            this.baiGiangBindingSource.DataMember = "BaiGiang";
-            this.baiGiangBindingSource.DataSource = this.thoiKhoaBieuDataSet1;
             // 
             // baiGiangTableAdapter
             // 
             this.baiGiangTableAdapter.ClearBeforeFill = true;
             // 
-            // maBGDataGridViewTextBoxColumn
-            // 
-            this.maBGDataGridViewTextBoxColumn.DataPropertyName = "MaBG";
-            this.maBGDataGridViewTextBoxColumn.HeaderText = "MaBG";
-            this.maBGDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.maBGDataGridViewTextBoxColumn.Name = "maBGDataGridViewTextBoxColumn";
-            this.maBGDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // thoiGianDataGridViewTextBoxColumn
-            // 
-            this.thoiGianDataGridViewTextBoxColumn.DataPropertyName = "ThoiGian";
-            this.thoiGianDataGridViewTextBoxColumn.HeaderText = "ThoiGian";
-            this.thoiGianDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.thoiGianDataGridViewTextBoxColumn.Name = "thoiGianDataGridViewTextBoxColumn";
-            this.thoiGianDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // phongDataGridViewTextBoxColumn
-            // 
-            this.phongDataGridViewTextBoxColumn.DataPropertyName = "Phong";
-            this.phongDataGridViewTextBoxColumn.HeaderText = "Phong";
-            this.phongDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.phongDataGridViewTextBoxColumn.Name = "phongDataGridViewTextBoxColumn";
-            this.phongDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // monHocDataGridViewTextBoxColumn
-            // 
-            this.monHocDataGridViewTextBoxColumn.DataPropertyName = "MonHoc";
-            this.monHocDataGridViewTextBoxColumn.HeaderText = "MonHoc";
-            this.monHocDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.monHocDataGridViewTextBoxColumn.Name = "monHocDataGridViewTextBoxColumn";
-            this.monHocDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // giaoVienDataGridViewTextBoxColumn
-            // 
-            this.giaoVienDataGridViewTextBoxColumn.DataPropertyName = "GiaoVien";
-            this.giaoVienDataGridViewTextBoxColumn.HeaderText = "GiaoVien";
-            this.giaoVienDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.giaoVienDataGridViewTextBoxColumn.Name = "giaoVienDataGridViewTextBoxColumn";
-            this.giaoVienDataGridViewTextBoxColumn.Width = 111;
-            // 
-            // lopDataGridViewTextBoxColumn
-            // 
-            this.lopDataGridViewTextBoxColumn.DataPropertyName = "Lop";
-            this.lopDataGridViewTextBoxColumn.HeaderText = "Lop";
-            this.lopDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.lopDataGridViewTextBoxColumn.Name = "lopDataGridViewTextBoxColumn";
-            this.lopDataGridViewTextBoxColumn.Width = 72;
-            // 
             // frmBaiGiang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1411, 682);
+            this.ClientSize = new System.Drawing.Size(1446, 546);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmBaiGiang";
             this.Text = "Bài_Giảng";
             this.Load += new System.EventHandler(this.frmBaiGiang_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baiGiangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baiGiangBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

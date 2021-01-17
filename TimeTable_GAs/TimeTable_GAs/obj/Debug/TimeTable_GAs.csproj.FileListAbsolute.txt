@@ -33,7 +33,6 @@ E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\bin\Debug\EntityFramework.SqlServer.
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csproj.CopyComplete
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmStudentList.resources
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmClassList.resources
-E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmLectureList.resources
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmRoomList.resources
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmSubjectList.resources
 E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmTeacherList.resources
@@ -49,3 +48,5 @@ D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmSubj
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmTeacherList.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmBaiGiang.resources
 D:\DoAn1_Git\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.frmSinhvien.resources
+E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.csprojAssemblyReference.cache
+E:\DoAn\Do_an_1\TimeTable_GAs\TimeTable_GAs\obj\Debug\TimeTable_GAs.Form2.resources

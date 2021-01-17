@@ -57,12 +57,11 @@ namespace TimeTable_GAs
             this.tenGVDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn});
             this.dvgStudentList.DataSource = this.giaoVienBindingSource;
-            this.dvgStudentList.Location = new System.Drawing.Point(38, 110);
-            this.dvgStudentList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dvgStudentList.Location = new System.Drawing.Point(34, 88);
             this.dvgStudentList.Name = "dvgStudentList";
             this.dvgStudentList.RowHeadersWidth = 51;
             this.dvgStudentList.RowTemplate.Height = 24;
-            this.dvgStudentList.Size = new System.Drawing.Size(706, 575);
+            this.dvgStudentList.Size = new System.Drawing.Size(628, 460);
             this.dvgStudentList.TabIndex = 3;
             // 
             // maGVDataGridViewTextBoxColumn
@@ -117,9 +116,9 @@ namespace TimeTable_GAs
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(186, 40);
+            this.label1.Location = new System.Drawing.Point(176, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 29);
+            this.label1.Size = new System.Drawing.Size(348, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "DANH SÁCH GIÁO VIÊN";
             // 
@@ -129,12 +128,11 @@ namespace TimeTable_GAs
             // 
             // frmTeacherList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 718);
+            this.ClientSize = new System.Drawing.Size(693, 574);
             this.Controls.Add(this.dvgStudentList);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmTeacherList";
             this.Text = "frmTeacherList";
             this.Load += new System.EventHandler(this.frmTeacherList_Load);

@@ -34,16 +34,16 @@ namespace TimeTable_GAs
             this.maPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.phongBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.thoiKhoaBieuDataSet4 = new TimeTable_GAs.ThoiKhoaBieuDataSet4();
+            this.phongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sinhVienTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet2TableAdapters.SinhVienTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.phongTableAdapter = new TimeTable_GAs.ThoiKhoaBieuDataSet4TableAdapters.PhongTableAdapter();
-            this.phongBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dvgStudentList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dvgStudentList
@@ -56,12 +56,11 @@ namespace TimeTable_GAs
             this.tenPhongDataGridViewTextBoxColumn,
             this.soLuongDataGridViewTextBoxColumn});
             this.dvgStudentList.DataSource = this.phongBindingSource1;
-            this.dvgStudentList.Location = new System.Drawing.Point(35, 81);
-            this.dvgStudentList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dvgStudentList.Location = new System.Drawing.Point(31, 65);
             this.dvgStudentList.Name = "dvgStudentList";
             this.dvgStudentList.RowHeadersWidth = 51;
             this.dvgStudentList.RowTemplate.Height = 24;
-            this.dvgStudentList.Size = new System.Drawing.Size(605, 455);
+            this.dvgStudentList.Size = new System.Drawing.Size(538, 364);
             this.dvgStudentList.TabIndex = 3;
             // 
             // maPhongDataGridViewTextBoxColumn
@@ -88,15 +87,20 @@ namespace TimeTable_GAs
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
             this.soLuongDataGridViewTextBoxColumn.Width = 125;
             // 
-            // phongBindingSource
+            // phongBindingSource1
             // 
-            this.phongBindingSource.DataMember = "Phong";
-            this.phongBindingSource.DataSource = this.thoiKhoaBieuDataSet4;
+            this.phongBindingSource1.DataMember = "Phong";
+            this.phongBindingSource1.DataSource = this.thoiKhoaBieuDataSet4;
             // 
             // thoiKhoaBieuDataSet4
             // 
             this.thoiKhoaBieuDataSet4.DataSetName = "ThoiKhoaBieuDataSet4";
             this.thoiKhoaBieuDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // phongBindingSource
+            // 
+            this.phongBindingSource.DataMember = "Phong";
+            this.phongBindingSource.DataSource = this.thoiKhoaBieuDataSet4;
             // 
             // sinhVienTableAdapter
             // 
@@ -106,9 +110,9 @@ namespace TimeTable_GAs
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(142, 30);
+            this.label1.Location = new System.Drawing.Point(166, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(507, 29);
+            this.label1.Size = new System.Drawing.Size(262, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "DANH SÁCH PHÒNG";
             // 
@@ -116,26 +120,20 @@ namespace TimeTable_GAs
             // 
             this.phongTableAdapter.ClearBeforeFill = true;
             // 
-            // phongBindingSource1
-            // 
-            this.phongBindingSource1.DataMember = "Phong";
-            this.phongBindingSource1.DataSource = this.thoiKhoaBieuDataSet4;
-            // 
             // frmRoomList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 572);
+            this.ClientSize = new System.Drawing.Size(598, 458);
             this.Controls.Add(this.dvgStudentList);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmRoomList";
             this.Text = "frmRoomList";
             this.Load += new System.EventHandler(this.frmRoomList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgStudentList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thoiKhoaBieuDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phongBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

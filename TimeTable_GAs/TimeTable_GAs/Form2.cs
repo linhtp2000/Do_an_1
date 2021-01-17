@@ -7,22 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TimeTable_GAs.Services;
 using TimeTable_GAs.Model;
+using TimeTable_GAs.Services;
 
 namespace TimeTable_GAs
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
         public ThoiKhoaBieuEntities db = new ThoiKhoaBieuEntities();
         private List<FlowLayoutPanel> listFlp = new List<FlowLayoutPanel>();
         private List<Label> listPhongLabel = new List<Label>();
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+       
+       
+        private void Form2_Load(object sender, EventArgs e)
         {
 
             // TODO: This line of code loads data into the 'thoiKhoaBieuDataSet.Lop' table.You can move, or remove it, as needed.
@@ -53,12 +54,11 @@ namespace TimeTable_GAs
         }
         void LoadplTkb()
         {
-
+            if (cmbXemTKB.Text !=null||cmbXemTKB.Text!="" ) { 
             string s = cmbXemTKB.SelectedValue.ToString();
-            if (s != null||s!="")
-            {
-                var dsbaigiang = db.BaiGiangs.Where(b => b.Lop == s).ToList();
-              //  List<BaiGiang> dsbaigiang = new List<BaiGiang>();
+            
+                var dsbaigiang = db.BaiGiangs.Where(b => b.GiaoVien == s).ToList();
+                //  List<BaiGiang> dsbaigiang = new List<BaiGiang>();
                 dsbaigiang = SapXep.dsBaiGiang.FindAll(b => b.Lop == s).ToList();
                 fplTkb.Controls.Clear();
                 listFlp.Clear();
@@ -85,8 +85,8 @@ namespace TimeTable_GAs
 
         void LoadTheoThu(string s, string thu, int p)
         {
-             List<BaiGiang> dstheothu = db.BaiGiangs.Where(b => b.Lop == s && b.ThoiGian1.Thu == thu).ToList();
-           // List<BaiGiang> dstheothu = SapXep.dsBaiGiang.FindAll(b => b.Lop == s && b.ThoiGian1.Thu == thu).ToList();
+            List<BaiGiang> dstheothu = db.BaiGiangs.Where(b => b.GiaoVien == s && b.ThoiGian1.Thu == thu).ToList();
+            // List<BaiGiang> dstheothu = SapXep.dsBaiGiang.FindAll(b => b.Lop == s && b.ThoiGian1.Thu == thu).ToList();
 
             for (int i = 0; i < dstheothu.Count - 1; i++)
             {
@@ -133,7 +133,7 @@ namespace TimeTable_GAs
             {
 
                 LoadLabelMon(dstheothu[i], p);
-                LoadLabelGV(dstheothu[i], p);
+                LoadLabelLop(dstheothu[i], p);
                 LoadLabelPhong(dstheothu[i], p);
                 LoadLabelTiet(dstheothu[i], p);
 
@@ -161,14 +161,14 @@ namespace TimeTable_GAs
         //    lb.Text = bg.ThoiGian1.Buoi + "-" + bg.ThoiGian1.Thu + "-" + bg.Phong1.TenPhong;
         //    listFlp[index].Controls.Add(lb);
         //}
-        void LoadLabelGV(BaiGiang bg, int index)
+        void LoadLabelLop(BaiGiang bg, int index)
         {
             Label lb = new Label();
-            lb.Name = $"lblGV{index}";
+            lb.Name = $"lblLop{index}";
             lb.Size = new Size(160, 24);
             lb.AutoSize = false;
             lb.TextAlign = ContentAlignment.MiddleLeft;
-            lb.Text = bg.GiaoVien1.TenGV;
+            lb.Text = bg.Lop1.TenLop;
             listFlp[index].Controls.Add(lb);
         }
         void LoadLabelTiet(BaiGiang bg, int index)
@@ -217,9 +217,9 @@ namespace TimeTable_GAs
 
             //DataSet ds = new DataSet();
             //=db.Lops.fill
-            cmbXemTKB.DataSource = db.Lops.ToList();
-            cmbXemTKB.ValueMember = "MaLop";
-            cmbXemTKB.DisplayMember = "TenLop";
+            cmbXemTKB.DataSource = db.GiaoViens.ToList();
+            cmbXemTKB.ValueMember = "MaGV";
+            cmbXemTKB.DisplayMember = "TenGV";
         }
 
         private void fplTkb_Paint(object sender, PaintEventArgs e)
@@ -236,11 +236,6 @@ namespace TimeTable_GAs
         {
             frmClassList frm = new frmClassList();
             frm.Show();
-        }
-
-        private void mnEditClass_Click(object sender, EventArgs e)
-        { 
-            
         }
 
         private void mnAddStudent_Click(object sender, EventArgs e)
@@ -267,14 +262,14 @@ namespace TimeTable_GAs
             frm.Show();
         }
 
-      
+
         private void mnEditTeacher_Click(object sender, EventArgs e)
         {
             frmGiaoVien frm = new frmGiaoVien();
             frm.Show();
-        } 
-      
-      
+        }
+
+
 
         private void mnlClass_Click(object sender, EventArgs e)
         {
@@ -313,7 +308,7 @@ namespace TimeTable_GAs
 
         private void mnSubject_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            
+
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -324,7 +319,7 @@ namespace TimeTable_GAs
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 frm = new Form2();
+            Form1 frm = new Form1();
             this.Hide();
             frm.ShowDialog();
         }
